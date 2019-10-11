@@ -2,19 +2,26 @@ import React from "react";
 import styled from "styled-components";
 import IconButton from "./IconButton";
 import BurgerMenu from "../icons/BurgerMenu";
+import Magnifier from "../icons/Magnifier";
+import VerticalPoints from "../icons/VerticalPoints";
 
 const HeaderContainer = styled.header`
   display: flex;
-  width: 100vw;
-  justify-content: start;
+  justify-content: center;
+  align-items: center;
   background-color: ${props => props.theme.lightBackground};
+  color: white;
+  fill: white;
 `;
 
-const StyledText = styled.text`
-  text-align: center;
+const HeaderRightContainer = styled.div`
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
   color: white;
-  line-height: 2.4;
-  padding-left: 5px;
 `;
 
 export default function Header() {
@@ -23,7 +30,15 @@ export default function Header() {
       <IconButton>
         <BurgerMenu />
       </IconButton>
-      <StyledText>Collection</StyledText>
+      Collection
+      <HeaderRightContainer>
+        <IconButton>
+          <Magnifier />
+        </IconButton>
+        <IconButton>
+          <VerticalPoints />
+        </IconButton>
+      </HeaderRightContainer>
     </HeaderContainer>
   );
 }

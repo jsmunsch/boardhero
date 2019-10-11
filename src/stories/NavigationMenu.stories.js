@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import StyledMenuButton from "../components/NavigationMenuButton";
 import Dice from "../icons/Dice";
 import Person from "../icons/Person";
