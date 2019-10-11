@@ -19,7 +19,7 @@ export const NavButtonInactive = () => (
 
 export const NavButtonActive = () => (
   <StyledMenuButton selected={true}>
-    <Dice />
+    <Dice selected />
     Peter
   </StyledMenuButton>
 );
