@@ -1,27 +1,29 @@
 import React from "react";
+import styled from "styled-components";
 
-export default function Star() {
+function StarIcon({ className }) {
   return (
     <svg
-      id="stars-24px"
       xmlns="http://www.w3.org/2000/svg"
-      width="43.365"
-      height="43.365"
-      viewBox="0 0 43.365 43.365"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      className={className}
     >
-      <path
-        id="Path_10"
-        data-name="Path 10"
-        d="M0,0H43.365V43.365H0Z"
-        fill="none"
-      />
-      <path
-        id="Path_11"
-        data-name="Path 11"
-        d="M19.323,2A17.341,17.341,0,1,0,36.681,19.341,17.332,17.332,0,0,0,19.323,2ZM32.294,14.416l-8.688-.746L20.138,5.5A13.919,13.919,0,0,1,32.294,14.416ZM23.5,25.271l-4.162-2.5-4.144,2.5,1.092-4.717L12.63,17.381l4.821-.416,1.89-4.457,1.89,4.439,4.821.416-3.659,3.173,1.11,4.734ZM18.543,5.5l-3.468,8.185-8.705.746A13.885,13.885,0,0,1,18.543,5.5ZM5.468,19.341a13.252,13.252,0,0,1,.4-3.225L12.439,21.8,10.514,30.04A13.841,13.841,0,0,1,5.468,19.341Zm6.659,11.826,7.214-4.353,7.214,4.335a13.69,13.69,0,0,1-14.427.017Zm16.04-1.127L26.242,21.8l6.572-5.688a14.04,14.04,0,0,1,.4,3.225A13.9,13.9,0,0,1,28.167,30.04Z"
-        transform="translate(2.342 2.342)"
-        fill="#000000"
-      />
+      <path fill="none" d="M0 0h24v24H0V0z" />
+      <path d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28-1.03-.64-1.03.62-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11.97-2.27M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z" />
     </svg>
   );
+}
+
+const StarIconStyled = styled(StarIcon)`
+  fill: ${props =>
+    props.selected ? props.theme.lightFont : props.theme.darkFont};
+  height: 32px;
+  width: 32px;
+  margin-right: 5px;
+`;
+
+export default function Star({ selected }) {
+  return <StarIconStyled selected={selected} />;
 }

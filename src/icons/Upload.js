@@ -1,27 +1,29 @@
 import React from "react";
+import styled from "styled-components";
 
-export default function Upload() {
+function UploadIcon({ className }) {
   return (
     <svg
-      id="cloud_upload-24px"
       xmlns="http://www.w3.org/2000/svg"
-      width="37.111"
-      height="37.111"
-      viewBox="0 0 37.111 37.111"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      className={className}
     >
-      <path
-        id="Path_1"
-        data-name="Path 1"
-        d="M0,0H37.111V37.111H0Z"
-        fill="none"
-      />
-      <path
-        id="Path_2"
-        data-name="Path 2"
-        d="M29.921,13.34A11.586,11.586,0,0,0,8.273,10.247,9.274,9.274,0,0,0,9.278,28.741h20.1a7.709,7.709,0,0,0,.541-15.4ZM29.38,25.648H9.278A6.181,6.181,0,0,1,8.6,13.324l1.655-.17.773-1.469A8.485,8.485,0,0,1,26.89,13.943l.464,2.319,2.366.17a4.613,4.613,0,0,1-.34,9.216ZM12.37,17.917h3.943v4.639H20.8V17.917h3.943l-6.185-6.185Z"
-        transform="translate(0 2.185)"
-        fill="#000000"
-      />
+      <path fill="none" d="M0 0h24v24H0V0z" />
+      <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4 0-2.05 1.53-3.76 3.56-3.97l1.07-.11.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5 1.53.11c1.56.1 2.78 1.41 2.78 2.96 0 1.65-1.35 3-3 3zM8 13h2.55v3h2.9v-3H16l-4-4z" />
     </svg>
   );
+}
+
+const UploadIconStyled = styled(UploadIcon)`
+  fill: ${props =>
+    props.selected ? props.theme.lightFont : props.theme.darkFont};
+  height: 32px;
+  width: 32px;
+  margin-right: 5px;
+`;
+
+export default function Upload({ selected }) {
+  return <UploadIconStyled selected={selected} />;
 }

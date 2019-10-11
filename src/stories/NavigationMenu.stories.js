@@ -1,7 +1,10 @@
 import React from "react";
+import styled from "styled-components";
 import StyledMenuButton from "../components/NavigationMenuButton";
 import Dice from "../icons/Dice";
-import StyledText from "../components/Title";
+import Person from "../icons/Person";
+import Upload from "../icons/Upload";
+import Star from "../icons/Star";
 
 export default {
   title: "NavigationMenu"
@@ -10,14 +13,14 @@ export default {
 export const NavButtonInactive = () => (
   <StyledMenuButton selected={false}>
     <Dice />
-    <StyledText>Collection</StyledText>
+    Collection
   </StyledMenuButton>
 );
 
 export const NavButtonActive = () => (
   <StyledMenuButton selected={true}>
     <Dice />
-    <StyledText>Peter</StyledText>
+    Peter
   </StyledMenuButton>
 );
 
@@ -25,19 +28,19 @@ export const NavigationMenu = () => (
   <>
     <StyledMenuButton onClick={() => onClick("Collection")} selected>
       <Dice selected />
-      <StyledText>Collection</StyledText>
+      Collection
     </StyledMenuButton>
     <StyledMenuButton onClick={() => onClick("User")} selected={false}>
-      <Dice />
-      <StyledText selected={false}>User</StyledText>
+      <Person />
+      User
     </StyledMenuButton>
     <StyledMenuButton onClick={() => onClick("Share")} selected={false}>
-      <Dice />
-      <StyledText>Share</StyledText>
+      <Upload />
+      Share
     </StyledMenuButton>
     <StyledMenuButton onClick={() => onClick("Wishlist")} selected={false}>
-      <Dice />
-      <StyledText>Wishlist</StyledText>
+      <Star />
+      Wishlist
     </StyledMenuButton>
   </>
 );
