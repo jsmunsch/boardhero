@@ -29,15 +29,15 @@ export const NavigationMenu = () => (
       <Dice selected />
       Collection
     </StyledMenuButton>
-    <StyledMenuButton onClick={() => onClick("User")} selected={false}>
+    <StyledMenuButton onClick={() => onClick("User")}>
       <Person />
       User
     </StyledMenuButton>
-    <StyledMenuButton onClick={() => onClick("Share")} selected={false}>
+    <StyledMenuButton onClick={() => onClick("Share")}>
       <Upload />
       Share
     </StyledMenuButton>
-    <StyledMenuButton onClick={() => onClick("Wishlist")} selected={false}>
+    <StyledMenuButton onClick={() => onClick("Wishlist")}>
       <Star />
       Wishlist
     </StyledMenuButton>
