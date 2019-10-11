@@ -14,7 +14,6 @@ const StyledMenuButton = styled.button`
   color: ${props =>
     props.selected ? props.theme.lightFont : props.theme.darkFont};
   font-size: 22px;
-  margin-right: 10px;
 `;
 
 function NavigationMenuButton({ selected, children, onClick }) {

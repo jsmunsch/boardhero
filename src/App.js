@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
-import GlobalStyle from "./GlobalStyle";
+import GlobalStyle from "./GlobalStyles";
 import defaultTheme from "./themes/default.js";
 
 const Container = styled.div`

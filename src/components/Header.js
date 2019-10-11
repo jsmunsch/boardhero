@@ -11,7 +11,6 @@ const HeaderContainer = styled.header`
   align-items: center;
   background-color: ${props => props.theme.lightBackground};
   color: white;
-  fill: white;
 `;
 
 const HeaderRightContainer = styled.div`

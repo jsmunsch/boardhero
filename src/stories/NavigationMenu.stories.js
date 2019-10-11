@@ -10,7 +10,7 @@ export default {
 };
 
 export const NavButtonInactive = () => (
-  <StyledMenuButton selected={false}>
+  <StyledMenuButton>
     <Dice />
     Collection
   </StyledMenuButton>
