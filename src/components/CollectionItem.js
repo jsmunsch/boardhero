@@ -8,7 +8,7 @@ const ImageContainer = styled.img`
   object-fit: cover;
   object-position: center center;
   border-radius: 15px;
-  box-shadow: 0px 3px 6px #00000037;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
 `;
 
 export const PositionedImageContainer = styled(ImageContainer)`

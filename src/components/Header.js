@@ -13,7 +13,7 @@ const HeaderContainer = styled.header`
   color: white;
   height: 60px;
   font-size: 20px;
-  box-shadow: 0px 3px 6px #00000037;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
   position: sticky;
   top: 0;
 `;
@@ -26,9 +26,10 @@ const HeaderRightContainer = styled.div`
   align-items: center;
   flex-direction: row;
   color: white;
+  position: relative;
 `;
 
-export default function Header() {
+export default function Header({ onClick }) {
   return (
     <HeaderContainer>
       <IconButton>
@@ -39,7 +40,7 @@ export default function Header() {
         <IconButton>
           <Magnifier />
         </IconButton>
-        <IconButton>
+        <IconButton onClick={onClick}>
           <VerticalPoints />
         </IconButton>
       </HeaderRightContainer>
