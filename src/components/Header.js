@@ -11,6 +11,11 @@ const HeaderContainer = styled.header`
   align-items: center;
   background-color: ${props => props.theme.lightBackground};
   color: white;
+  height: 60px;
+  font-size: 20px;
+  box-shadow: 0px 3px 6px #00000037;
+  position: sticky;
+  top: 0;
 `;
 
 const HeaderRightContainer = styled.div`
@@ -29,7 +34,7 @@ export default function Header() {
       <IconButton>
         <BurgerMenu />
       </IconButton>
-      Collection
+      Library
       <HeaderRightContainer>
         <IconButton>
           <Magnifier />
