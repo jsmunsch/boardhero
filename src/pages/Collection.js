@@ -9,13 +9,13 @@ import SortModal from "../components/SortModal";
 export default function Collection() {
   const [navigation, setNavigation] = useState("");
   const [showOptions, setShowOptions] = useState(false);
+  const [showSort, setShowSort] = useState(false);
 
   return (
     <>
       <Header onClick={setShowOptions} />
-      <OptionBox show={showOptions}>
-        <SortModal />
-      </OptionBox>
+      <OptionBox show={showOptions} onClick={setShowSort} />
+      <SortModal show={showSort} />
       <LibraryNav selected={navigation} onClick={setNavigation} />
       <CollectionGrid>
         <CollectionItem />

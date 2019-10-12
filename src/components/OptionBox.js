@@ -27,12 +27,10 @@ const OptionButton = styled.button`
   outline: none;
 `;
 
-export default function OptionBox({ show }) {
-  let toggle = !show;
-  console.log(toggle);
+export default function OptionBox({ show, onClick }) {
   return (
     <OptionBoxDiv show={show}>
-      <OptionButton>Sort</OptionButton>
+      <OptionButton onClick={() => onClick("Sort")}>Sort</OptionButton>
       <OptionButton>Filter</OptionButton>
     </OptionBoxDiv>
   );
