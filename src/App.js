@@ -1,7 +1,9 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
-import GlobalStyle from "./GlobalStyles";
+import GlobalStyles from "./GlobalStyles";
 import defaultTheme from "./themes/default.js";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Collection from "./pages/Collection";
 
 const Container = styled.div`
   display: grid;
@@ -13,9 +15,10 @@ function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container>
-        <GlobalStyle />
-        <header>Hello</header>
-        <div>ciao</div>
+        <GlobalStyles />
+        <Router>
+          <Route path="/" exact component={Collection} />
+        </Router>
       </Container>
     </ThemeProvider>
   );

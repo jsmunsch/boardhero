@@ -18,7 +18,10 @@ const StyledMenuButton = styled.button`
 
 function NavigationMenuButton({ selected, children, onClick }) {
   return (
-    <StyledMenuButton onClick={onClick} selected={selected}>
+    <StyledMenuButton
+      onClick={() => console.log({ children })}
+      selected={selected === { children }}
+    >
       {children}
     </StyledMenuButton>
   );

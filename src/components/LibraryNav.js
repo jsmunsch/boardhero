@@ -21,14 +21,30 @@ const NavGridButton = styled.button`
   border-bottom: ${props =>
     props.selected ? `6px solid ${props.theme.brightEffect}` : "none"};
   color: ${props => (props.selected ? "white" : props.theme.darkFont)};
+  outline: none;
 `;
 
-export default function LibraryNav() {
+export default function LibraryNav({ selected, onClick }) {
   return (
     <NavGrid>
-      <NavGridButton selected>Collection</NavGridButton>
-      <NavGridButton>Browse</NavGridButton>
-      <NavGridButton>Wishlist</NavGridButton>
+      <NavGridButton
+        selected={selected === "Collection"}
+        onClick={() => onClick("Collection")}
+      >
+        Collection
+      </NavGridButton>
+      <NavGridButton
+        selected={selected === "Browse"}
+        onClick={() => onClick("Browse")}
+      >
+        Browse
+      </NavGridButton>
+      <NavGridButton
+        selected={selected === "Wishlist"}
+        onClick={() => onClick("Wishlist")}
+      >
+        Wishlist
+      </NavGridButton>
     </NavGrid>
   );
 }
