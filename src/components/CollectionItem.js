@@ -11,13 +11,13 @@ const ImageContainer = styled.img`
   box-shadow: 0px 3px 6px #00000037;
 `;
 
-export const AbsoluteImageContainer = styled(ImageContainer)`
+export const PositionedImageContainer = styled(ImageContainer)`
   position: absolute;
   top: -40px;
   left: 30px;
 `;
 
-export default function Game({ className }) {
+export default function CollectionItem({ className }) {
   return (
     <ImageContainer
       classname={className}
@@ -28,7 +28,7 @@ export default function Game({ className }) {
 
 export function GamePositioned({ className }) {
   return (
-    <AbsoluteImageContainer
+    <PositionedImageContainer
       className={className}
       src="https://d2k4q26owzy373.cloudfront.net/700x700/games/uploaded/1559254200327-61EFZADvURL.jpg"
     />

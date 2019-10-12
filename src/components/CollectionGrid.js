@@ -10,6 +10,6 @@ const BodyGrid = styled.div`
   background-color: ${props => props.theme.main};
 `;
 
-export default function Collection({ children }) {
+export default function CollectionGrid({ children }) {
   return <BodyGrid>{children}</BodyGrid>;
 }

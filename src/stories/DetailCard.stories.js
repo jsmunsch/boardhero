@@ -1,5 +1,5 @@
 import React from "react";
-import { GamePositioned } from "../components/Game";
+import { GamePositioned } from "../components/CollectionItem";
 import CardModal from "../components/CardModal";
 
 export default {
