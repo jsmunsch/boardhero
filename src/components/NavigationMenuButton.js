@@ -16,14 +16,7 @@ const StyledMenuButton = styled.button`
   font-size: 20px;
 `;
 
-function NavigationMenuButton({ selected, children, onClick }) {
-  return (
-    <StyledMenuButton
-      onClick={() => console.log({ children })}
-      selected={selected === { children }}
-    >
-      {children}
-    </StyledMenuButton>
-  );
+function NavigationMenuButton({ children }) {
+  return <StyledMenuButton>{children}</StyledMenuButton>;
 }
 export default NavigationMenuButton;
