@@ -11,6 +11,11 @@ const HeaderContainer = styled.header`
   align-items: center;
   background-color: ${props => props.theme.lightBackground};
   color: white;
+  height: 60px;
+  font-size: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
 `;
 
 const HeaderRightContainer = styled.div`
@@ -21,20 +26,21 @@ const HeaderRightContainer = styled.div`
   align-items: center;
   flex-direction: row;
   color: white;
+  position: relative;
 `;
 
-export default function Header() {
+export default function Header({ toggleOptions }) {
   return (
     <HeaderContainer>
       <IconButton>
         <BurgerMenu />
       </IconButton>
-      Collection
+      Library
       <HeaderRightContainer>
         <IconButton>
           <Magnifier />
         </IconButton>
-        <IconButton>
+        <IconButton onClick={toggleOptions}>
           <VerticalPoints />
         </IconButton>
       </HeaderRightContainer>

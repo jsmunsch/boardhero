@@ -10,8 +10,8 @@ const StyledButton = styled.button`
   background: none;
 `;
 
-function IconButton({ children }) {
-  return <StyledButton>{children}</StyledButton>;
+function IconButton({ children, onClick }) {
+  return <StyledButton onClick={onClick}>{children}</StyledButton>;
 }
 
 export default IconButton;
