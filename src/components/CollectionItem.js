@@ -17,10 +17,11 @@ export const PositionedImageContainer = styled(ImageContainer)`
   left: 30px;
 `;
 
-export default function CollectionItem({ className }) {
+export default function CollectionItem({ className, onClick }) {
   return (
     <ImageContainer
       classname={className}
+      onClick={onClick}
       src="https://d2k4q26owzy373.cloudfront.net/700x700/games/uploaded/1559254200327-61EFZADvURL.jpg"
     />
   );

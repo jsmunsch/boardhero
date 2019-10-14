@@ -1,8 +1,8 @@
 import React from "react";
-import Collection from "../pages/Collection";
+import Library from "../pages/Library";
 
 export default {
   title: "CollectionPage"
 };
 
-export const CollectionPage = () => <Collection />;
+export const CollectionPage = () => <Library />;

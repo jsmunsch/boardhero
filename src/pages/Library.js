@@ -6,7 +6,7 @@ import CollectionItem from "../components/CollectionItem";
 import OptionBox from "../components/OptionBox";
 import SortModal from "../components/SortModal";
 
-export default function Collection() {
+export default function Library() {
   const [navigation, setNavigation] = useState("Collection");
   const [options, setOptions] = useState(false);
   const [showSort, setShowSort] = useState(false);
@@ -17,11 +17,14 @@ export default function Collection() {
       <OptionBox show={options} onClick={() => setShowSort(!showSort)} />
       <SortModal show={showSort} />
       <LibraryNav selected={navigation} onNavigationChange={setNavigation} />
-      <CollectionGrid>
+      {/* <CollectionGrid>
         {GamesArray.map(index => (
-          <CollectionItem key={index} />
+          <CollectionItem
+            key={index}
+            onClick={() => console.log("Spiel Nummer " + index)}
+          />
         ))}
-      </CollectionGrid>
+      </CollectionGrid> */}
     </>
   );
 }
