@@ -19,9 +19,9 @@ const StyledBadge = styled.span`
   margin-right: 5px;
 `;
 export default function CardBadge({ children }) {
-  return <StyledBadge>{children}</StyledBadge>;
-}
-
-export function FlexContainer() {
-  return <WrapperBadge />;
+  return (
+    <WrapperBadge>
+      <StyledBadge>{children}</StyledBadge>
+    </WrapperBadge>
+  );
 }

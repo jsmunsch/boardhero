@@ -29,7 +29,7 @@ const HeaderRightContainer = styled.div`
   position: relative;
 `;
 
-export default function Header({ onClick }) {
+export default function Header({ toggleOptions }) {
   return (
     <HeaderContainer>
       <IconButton>
@@ -40,7 +40,7 @@ export default function Header({ onClick }) {
         <IconButton>
           <Magnifier />
         </IconButton>
-        <IconButton onClick={onClick}>
+        <IconButton onClick={toggleOptions}>
           <VerticalPoints />
         </IconButton>
       </HeaderRightContainer>

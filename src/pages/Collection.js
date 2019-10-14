@@ -7,33 +7,20 @@ import OptionBox from "../components/OptionBox";
 import SortModal from "../components/SortModal";
 
 export default function Collection() {
-  const [navigation, setNavigation] = useState("");
-  const [showOptions, setShowOptions] = useState(false);
+  const [navigation, setNavigation] = useState("Collection");
+  const [options, setOptions] = useState(false);
   const [showSort, setShowSort] = useState(false);
-
+  const GamesArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
   return (
     <>
-      <Header onClick={setShowOptions} />
-      <OptionBox show={showOptions} onClick={setShowSort} />
+      <Header toggleOptions={() => setOptions(!options)} />
+      <OptionBox show={options} onClick={() => setShowSort(!showSort)} />
       <SortModal show={showSort} />
-      <LibraryNav selected={navigation} onClick={setNavigation} />
+      <LibraryNav selected={navigation} onNavigationChange={setNavigation} />
       <CollectionGrid>
-        <CollectionItem />
-        <CollectionItem />
-        <CollectionItem />
-        <CollectionItem />
-        <CollectionItem />
-        <CollectionItem />
-        <CollectionItem />
-        <CollectionItem />
-        <CollectionItem />
-        <CollectionItem />
-        <CollectionItem />
-        <CollectionItem />
-        <CollectionItem />
-        <CollectionItem />
-        <CollectionItem />
-        <CollectionItem />
+        {GamesArray.map(index => (
+          <CollectionItem key={index} />
+        ))}
       </CollectionGrid>
     </>
   );
