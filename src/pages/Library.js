@@ -12,6 +12,7 @@ export default function Library() {
   const [navigation, setNavigation] = useState("");
   const [options, setOptions] = useState(false);
   const [showSort, setShowSort] = useState(false);
+  const [visibility, setVisibility] = useState(false);
   const CollectionArray = [
     0,
     1,
@@ -34,7 +35,11 @@ export default function Library() {
   const WishlistArray = [0, 1, 2, 3, 4, 5, 6, 7];
   return (
     <>
-      <Header toggleOptions={() => setOptions(!options)} />
+      <Header
+        toggleOptions={() => setOptions(!options)}
+        toggleSearchbar={() => setVisibility(!visibility)}
+        active={visibility}
+      />
       <OptionBox show={options} onClick={() => setShowSort(!showSort)} />
       <SortModal show={showSort} />
       <LibraryNav selected={navigation} onNavigationChange={setNavigation} />

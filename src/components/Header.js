@@ -4,6 +4,7 @@ import IconButton from "./IconButton";
 import BurgerMenu from "../icons/BurgerMenu";
 import Magnifier from "../icons/Magnifier";
 import VerticalPoints from "../icons/VerticalPoints";
+import SearchBar from "./SearchBar";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -18,32 +19,31 @@ const HeaderContainer = styled.header`
   top: 0;
 `;
 
-const HeaderRightContainer = styled.div`
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: row;
-  color: white;
-  position: relative;
-`;
+// const HeaderRightContainer = styled.div`
+//   display: flex;
+//   flex-grow: 1;
+//   flex-direction: column;
+//   justify-content: flex-end;
+//   align-items: center;
+//   flex-direction: row;
+//   color: white;
+//   position: relative;
+// `;
 
-export default function Header({ toggleOptions }) {
+export default function Header({ toggleOptions, toggleSearchbar, active }) {
   return (
     <HeaderContainer>
       <IconButton>
         <BurgerMenu />
       </IconButton>
       Library
-      <HeaderRightContainer>
-        <IconButton>
-          <Magnifier />
-        </IconButton>
-        <IconButton onClick={toggleOptions}>
-          <VerticalPoints />
-        </IconButton>
-      </HeaderRightContainer>
+      <SearchBar active={active} />
+      <IconButton onClick={toggleSearchbar}>
+        <Magnifier />
+      </IconButton>
+      <IconButton onClick={toggleOptions}>
+        <VerticalPoints />
+      </IconButton>
     </HeaderContainer>
   );
 }
