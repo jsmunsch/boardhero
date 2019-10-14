@@ -6,6 +6,7 @@ import {
   Route,
   Link,
   useParams,
+  NavLink,
   useRouteMatch
 } from "react-router-dom";
 
@@ -32,31 +33,43 @@ const NavGridButton = styled.button`
   outline: none;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  height: inherit;
+`;
+
 export default function LibraryNav({ selected, onNavigationChange }) {
   let { path, url } = useRouteMatch();
   return (
     <NavGrid>
-      <NavGridButton
-        selected={selected === "Collection"}
-        value="Collection"
-        onClick={event => onNavigationChange(event.target.innerHTML)}
-      >
-        <Link to={`${url}/Collection`}>Collection</Link>
-      </NavGridButton>
-      <NavGridButton
-        selected={selected === "Browse"}
-        value="Browse"
-        onClick={event => onNavigationChange(event.target.innerHTML)}
-      >
-        Browse
-      </NavGridButton>
-      <NavGridButton
-        selected={selected === "Wishlist"}
-        value="Wishlist"
-        onClick={event => onNavigationChange(event.target.innerHTML)}
-      >
-        Wishlist
-      </NavGridButton>
+      <StyledLink to={`${url}/Collection`}>
+        <NavGridButton
+          selected={selected === "Collection"}
+          value="Collection"
+          onClick={event => onNavigationChange(event.target.innerHTML)}
+        >
+          Collection
+        </NavGridButton>
+      </StyledLink>
+      <StyledLink to={`${url}/Browse`}>
+        <NavGridButton
+          selected={selected === "Browse"}
+          value="Browse"
+          onClick={event => onNavigationChange(event.target.innerHTML)}
+        >
+          Browse
+        </NavGridButton>
+      </StyledLink>
+      <StyledLink to={`${url}/Wishlist`}>
+        <NavGridButton
+          selected={selected === "Wishlist"}
+          value="Wishlist"
+          onClick={event => onNavigationChange(event.target.innerHTML)}
+        >
+          Wishlist
+        </NavGridButton>
+      </StyledLink>
     </NavGrid>
   );
 }
