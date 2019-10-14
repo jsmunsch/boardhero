@@ -2,11 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
   Link,
-  useParams,
-  NavLink,
   useRouteMatch
 } from "react-router-dom";
 
@@ -40,7 +37,7 @@ const StyledLink = styled(Link)`
 `;
 
 export default function LibraryNav({ selected, onNavigationChange }) {
-  let { path, url } = useRouteMatch();
+  let { url } = useRouteMatch();
   return (
     <NavGrid>
       <StyledLink to={`${url}/Collection`}>

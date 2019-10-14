@@ -17,7 +17,7 @@ const WrapperDiv = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${props => props.theme.main};
-  padding: 30px;
+  padding: 10px;
 `;
 export default function CollectionGrid({ children }) {
   return (

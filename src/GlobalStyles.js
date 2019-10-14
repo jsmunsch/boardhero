@@ -12,7 +12,7 @@ html, body {
     font-family: Roboto, sans-serif;
     height: 100vh;
     width: 100vw;
-    background: grey;
+    background: ${props => props.theme.main};
   }
 `;
 
