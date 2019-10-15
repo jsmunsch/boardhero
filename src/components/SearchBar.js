@@ -35,7 +35,11 @@ const StyledInput = styled.input`
 export default function SearchBar({ active }) {
   return (
     <StyledSearchBar active={active}>
-      <StyledInput type="search" placeholder="Enter Game Name" />
+      <StyledInput
+        type="search"
+        placeholder="Enter Game Name"
+        onChange={event => console.log(event.target.value)}
+      />
     </StyledSearchBar>
   );
 }
