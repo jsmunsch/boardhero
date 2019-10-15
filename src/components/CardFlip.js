@@ -7,7 +7,11 @@ const FlipContainer = styled.div`
   padding: 20px;
   margin-left: 130px;
   height: 15%;
+<<<<<<< HEAD
   width: 60%;
+=======
+  width: 60%
+>>>>>>> master
   font-size: 1.4em;
 `;
 
