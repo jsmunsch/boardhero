@@ -7,32 +7,15 @@ import OptionBox from "../components/OptionBox";
 import SortModal from "../components/SortModal";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import BrowseEmpty from "../components/BrowseEmpty";
+import gameCollection from "../api/collectionData";
+import gameWishlist from "../api/wishlistData";
 
 export default function Library() {
   const [navigation, setNavigation] = useState("");
   const [options, setOptions] = useState(false);
   const [showSort, setShowSort] = useState(false);
   const [visibility, setVisibility] = useState(false);
-  const CollectionArray = [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16
-  ];
-  const WishlistArray = [0, 1, 2, 3, 4, 5, 6, 7];
+
   return (
     <>
       <Header
@@ -46,10 +29,11 @@ export default function Library() {
       <Switch>
         <Route exact path="/Library/Collection">
           <CollectionGrid>
-            {CollectionArray.map(index => (
+            {gameCollection.map(game => (
               <CollectionItem
-                key={index}
-                onClick={() => console.log("Spiel Nummer " + index)}
+                key={game.id}
+                onClick={() => console.log(game)}
+                src={game.image_url}
               />
             ))}
           </CollectionGrid>
@@ -61,10 +45,11 @@ export default function Library() {
         </Route>
         <Route exact path="/Library/Wishlist">
           <CollectionGrid>
-            {WishlistArray.map(index => (
+            {gameWishlist.map(game => (
               <CollectionItem
-                key={index}
-                onClick={() => console.log("Spiel Nummer " + index)}
+                key={game.id}
+                onClick={() => console.log(game.description)}
+                src={game.image_url}
               />
             ))}
           </CollectionGrid>
