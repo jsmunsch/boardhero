@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 import defaultTheme from "./themes/default.js";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Collection from "./pages/Collection";
+import Library from "./pages/Library";
 
 const Container = styled.div`
   display: grid;
@@ -17,7 +17,9 @@ function App() {
       <Container>
         <GlobalStyles />
         <Router>
-          <Route path="/" exact component={Collection} />
+          <Route path="/Library">
+            <Library />
+          </Route>
         </Router>
       </Container>
     </ThemeProvider>

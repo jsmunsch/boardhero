@@ -1,5 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+  useRouteMatch
+} from "react-router-dom";
 
 const NavGrid = styled.div`
   display: grid;
@@ -25,6 +33,7 @@ const NavGridButton = styled.button`
 `;
 
 export default function LibraryNav({ selected, onNavigationChange }) {
+  let { path, url } = useRouteMatch();
   return (
     <NavGrid>
       <NavGridButton
@@ -32,7 +41,7 @@ export default function LibraryNav({ selected, onNavigationChange }) {
         value="Collection"
         onClick={event => onNavigationChange(event.target.innerHTML)}
       >
-        Collection
+        <Link to={`${url}/Collection`}>Collection</Link>
       </NavGridButton>
       <NavGridButton
         selected={selected === "Browse"}
