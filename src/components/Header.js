@@ -30,9 +30,12 @@ const HeaderContainer = styled.header`
 //   position: relative;
 // `;
 
-export default function Header({ toggleOptions, toggleSearchbar, active }) {
-  const [textInput, setTextInput] = React.useState("");
-  console.log(textInput);
+export default function Header({
+  toggleOptions,
+  toggleSearchbar,
+  active,
+  handleInputChange
+}) {
   return (
     <HeaderContainer>
       <IconButton>
@@ -41,7 +44,7 @@ export default function Header({ toggleOptions, toggleSearchbar, active }) {
       Library
       <SearchBar
         active={active}
-        onChange={event => setTextInput(event.target.value)}
+        onChange={event => handleInputChange(event.target.value)}
       />
       <IconButton onClick={toggleSearchbar}>
         <Magnifier />
