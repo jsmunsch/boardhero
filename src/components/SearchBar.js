@@ -31,14 +31,18 @@ const StyledInput = styled.input`
   color: white;
 `;
 
-export default function SearchBar({ active, onChange }) {
+export default function SearchBar({ active, onSearch }) {
+  function handleInputChange(event) {
+    const value = event.target.value;
+    onSearch(value);
+  }
   return (
     <StyledSearchBar active={active}>
       {active && (
         <StyledInput
           type="search"
           placeholder="Enter Game Name"
-          onChange={onChange}
+          onChange={handleInputChange}
         />
       )}
     </StyledSearchBar>

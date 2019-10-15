@@ -34,7 +34,8 @@ export default function Header({
   toggleOptions,
   toggleSearchbar,
   active,
-  handleInputChange
+  handleInputChange,
+  onSearch
 }) {
   return (
     <HeaderContainer>
@@ -45,6 +46,7 @@ export default function Header({
       <SearchBar
         active={active}
         onChange={event => handleInputChange(event.target.value)}
+        onSearch={onSearch}
       />
       <IconButton onClick={toggleSearchbar}>
         <Magnifier />

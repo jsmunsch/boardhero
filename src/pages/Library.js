@@ -16,10 +16,17 @@ export default function Library() {
   const [options, setOptions] = useState(false);
   const [showSort, setShowSort] = useState(false);
   const [visibility, setVisibility] = useState(false);
-  const [textInput, setTextInput] = React.useState(null);
+  const [textInput, setTextInput] = React.useState("");
+
+  const searchContent = browseData.filter(info =>
+    info.name.toLowerCase().includes(textInput.toLowerCase())
+  );
   let empty = textInput;
   console.log(empty);
   console.log(textInput);
+  function handleSearch(value) {
+    setTextInput(value);
+  }
   return (
     <>
       <Header
@@ -27,6 +34,7 @@ export default function Library() {
         toggleSearchbar={() => setVisibility(!visibility)}
         active={visibility}
         handleInputChange={setTextInput}
+        onSearch={handleSearch}
       />
       <OptionBox show={options} onClick={() => setShowSort(!showSort)} />
       <SortModal show={showSort} />
@@ -51,7 +59,7 @@ export default function Library() {
           )}
           {textInput && (
             <CollectionGrid>
-              {browseData.map(game => (
+              {searchContent.map(game => (
                 <CollectionItem
                   key={game.id}
                   onClick={() => console.log(game)}
