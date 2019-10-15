@@ -31,13 +31,18 @@ const HeaderContainer = styled.header`
 // `;
 
 export default function Header({ toggleOptions, toggleSearchbar, active }) {
+  const [textInput, setTextInput] = React.useState("");
+  console.log(textInput);
   return (
     <HeaderContainer>
       <IconButton>
         <BurgerMenu />
       </IconButton>
       Library
-      <SearchBar active={active} />
+      <SearchBar
+        active={active}
+        onChange={event => setTextInput(event.target.value)}
+      />
       <IconButton onClick={toggleSearchbar}>
         <Magnifier />
       </IconButton>

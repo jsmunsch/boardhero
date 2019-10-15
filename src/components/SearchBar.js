@@ -10,7 +10,6 @@ const StyledSearchBar = styled.div`
   background-color: inherit;
   color: white;
   margin-left: 10px;
-  visibility: ${props => (props.active ? "visible" : "hidden")};
 `;
 
 const StyledInput = styled.input`
@@ -32,14 +31,16 @@ const StyledInput = styled.input`
   color: white;
 `;
 
-export default function SearchBar({ active }) {
+export default function SearchBar({ active, onChange }) {
   return (
     <StyledSearchBar active={active}>
-      <StyledInput
-        type="search"
-        placeholder="Enter Game Name"
-        onChange={event => console.log(event.target.value)}
-      />
+      {active && (
+        <StyledInput
+          type="search"
+          placeholder="Enter Game Name"
+          onChange={onChange}
+        />
+      )}
     </StyledSearchBar>
   );
 }

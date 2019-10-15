@@ -7,7 +7,6 @@ import OptionBox from "../components/OptionBox";
 import SortModal from "../components/SortModal";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import BrowseEmpty from "../components/BrowseEmpty";
-import gameCollection from "../api/collectionData";
 
 export default function Library() {
   const [navigation, setNavigation] = useState("");
