@@ -18,18 +18,6 @@ const HeaderContainer = styled.header`
   position: sticky;
   top: 0;
 `;
-
-// const HeaderRightContainer = styled.div`
-//   display: flex;
-//   flex-grow: 1;
-//   flex-direction: column;
-//   justify-content: flex-end;
-//   align-items: center;
-//   flex-direction: row;
-//   color: white;
-//   position: relative;
-// `;
-
 export default function Header({ toggleOptions, toggleSearchbar, active }) {
   return (
     <HeaderContainer>
