@@ -2,15 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import {
   BrowserRouter as Router,
-<<<<<<< HEAD
   Route,
   Link,
-=======
-  Switch,
-  Route,
-  Link,
-  useParams,
->>>>>>> master
   useRouteMatch
 } from "react-router-dom";
 
@@ -44,7 +37,6 @@ const StyledLink = styled(Link)`
 `;
 
 export default function LibraryNav({ selected, onNavigationChange }) {
-<<<<<<< HEAD
   let { url } = useRouteMatch();
   return (
     <NavGrid>
@@ -75,32 +67,6 @@ export default function LibraryNav({ selected, onNavigationChange }) {
           Wishlist
         </NavGridButton>
       </StyledLink>
-=======
-  let { path, url } = useRouteMatch();
-  return (
-    <NavGrid>
-      <NavGridButton
-        selected={selected === "Collection"}
-        value="Collection"
-        onClick={event => onNavigationChange(event.target.innerHTML)}
-      >
-        <Link to={`${url}/Collection`}>Collection</Link>
-      </NavGridButton>
-      <NavGridButton
-        selected={selected === "Browse"}
-        value="Browse"
-        onClick={event => onNavigationChange(event.target.innerHTML)}
-      >
-        Browse
-      </NavGridButton>
-      <NavGridButton
-        selected={selected === "Wishlist"}
-        value="Wishlist"
-        onClick={event => onNavigationChange(event.target.innerHTML)}
-      >
-        Wishlist
-      </NavGridButton>
->>>>>>> master
     </NavGrid>
   );
 }
