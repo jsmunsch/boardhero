@@ -6,8 +6,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Library from "./pages/Library";
 
 const Container = styled.div`
-  display: grid;
-  grid-template: 60px 1fr;
   background: ${props => props.theme.main};
 `;
 
