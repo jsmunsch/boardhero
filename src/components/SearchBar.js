@@ -13,9 +13,6 @@ const StyledSearchBar = styled.div`
 `;
 
 const StyledInput = styled.input`
-  display: flex;
-  justify-content: flex-start;
-  flex-grow: 1;
   background-color: inherit;
   border: 1px solid ${props => props.theme.brightEffect};
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
@@ -27,6 +24,7 @@ const StyledInput = styled.input`
   }
   font-size: 18px;
   padding: 10px;
+  width: 100%;
   fill: white;
   color: white;
 `;
