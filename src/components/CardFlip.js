@@ -6,7 +6,7 @@ const FlipContainer = styled.div`
   justify-content: flex-start;
   padding: 20px;
   margin-left: 130px;
-  height: 15%;
+  height: 8%;
   width: 60%;
   font-size: 1.4em;
 `;

@@ -10,24 +10,26 @@ import BrowseEmpty from "../components/BrowseEmpty";
 import gameCollection from "../api/CollectionData";
 import gameWishlist from "../api/WishlistData";
 import browseData from "../api/FakeData";
+import CardModal from "../components/CardModal";
 export default function Library() {
   const [navigation, setNavigation] = useState("");
   const [options, setOptions] = useState(false);
   const [showSort, setShowSort] = useState(false);
   const [visibility, setVisibility] = useState(false);
   const [textInput, setTextInput] = React.useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const searchContent = browseData.filter(info =>
     info.name.toLowerCase().includes(textInput.toLowerCase())
   );
-  let empty = textInput;
-  console.log(empty);
-  console.log(textInput);
   function handleSearch(value) {
     setTextInput(value);
   }
   return (
     <>
+      {showModal && (
+        <CardModal handleOutsideClick={() => setShowModal(false)} />
+      )}
       <Header
         toggleOptions={() => setOptions(!options)}
         toggleSearchbar={() => setVisibility(!visibility)}
@@ -44,7 +46,7 @@ export default function Library() {
             {gameCollection.map(game => (
               <CollectionItem
                 key={game.id}
-                onClick={() => console.log(game)}
+                onClick={() => setShowModal(true)}
                 src={game.image_url}
               />
             ))}
@@ -61,7 +63,7 @@ export default function Library() {
               {searchContent.map(game => (
                 <CollectionItem
                   key={game.id}
-                  onClick={() => console.log(game)}
+                  onClick={() => setShowModal(!showModal)}
                   src={game.image_url}
                 />
               ))}
