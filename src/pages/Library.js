@@ -18,8 +18,15 @@ export default function Library() {
   const [visibility, setVisibility] = useState(false);
   const [textInput, setTextInput] = React.useState("");
   const [showModal, setShowModal] = useState(false);
+  const [selectGame, setSelectGame] = useState();
 
-  const searchContent = browseData.filter(info =>
+  const searchContentBrowse = browseData.filter(info =>
+    info.name.toLowerCase().includes(textInput.toLowerCase())
+  );
+  const searchContentCollection = gameCollection.filter(info =>
+    info.name.toLowerCase().includes(textInput.toLowerCase())
+  );
+  const searchContentWishlist = gameWishlist.filter(info =>
     info.name.toLowerCase().includes(textInput.toLowerCase())
   );
   function handleSearch(value) {
@@ -28,7 +35,10 @@ export default function Library() {
   return (
     <>
       {showModal && (
-        <CardModal handleOutsideClick={() => setShowModal(false)} />
+        <CardModal
+          handleOutsideClick={() => setShowModal(false)}
+          selectedGame={selectGame}
+        />
       )}
       <Header
         toggleOptions={() => setOptions(!options)}
@@ -43,10 +53,13 @@ export default function Library() {
       <Switch>
         <Route exact path="/Library/Collection">
           <CollectionGrid>
-            {gameCollection.map(game => (
+            {searchContentCollection.map(game => (
               <CollectionItem
                 key={game.id}
-                onClick={() => setShowModal(true)}
+                onClick={() => {
+                  setSelectGame(game);
+                  setShowModal(!showModal);
+                }}
                 src={game.image_url}
               />
             ))}
@@ -60,10 +73,13 @@ export default function Library() {
           )}
           {textInput && (
             <CollectionGrid>
-              {searchContent.map(game => (
+              {searchContentBrowse.map(game => (
                 <CollectionItem
                   key={game.id}
-                  onClick={() => setShowModal(!showModal)}
+                  onClick={() => {
+                    setSelectGame(game);
+                    setShowModal(!showModal);
+                  }}
                   src={game.image_url}
                 />
               ))}
@@ -72,10 +88,13 @@ export default function Library() {
         </Route>
         <Route exact path="/Library/Wishlist">
           <CollectionGrid>
-            {gameWishlist.map(game => (
+            {searchContentWishlist.map(game => (
               <CollectionItem
                 key={game.id}
-                onClick={() => console.log(game.description)}
+                onClick={() => {
+                  setSelectGame(game);
+                  setShowModal(!showModal);
+                }}
                 src={game.image_url}
               />
             ))}

@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import CollectionItemPositioned, {
-  GamePositioned
-} from "../components/GamePositioned";
+import CollectionItemPositioned from "../components/GamePositioned";
 import CardBadge from "../components/CardBadge";
 import CardDetails from "../components/CardDetails";
 import CardCategories from "../components/CardCategories";
@@ -36,17 +34,22 @@ const StyledDiv = styled.div`
   backdrop-filter: blur(2px);
 `;
 
-export default function CardModal({ handleOutsideClick }) {
+export default function CardModal({ handleOutsideClick, selectedGame }) {
+  console.log(selectedGame);
   return (
     <>
       <Background onClick={handleOutsideClick} />
       <FlexContainer>
         <StyledDiv>
-          <CollectionItemPositioned />
-          <CardFlip>Fest für Odin</CardFlip>
+          <CollectionItemPositioned src={selectedGame.image_url} />
+          <CardFlip>{selectedGame.name}</CardFlip>
           <CardDetails>
-            <CardTitle>Players: 2-4</CardTitle>
-            <CardTitle>Time: test</CardTitle>
+            <CardTitle>
+              Players: {selectedGame.min_players}-{selectedGame.max_players}
+            </CardTitle>
+            <CardTitle>
+              Time: {selectedGame.min_playtime}-{selectedGame.max_playtime} min
+            </CardTitle>
             <CardTitle>Categories</CardTitle>
             <CardCategories>
               <CardBadge>Economics</CardBadge>

@@ -11,6 +11,19 @@ export const ImageContainer = styled.img`
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
 `;
 
-export default function CollectionItem({ className, onClick, src }) {
-  return <ImageContainer classname={className} onClick={onClick} src={src} />;
+export default function CollectionItem({
+  game,
+  src,
+  onClick,
+  className,
+  handleOpen
+}) {
+  return (
+    <ImageContainer
+      classname={className}
+      onClick={onClick}
+      src={src}
+      game={game}
+    />
+  );
 }
