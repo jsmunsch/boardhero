@@ -10,8 +10,9 @@ import BrowseEmpty from "../components/BrowseEmpty";
 import { getGameCollection } from "../api/GameCollection";
 import { getBrowseCollection } from "../api/BrowseCollection";
 import { getGameWishlist } from "../api/WishlistCollection";
-
+import { getGames } from "../api/BrowseCollection";
 import CardModal from "../components/CardModal";
+
 export default function Library() {
   const [navigation, setNavigation] = useState("");
   const [options, setOptions] = useState(false);
@@ -21,23 +22,13 @@ export default function Library() {
   const [showModal, setShowModal] = useState(false);
   const [selectGame, setSelectGame] = useState();
 
-  async function fetchCollectionData() {
-    const gameCollection = await getGameCollection();
-    return gameCollection;
-  }
-
-  const browseCollection = Object.entries(getBrowseCollection());
+  const browseCollection = getGames({ textInput });
   const wishlistCollection = Object.entries(getGameWishlist());
-  const gameCollection = getGameCollection();
-  const game123 = gameCollection.then(function(game123) {
-    console.log(game123);
-  });
-  const searchContentBrowse = browseCollection.filter(info =>
-    info.name.toLowerCase().includes(textInput.toLowerCase())
-  );
 
-  const searchContentCollection = Object.keys(game123).filter(info =>
-    info.name.toLowerCase().includes(textInput.toLowerCase())
+  console.log(browseCollection);
+
+  const searchContentCollection = Object.entries(browseCollection).filter(
+    info => info.name.toLowerCase().includes(textInput.toLowerCase())
   );
   const searchContentWishlist = wishlistCollection.filter(info =>
     info.name.toLowerCase().includes(textInput.toLowerCase())
@@ -86,7 +77,7 @@ export default function Library() {
           )}
           {textInput && (
             <CollectionGrid>
-              {searchContentBrowse.map(game => (
+              {Object.entries(browseCollection).map(game => (
                 <CollectionItem
                   key={game.id}
                   onClick={() => {
