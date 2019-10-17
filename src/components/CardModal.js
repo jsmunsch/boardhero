@@ -6,6 +6,10 @@ import CardDetails from "../components/CardDetails";
 import CardCategories from "../components/CardCategories";
 import CardTitle from "../components/CardTitle";
 import CardFlip from "../components/CardFlip";
+import AddButtonCollection from "./AddButtonCollection";
+import Star from "../icons/Star";
+import Dice from "../icons/Dice";
+import AddButtonWishlist from "./AddButtonWishlist";
 
 const Background = styled.img`
   height: 100%;
@@ -61,6 +65,12 @@ export default function CardModal({ handleOutsideClick, selectedGame }) {
               <CardBadge>Area Control</CardBadge>
               <CardBadge>Route/Network Building</CardBadge>
             </CardCategories>
+            <AddButtonCollection handleAddButton={() => console.log("Hallo")}>
+              <Star />
+            </AddButtonCollection>
+            <AddButtonWishlist>
+              <Dice />
+            </AddButtonWishlist>
           </CardDetails>
         </StyledDiv>
       </FlexContainer>
