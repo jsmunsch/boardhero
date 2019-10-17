@@ -7,9 +7,10 @@ import OptionBox from "../components/OptionBox";
 import SortModal from "../components/SortModal";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import BrowseEmpty from "../components/BrowseEmpty";
-import gameCollection from "../api/CollectionData";
-import gameWishlist from "../api/WishlistData";
-import browseData from "../api/FakeData";
+import { getGameCollection } from "../api/GameCollection";
+import { getBrowseCollection } from "../api/BrowseCollection";
+import { getGameWishlist } from "../api/WishlistCollection";
+
 import CardModal from "../components/CardModal";
 export default function Library() {
   const [navigation, setNavigation] = useState("");
@@ -20,13 +21,25 @@ export default function Library() {
   const [showModal, setShowModal] = useState(false);
   const [selectGame, setSelectGame] = useState();
 
-  const searchContentBrowse = browseData.filter(info =>
+  async function fetchCollectionData() {
+    const gameCollection = await getGameCollection();
+    return gameCollection;
+  }
+
+  const browseCollection = Object.entries(getBrowseCollection());
+  const wishlistCollection = Object.entries(getGameWishlist());
+  const gameCollection = getGameCollection();
+  const game123 = gameCollection.then(function(game123) {
+    console.log(game123);
+  });
+  const searchContentBrowse = browseCollection.filter(info =>
     info.name.toLowerCase().includes(textInput.toLowerCase())
   );
-  const searchContentCollection = gameCollection.filter(info =>
+
+  const searchContentCollection = Object.keys(game123).filter(info =>
     info.name.toLowerCase().includes(textInput.toLowerCase())
   );
-  const searchContentWishlist = gameWishlist.filter(info =>
+  const searchContentWishlist = wishlistCollection.filter(info =>
     info.name.toLowerCase().includes(textInput.toLowerCase())
   );
   function handleSearch(value) {

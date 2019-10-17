@@ -10,6 +10,7 @@ import AddButtonCollection from "./AddButtonCollection";
 import Star from "../icons/Star";
 import Dice from "../icons/Dice";
 import AddButtonWishlist from "./AddButtonWishlist";
+import { postGameCollection } from "../api/GameCollection";
 
 const Background = styled.img`
   height: 100%;
@@ -65,7 +66,9 @@ export default function CardModal({ handleOutsideClick, selectedGame }) {
               <CardBadge>Area Control</CardBadge>
               <CardBadge>Route/Network Building</CardBadge>
             </CardCategories>
-            <AddButtonCollection handleAddButton={() => console.log("Hallo")}>
+            <AddButtonCollection
+              handleAddButton={() => NewGameCollection(selectedGame)}
+            >
               <Star />
             </AddButtonCollection>
             <AddButtonWishlist>
@@ -76,4 +79,8 @@ export default function CardModal({ handleOutsideClick, selectedGame }) {
       </FlexContainer>
     </>
   );
+}
+
+function NewGameCollection(selectedGame) {
+  postGameCollection(selectedGame);
 }
