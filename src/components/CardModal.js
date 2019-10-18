@@ -1,15 +1,24 @@
 import React from "react";
 import styled from "styled-components";
+<<<<<<< HEAD
 import CollectionItemPositioned from "../components/GamePositioned";
+=======
+import CollectionItemPositioned, {
+  GamePositioned
+} from "../components/GamePositioned";
+>>>>>>> master
 import CardBadge from "../components/CardBadge";
 import CardDetails from "../components/CardDetails";
 import CardCategories from "../components/CardCategories";
 import CardTitle from "../components/CardTitle";
 import CardFlip from "../components/CardFlip";
+<<<<<<< HEAD
 import AddButtonCollection from "./AddButtonCollection";
 import Star from "../icons/Star";
 import Dice from "../icons/Dice";
 import AddButtonWishlist from "./AddButtonWishlist";
+=======
+>>>>>>> master
 
 const Background = styled.img`
   height: 100%;
@@ -38,6 +47,7 @@ const StyledDiv = styled.div`
   backdrop-filter: blur(2px);
 `;
 
+<<<<<<< HEAD
 export default function CardModal({
   handleOutsideClick,
   selectedGame,
@@ -45,11 +55,15 @@ export default function CardModal({
   onWishlistButton
 }) {
   console.log(selectedGame);
+=======
+export default function CardModal({ handleOutsideClick }) {
+>>>>>>> master
   return (
     <>
       <Background onClick={handleOutsideClick} />
       <FlexContainer>
         <StyledDiv>
+<<<<<<< HEAD
           <CollectionItemPositioned src={selectedGame.image_url} />
           <CardFlip>{selectedGame.name}</CardFlip>
           <CardDetails>
@@ -59,6 +73,13 @@ export default function CardModal({
             <CardTitle>
               Time: {selectedGame.min_playtime}-{selectedGame.max_playtime} min
             </CardTitle>
+=======
+          <CollectionItemPositioned />
+          <CardFlip>Fest für Odin</CardFlip>
+          <CardDetails>
+            <CardTitle>Players: 2-4</CardTitle>
+            <CardTitle>Time: test</CardTitle>
+>>>>>>> master
             <CardTitle>Categories</CardTitle>
             <CardCategories>
               <CardBadge>Economics</CardBadge>
@@ -70,12 +91,15 @@ export default function CardModal({
               <CardBadge>Area Control</CardBadge>
               <CardBadge>Route/Network Building</CardBadge>
             </CardCategories>
+<<<<<<< HEAD
             <AddButtonCollection handleAddButton={onCollectionButton}>
               <Star />
             </AddButtonCollection>
             <AddButtonWishlist handleAddButton={onWishlistButton}>
               <Dice />
             </AddButtonWishlist>
+=======
+>>>>>>> master
           </CardDetails>
         </StyledDiv>
       </FlexContainer>

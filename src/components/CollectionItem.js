@@ -10,6 +10,7 @@ export const ImageContainer = styled.img`
   border-radius: 15px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
 `;
+<<<<<<< HEAD
 
 export default function CollectionItem({
   game,
@@ -27,3 +28,5 @@ export default function CollectionItem({
     />
   );
 }
+=======
+>>>>>>> master
