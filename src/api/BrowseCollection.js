@@ -6,9 +6,14 @@ export function getBrowseCollection() {
   );
 }
 
-export async function getGames({ textInput }) {
-  const searchBrowseCollection = await getBrowseCollection();
-  return await searchBrowseCollection.filter(info =>
-    info.name.toLowerCase().includes(textInput.toLowerCase())
-  );
+export function waitTwoSeconds() {
+  return new Promise(resolve => {
+    setTimeout(resolve, 10);
+  });
+}
+
+export async function getAsyncBrowseGames() {
+  await waitTwoSeconds();
+  const games = await getBrowseCollection();
+  return games;
 }
