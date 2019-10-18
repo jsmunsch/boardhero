@@ -39,7 +39,12 @@ const StyledDiv = styled.div`
   backdrop-filter: blur(2px);
 `;
 
-export default function CardModal({ handleOutsideClick, selectedGame }) {
+export default function CardModal({
+  handleOutsideClick,
+  selectedGame,
+  onCollectionButton,
+  onWishlistButton
+}) {
   console.log(selectedGame);
   return (
     <>
@@ -66,12 +71,10 @@ export default function CardModal({ handleOutsideClick, selectedGame }) {
               <CardBadge>Area Control</CardBadge>
               <CardBadge>Route/Network Building</CardBadge>
             </CardCategories>
-            <AddButtonCollection
-              handleAddButton={() => NewGameCollection(selectedGame)}
-            >
+            <AddButtonCollection handleAddButton={onCollectionButton}>
               <Star />
             </AddButtonCollection>
-            <AddButtonWishlist>
+            <AddButtonWishlist handleAddButton={onWishlistButton}>
               <Dice />
             </AddButtonWishlist>
           </CardDetails>
@@ -79,8 +82,4 @@ export default function CardModal({ handleOutsideClick, selectedGame }) {
       </FlexContainer>
     </>
   );
-}
-
-function NewGameCollection(selectedGame) {
-  postGameCollection(selectedGame);
 }

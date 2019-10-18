@@ -9,8 +9,14 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import BrowseEmpty from "../components/BrowseEmpty";
 import CardModal from "../components/CardModal";
 import { getAsyncBrowseGames } from "../api/BrowseCollection";
-import { getAsyncWishlistGames } from "../api/WishlistCollection";
-import { getAsyncCollectionGames } from "../api/GameCollection";
+import {
+  getAsyncWishlistGames,
+  postGameToWishlist
+} from "../api/WishlistCollection";
+import {
+  getAsyncCollectionGames,
+  postGameToCollection
+} from "../api/GameCollection";
 
 export default function Library() {
   const [navigation, setNavigation] = useState("");
@@ -23,26 +29,24 @@ export default function Library() {
   const [browseGame, setBrowseGame] = useState([]);
   const [wishlistGame, setWishlistGame] = useState([]);
   const [collectionGame, setCollectionGame] = useState([]);
+  const [bla, setBla] = useState(true);
 
   React.useEffect(() => {
     getAsyncBrowseGames().then(gameArray => {
       setBrowseGame(gameArray);
     });
-  }, [textInput]);
-  console.log(browseGame);
+  }, [bla]);
 
   React.useEffect(() => {
     getAsyncWishlistGames().then(gameArray => {
       setWishlistGame(gameArray);
     });
-  }, [textInput]);
-  console.log(wishlistGame);
+  }, [bla]);
   React.useEffect(() => {
     getAsyncCollectionGames().then(gameArray => {
       setCollectionGame(gameArray);
     });
-  }, [textInput]);
-  console.log(collectionGame);
+  }, [bla]);
 
   const searchCollectionGames = collectionGame.filter(info =>
     info.name.toLowerCase().includes(textInput.toLowerCase())
@@ -53,7 +57,13 @@ export default function Library() {
   const searchBrowseGames = browseGame.filter(info =>
     info.name.toLowerCase().includes(textInput.toLowerCase())
   );
-
+  async function addGameToCollection() {
+    postGameToCollection(selectGame);
+    setBla(!bla);
+  }
+  async function addGameToWishlist() {
+    postGameToWishlist(selectGame);
+  }
   function handleSearch(value) {
     setTextInput(value);
   }
@@ -63,6 +73,8 @@ export default function Library() {
         <CardModal
           handleOutsideClick={() => setShowModal(false)}
           selectedGame={selectGame}
+          onCollectionButton={addGameToCollection}
+          onWishlistButton={addGameToWishlist}
         />
       )}
       <Header

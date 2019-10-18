@@ -6,7 +6,13 @@ export function getWishlistCollection() {
   );
 }
 
-export function postGameWishlist(game) {
+export async function getAsyncWishlistGames() {
+  await waitTwoSeconds();
+  const games = await getWishlistCollection();
+  return games;
+}
+
+export function postGameToWishlist(game) {
   return fetch("http://localhost:3000/gameWishlist", {
     method: "POST",
     headers: {
@@ -14,10 +20,4 @@ export function postGameWishlist(game) {
     },
     body: JSON.stringify(game)
   });
-}
-
-export async function getAsyncWishlistGames() {
-  await waitTwoSeconds();
-  const games = await getWishlistCollection();
-  return games;
 }

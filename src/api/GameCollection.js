@@ -21,3 +21,13 @@ export async function getAsyncCollectionGames() {
   const games = await getGameCollection();
   return games;
 }
+
+export function postGameToCollection(game) {
+  return fetch("http://localhost:3000/gameCollection", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(game)
+  });
+}

@@ -18,64 +18,12 @@
       "msrp": "79.95",
       "discount": "0.32",
       "primary_publisher": "Greater Than Games",
-      "publishers": ["Greater Than Games"],
-      "designers": ["R. Eric Reuss"],
-      "developers": [],
-      "artists": [],
-      "names": [],
-      "num_user_ratings": 42,
-      "average_user_rating": 3.9285714285714284
-    }
-  ],
-  "gameWishlist": [
-    {
-      "id": "TAAifFP590",
-      "name": "Root",
-      "year_published": 2018,
-      "min_players": 2,
-      "max_players": 4,
-      "min_playtime": 60,
-      "max_playtime": 90,
-      "min_age": 10,
-      "description": "Find adventure in this marvelous asymmetric game. Root provides limitless replay value as you and your friends explore the unique factions all wanting to rule a fantastic forest kingdom. Play as the Marquise de Cat and dominate the woods, extracting its riches and policing its inhabitants, as the Woodland Alliance, gathering supporters and coordinate revolts against the ruling regime, the Eyrie Dynasties, regaining control of the woods while keeping your squabbling court at bay, or as the Vagabond, seeking fame and fortune as you forge alliances and rivalries with the other players. Each faction has its own play style and paths to victory, providing an immersive game experience you will want to play again and again.",
-      "description_preview": "Find adventure in this marvelous asymmetric game. Root provides limitless replay value as you and your friends explore the unique factions all wanting to rule a fantastic forest kingdom. Play as the Marquise de Cat and dominate the woods, extracting its riches and policing its inhabitants, as the Woodland Alliance, gathering supporters and coordinate revolts against the ruling regime, the Eyrie Dynasties, regaining control of the woods while keeping your squabbling court at bay, or as the Vagabond, seeking fame and fortune as you forge alliances and rivalries with the other players. Each faction has its own play style and paths to victory, providing an immersive game experience you will want to play again and again.",
-      "image_url": "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1540147295104",
-      "thumb_url": "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1540147295104",
-      "url": "https://www.boardgameatlas.com/search/game/TAAifFP590",
-      "price": "41.97",
-      "msrp": "60.00",
-      "discount": "0.30",
-      "primary_publisher": "Leder Games",
-      "publishers": ["Leder Games"],
-      "designers": ["Cole Wehrle", "Patrick Leder "],
-      "developers": [],
-      "artists": ["Kyle Ferrin "],
-      "names": ["root ", "Root "],
-      "num_user_ratings": 27,
-      "average_user_rating": 3.7037037037037037
-    }
-  ],
-  "gameBrowse": [
-    {
-      "id": "kPDxpJZ8PD",
-      "name": "Spirit Island",
-      "year_published": 2016,
-      "min_players": 1,
-      "max_players": 4,
-      "min_playtime": 90,
-      "max_playtime": 120,
-      "min_age": 13,
-      "description": "Powerful Spirits have existed on this isolated island for time immemorial. They are both part of the natural world and - at the same time - something beyond nature. Native Islanders, known as the Dahan, have learned how to co-exist with the spirits, but with a healthy dose of fear and reverence. However, now, the island has been &quot;discovered&quot; by invaders from a far-off land. These would-be colonists are taking over the land and upsetting the natural balance, destroying the presence of Spirits as they go. As Spirits, you must grow in power and work together to drive the invaders from your island... before it's too late!",
-      "description_preview": "Powerful Spirits have existed on this isolated island for time immemorial. They are both part of the natural world and - at the same time - something beyond nature. Native Islanders, known as the Dahan, have learned how to co-exist with the spirits, but with a healthy dose of fear and reverence. However, now, the island has been \"discovered\" by invaders from a far-off land. These would-be colonists are taking over the land and upsetting the natural balance, destroying the presence of Spirits as they go. As Spirits, you must grow in power and work together to drive the invaders from your island... before it's too late!",
-      "image_url": "https://images-na.ssl-images-amazon.com/images/I/61PJxjjnbfL.jpg",
-      "thumb_url": "https://images-na.ssl-images-amazon.com/images/I/61PJxjjnbfL.jpg",
-      "url": "https://www.boardgameatlas.com/search/game/kPDxpJZ8PD",
-      "price": "53.99",
-      "msrp": "79.95",
-      "discount": "0.32",
-      "primary_publisher": "Greater Than Games",
-      "publishers": ["Greater Than Games"],
-      "designers": ["R. Eric Reuss"],
+      "publishers": [
+        "Greater Than Games"
+      ],
+      "designers": [
+        "R. Eric Reuss"
+      ],
       "developers": [],
       "artists": [],
       "names": [],
@@ -83,30 +31,38 @@
       "average_user_rating": 3.9285714285714284
     },
     {
-      "id": "RLlDWHh7hR",
-      "name": "Gloomhaven",
-      "year_published": 2017,
-      "min_players": 1,
+      "id": "E4ELA8cG85",
+      "name": "Race for the Galaxy",
+      "year_published": 2007,
+      "min_players": 2,
       "max_players": 4,
-      "min_playtime": 60,
-      "max_playtime": 120,
-      "min_age": 12,
-      "description": "Gloomhaven is a game of Euro-inspired tactical combat in a persistent world of shifting motives. Players will take on the role of a wandering adventurer with their own special set of skills and their own reasons for traveling to this dark corner of the world.<br />\r\n<br />\r\nPlayers must work together out of necessity to clear out menacing dungeons and forgotten ruins. In the process they will enhance their abilities with experience and loot, discover new locations to explore and plunder, and expand an ever-branching story fueled by the decisions they make.<br />\r\n<br />\r\nThis is a legacy game with a persistent and changing world that is ideally played over many game sessions. After a scenario, players will make decisions on what to do, which will determine how the story continues, kind of like a &quot;Choose Your Own Adventure&quot; book. Playing through a scenario is a cooperative affair where players will fight against automated monsters using an innovative card system to determine the order of play and what a player does on their turn.",
-      "description_preview": "Gloomhaven is a game of Euro-inspired tactical combat in a persistent world of shifting motives. Players will take on the role of a wandering adventurer with their own special set of skills and their own reasons for traveling to this dark corner of the world. \r\n \r\nPlayers must work together out of necessity to clear out menacing dungeons and forgotten ruins. In the process they will enhance their abilities with experience and loot, discover new locations to explore and plunder, and expand an ever-branching story fueled by the decisions they make. \r\n \r\nThis is a legacy game with a persistent and changing world that is ideally played over many game sessions. After a scenario, players will make decisions on what to do, which will determine how the story continues, kind of like a \"Choose Your Own Adventure\" book. Playing through a scenario is a cooperative affair where players will fight against automated monsters using an innovative card system to determine the order of play and what a player does on their turn.",
-      "image_url": "https://images-na.ssl-images-amazon.com/images/I/51ulRXlJ7LL.jpg",
-      "thumb_url": "https://images-na.ssl-images-amazon.com/images/I/51ulRXlJ7LL.jpg",
-      "url": "https://www.boardgameatlas.com/search/game/RLlDWHh7hR",
-      "price": "106.00",
-      "msrp": "139.99",
-      "discount": "0.24",
-      "primary_publisher": "Cephalofair Games",
-      "publishers": ["Cephalofair Games"],
-      "designers": ["Isaac Childres"],
+      "min_playtime": 30,
+      "max_playtime": 60,
+      "min_age": 14,
+      "description": "In Race for the Galaxy from Rio Grande Games, players build galactic civilizations using game cards that represent worlds or technical and social developments. Each round consists of one or more of five possible phases. In each round, each player secretly and simultaneously chooses one of seven different action cards and then reveals it. Only the selected phases occur. For these phases, every player performs the phasea€s action, while the selecting player(s) also get a bonus for that phase. For example, if at least one player chooses the Develop action, then the Develop phase will occur, otherwise it is skipped. In it, each player may simultaneously select a development from his hand of cards to build. After revealing the cards, each player adds his development to his tableau of cards on the table and then discards cards from his hand equal to its cost. Each player who chose Develop discards one card fewer as his bonus. Explore allows a player to draw cards and select which of them to add to his hand. Settle allows a player to place a world in his tableau. Some worlds produce goods, represented by face down cards, when Produce is selected. These goods can be discarded for victory points or sold to add cards to the player's hand by selecting Consume. With cards, players can settle new worlds and build more developments, gaining both victory points and card powers that provide advantages in certain phases. The player who best manages his cards, phase and bonus selections, and card powers to build the greatest space empire, wins. The winner is the player with the most victory points.",
+      "description_preview": "In Race for the Galaxy from Rio Grande Games, players build galactic civilizations using game cards that represent worlds or technical and social developments. Each round consists of one or more of five possible phases. In each round, each player secretly and simultaneously chooses one of seven different action cards and then reveals it. Only the selected phases occur. For these phases, every player performs the phasea€s action, while the selecting player(s) also get a bonus for that phase. For example, if at least one player chooses the Develop action, then the Develop phase will occur, otherwise it is skipped. In it, each player may simultaneously select a development from his hand of cards to build. After revealing the cards, each player adds his development to his tableau of cards on the table and then discards cards from his hand equal to its cost. Each player who chose Develop discards one card fewer as his bonus. Explore allows a player to draw cards and select which of them to add to his hand. Settle allows a player to place a world in his tableau. Some worlds produce goods, represented by face down cards, when Produce is selected. These goods can be discarded for victory points or sold to add cards to the player's hand by selecting Consume. With cards, players can settle new worlds and build more developments, gaining both victory points and card powers that provide advantages in certain phases. The player who best manages his cards, phase and bonus selections, and card powers to build the greatest space empire, wins. The winner is the player with the most victory points.",
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/516WSoozIAL.jpg",
+      "thumb_url": "https://images-na.ssl-images-amazon.com/images/I/516WSoozIAL.jpg",
+      "url": "https://www.boardgameatlas.com/search/game/E4ELA8cG85",
+      "price": "34.99",
+      "msrp": "34.99",
+      "discount": "0.00",
+      "primary_publisher": "Rio Grande Games",
+      "publishers": [
+        "Rio Grande Games"
+      ],
+      "designers": [
+        "\tThomas Lehmann"
+      ],
       "developers": [],
-      "artists": ["Alexandr Elichev", "Josh T. McDowell", "Alvaro Nebot"],
+      "artists": [
+        "Claus Stephan",
+        "Martin Hoffmann",
+        "Mirko Suzuki"
+      ],
       "names": [],
-      "num_user_ratings": 53,
-      "average_user_rating": 4.113207547169811
+      "num_user_ratings": 47,
+      "average_user_rating": 3.515704154002027
     },
     {
       "id": "yqR4PtpO8X",
@@ -126,10 +82,16 @@
       "msrp": "80.00",
       "discount": "0.23",
       "primary_publisher": "Stonemaier Games",
-      "publishers": ["Stonemaier Games"],
-      "designers": ["\tJamey Stegmaier"],
+      "publishers": [
+        "Stonemaier Games"
+      ],
+      "designers": [
+        "\tJamey Stegmaier"
+      ],
       "developers": [],
-      "artists": ["Jakub Różalski"],
+      "artists": [
+        "Jakub Różalski"
+      ],
       "names": [],
       "num_user_ratings": 79,
       "average_user_rating": 3.911392405063292
@@ -166,10 +128,261 @@
         "Rio Grande Games (Sweden)",
         "Hobby World (Russia)"
       ],
-      "designers": ["Klaus-Jurgen Wrede"],
+      "designers": [
+        "Klaus-Jurgen Wrede"
+      ],
       "developers": [],
       "artists": [],
-      "names": ["carcassone"],
+      "names": [
+        "carcassone"
+      ],
+      "num_user_ratings": 112,
+      "average_user_rating": 3.258928571428572
+    },
+    {
+      "id": "O0G8z5Wgz1",
+      "name": "Splendor",
+      "year_published": 2014,
+      "min_players": 2,
+      "max_players": 4,
+      "min_playtime": 30,
+      "max_playtime": 60,
+      "min_age": 10,
+      "description": "As a wealthy Renaissance merchant, acquire mines and transportation, hire artisans and woo the nobility. Create the most fantastic jewelry to become the best-known merchant of them all! Acquire precious stones to trade them for development cards. Use development cards to acquire more gem stones. Use your gems and gold to create the most fantastic jewelry, and appeal to the nobles to gain the prestige you need to win.<br />\r\n<br />\r\nSplendor is a fast-paced and addictive game of chip-collecting and card development. Players are merchants of the Renaissance trying to buy gem mines, means of transportation, shops; all in order to acquire the most prestige points. If you're wealthy enough, you might even receive a visit from a noble at some point, which of course will further increase your prestige.<br />\r\n <br />\r\nOn your turn, you may (1) collect chips (gems), or (2) buy and build a card, or (3) reserve one card. If you collect chips, you take either three different kinds of chips or two chips of the same kind. If you buy a card, you pay its price in chips and add it to your playing area. To reserve a card, you place it in front of you face down for later building; this costs you a round, but you also get gold in the form of a joker chip, which you can use as any gem.<br />\r\n <br />\r\nAll of the cards you buy increase your wealth as they give you a permanent gem bonus for later buys; some of the cards also give you prestige points. In order to win the game, you must reach 15 prestige points before your opponents do.",
+      "description_preview": "As a wealthy Renaissance merchant, acquire mines and transportation, hire artisans and woo the nobility. Create the most fantastic jewelry to become the best-known merchant of them all! Acquire precious stones to trade them for development cards. Use development cards to acquire more gem stones. Use your gems and gold to create the most fantastic jewelry, and appeal to the nobles to gain the prestige you need to win. \r\n \r\nSplendor is a fast-paced and addictive game of chip-collecting and card development. Players are merchants of the Renaissance trying to buy gem mines, means of transportation, shops; all in order to acquire the most prestige points. If you're wealthy enough, you might even receive a visit from a noble at some point, which of course will further increase your prestige. \r\n  \r\nOn your turn, you may (1) collect chips (gems), or (2) buy and build a card, or (3) reserve one card. If you collect chips, you take either three different kinds of chips or two chips of the same kind. If you buy a card, you pay its price in chips and add it to your playing area. To reserve a card, you place it in front of you face down for later building; this costs you a round, but you also get gold in the form of a joker chip, which you can use as any gem. \r\n  \r\nAll of the cards you buy increase your wealth as they give you a permanent gem bonus for later buys; some of the cards also give you prestige points. In order to win the game, you must reach 15 prestige points before your opponents do.",
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/51AHDwGznvL.jpg",
+      "thumb_url": "https://images-na.ssl-images-amazon.com/images/I/51AHDwGznvL.jpg",
+      "url": "https://www.boardgameatlas.com/search/game/O0G8z5Wgz1",
+      "price": "35.99",
+      "msrp": "39.99",
+      "discount": "0.10",
+      "primary_publisher": "Asmodee Editions",
+      "publishers": [
+        "Asmodee Editions",
+        "Space Cowboys"
+      ],
+      "designers": [
+        "Marc Andre"
+      ],
+      "developers": [],
+      "artists": [
+        "Pascal Quidault"
+      ],
+      "names": [],
+      "num_user_ratings": 89,
+      "average_user_rating": 3.303370786516853
+    }
+  ],
+  "gameWishlist": [
+    {
+      "id": "TAAifFP590",
+      "name": "Root",
+      "year_published": 2018,
+      "min_players": 2,
+      "max_players": 4,
+      "min_playtime": 60,
+      "max_playtime": 90,
+      "min_age": 10,
+      "description": "Find adventure in this marvelous asymmetric game. Root provides limitless replay value as you and your friends explore the unique factions all wanting to rule a fantastic forest kingdom. Play as the Marquise de Cat and dominate the woods, extracting its riches and policing its inhabitants, as the Woodland Alliance, gathering supporters and coordinate revolts against the ruling regime, the Eyrie Dynasties, regaining control of the woods while keeping your squabbling court at bay, or as the Vagabond, seeking fame and fortune as you forge alliances and rivalries with the other players. Each faction has its own play style and paths to victory, providing an immersive game experience you will want to play again and again.",
+      "description_preview": "Find adventure in this marvelous asymmetric game. Root provides limitless replay value as you and your friends explore the unique factions all wanting to rule a fantastic forest kingdom. Play as the Marquise de Cat and dominate the woods, extracting its riches and policing its inhabitants, as the Woodland Alliance, gathering supporters and coordinate revolts against the ruling regime, the Eyrie Dynasties, regaining control of the woods while keeping your squabbling court at bay, or as the Vagabond, seeking fame and fortune as you forge alliances and rivalries with the other players. Each faction has its own play style and paths to victory, providing an immersive game experience you will want to play again and again.",
+      "image_url": "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1540147295104",
+      "thumb_url": "https://s3-us-west-1.amazonaws.com/5cc.images/games/uploaded/1540147295104",
+      "url": "https://www.boardgameatlas.com/search/game/TAAifFP590",
+      "price": "41.97",
+      "msrp": "60.00",
+      "discount": "0.30",
+      "primary_publisher": "Leder Games",
+      "publishers": [
+        "Leder Games"
+      ],
+      "designers": [
+        "Cole Wehrle",
+        "Patrick Leder "
+      ],
+      "developers": [],
+      "artists": [
+        "Kyle Ferrin "
+      ],
+      "names": [
+        "root ",
+        "Root "
+      ],
+      "num_user_ratings": 27,
+      "average_user_rating": 3.7037037037037037
+    },
+    {
+      "id": "q4g2Y5eqyZ",
+      "name": "The Fox in the Forest",
+      "year_published": 2017,
+      "min_players": 2,
+      "max_players": 2,
+      "min_playtime": 30,
+      "max_playtime": 45,
+      "min_age": 10,
+      "description": "<div><p>Enter the fairy tale world of <i>The Fox in the Forest</i>, a trick-taking game for two based on a story about a woodcutter's clever daughter who sets out on a journey to uncover the secrets of why monsters have begun to plague the kingdom. Players will play cards from their hands in a battle to take tricks and score points. <br /></p><p><br /><i>The Fox in the Forest</i> has a unique take on scoring that introduces tension into the trick-taking formula. If a player takes too many tricks, they are determined to be greedy and won't get any points at all. Do you want to win this trick and risk winning too many over the course of the round? What is your opponent trying to do?<br /></p><p><br />Each of the three suits has a set of special cards that have unique effects when played. The Swan allows you to lead the next trick even if you lose this one. The Fox lets you switch a card in your hand with the decree card setting the trump suit. The Woodcutter lets you swap a card in your hand with one of the extra cards. The Treasure will give the winner of a trick a free point for each 7 in the trick. The Witch will act as the trump suit if it's the only witch in the trick. Finally, the Monarch forces your opponent to play either the 1 of that suit, or their highest ranked card of that suit.</p>\r\n</div>",
+      "description_preview": "  Enter the fairy tale world of  The Fox in the Forest , a trick-taking game for two based on a story about a woodcutter's clever daughter who sets out on a journey to uncover the secrets of why monsters have begun to plague the kingdom. Players will play cards from their hands in a battle to take tricks and score points.      The Fox in the Forest  has a unique take on scoring that introduces tension into the trick-taking formula. If a player takes too many tricks, they are determined to be greedy and won't get any points at all. Do you want to win this trick and risk winning too many over the course of the round? What is your opponent trying to do?    Each of the three suits has a set of special cards that have unique effects when played. The Swan allows you to lead the next trick even if you lose this one. The Fox lets you switch a card in your hand with the decree card setting the trump suit. The Woodcutter lets you swap a card in your hand with one of the extra cards. The Treasure will give the winner of a trick a free point for each 7 in the trick. The Witch will act as the trump suit if it's the only witch in the trick. Finally, the Monarch forces your opponent to play either the 1 of that suit, or their highest ranked card of that suit. \r\n ",
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/41CjWbXSlWL.jpg",
+      "thumb_url": "https://images-na.ssl-images-amazon.com/images/I/41CjWbXSlWL.jpg",
+      "url": "https://www.boardgameatlas.com/search/game/q4g2Y5eqyZ",
+      "price": "10.49",
+      "msrp": "15.00",
+      "discount": "0.30",
+      "primary_publisher": "Renegade Game Studios",
+      "publishers": [
+        "Renegade Game Studios"
+      ],
+      "designers": [
+        "Joshua Buergel"
+      ],
+      "developers": [],
+      "artists": [
+        "Jennifer L. Meyer",
+        "Keith Pishnery"
+      ],
+      "names": [
+        "Fox in the Forest"
+      ],
+      "num_user_ratings": 28,
+      "average_user_rating": 3.2928571428571427
+    }
+  ],
+  "gameBrowse": [
+    {
+      "id": "kPDxpJZ8PD",
+      "name": "Spirit Island",
+      "year_published": 2016,
+      "min_players": 1,
+      "max_players": 4,
+      "min_playtime": 90,
+      "max_playtime": 120,
+      "min_age": 13,
+      "description": "Powerful Spirits have existed on this isolated island for time immemorial. They are both part of the natural world and - at the same time - something beyond nature. Native Islanders, known as the Dahan, have learned how to co-exist with the spirits, but with a healthy dose of fear and reverence. However, now, the island has been &quot;discovered&quot; by invaders from a far-off land. These would-be colonists are taking over the land and upsetting the natural balance, destroying the presence of Spirits as they go. As Spirits, you must grow in power and work together to drive the invaders from your island... before it's too late!",
+      "description_preview": "Powerful Spirits have existed on this isolated island for time immemorial. They are both part of the natural world and - at the same time - something beyond nature. Native Islanders, known as the Dahan, have learned how to co-exist with the spirits, but with a healthy dose of fear and reverence. However, now, the island has been \"discovered\" by invaders from a far-off land. These would-be colonists are taking over the land and upsetting the natural balance, destroying the presence of Spirits as they go. As Spirits, you must grow in power and work together to drive the invaders from your island... before it's too late!",
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/61PJxjjnbfL.jpg",
+      "thumb_url": "https://images-na.ssl-images-amazon.com/images/I/61PJxjjnbfL.jpg",
+      "url": "https://www.boardgameatlas.com/search/game/kPDxpJZ8PD",
+      "price": "53.99",
+      "msrp": "79.95",
+      "discount": "0.32",
+      "primary_publisher": "Greater Than Games",
+      "publishers": [
+        "Greater Than Games"
+      ],
+      "designers": [
+        "R. Eric Reuss"
+      ],
+      "developers": [],
+      "artists": [],
+      "names": [],
+      "num_user_ratings": 42,
+      "average_user_rating": 3.9285714285714284
+    },
+    {
+      "id": "RLlDWHh7hR",
+      "name": "Gloomhaven",
+      "year_published": 2017,
+      "min_players": 1,
+      "max_players": 4,
+      "min_playtime": 60,
+      "max_playtime": 120,
+      "min_age": 12,
+      "description": "Gloomhaven is a game of Euro-inspired tactical combat in a persistent world of shifting motives. Players will take on the role of a wandering adventurer with their own special set of skills and their own reasons for traveling to this dark corner of the world.<br />\r\n<br />\r\nPlayers must work together out of necessity to clear out menacing dungeons and forgotten ruins. In the process they will enhance their abilities with experience and loot, discover new locations to explore and plunder, and expand an ever-branching story fueled by the decisions they make.<br />\r\n<br />\r\nThis is a legacy game with a persistent and changing world that is ideally played over many game sessions. After a scenario, players will make decisions on what to do, which will determine how the story continues, kind of like a &quot;Choose Your Own Adventure&quot; book. Playing through a scenario is a cooperative affair where players will fight against automated monsters using an innovative card system to determine the order of play and what a player does on their turn.",
+      "description_preview": "Gloomhaven is a game of Euro-inspired tactical combat in a persistent world of shifting motives. Players will take on the role of a wandering adventurer with their own special set of skills and their own reasons for traveling to this dark corner of the world. \r\n \r\nPlayers must work together out of necessity to clear out menacing dungeons and forgotten ruins. In the process they will enhance their abilities with experience and loot, discover new locations to explore and plunder, and expand an ever-branching story fueled by the decisions they make. \r\n \r\nThis is a legacy game with a persistent and changing world that is ideally played over many game sessions. After a scenario, players will make decisions on what to do, which will determine how the story continues, kind of like a \"Choose Your Own Adventure\" book. Playing through a scenario is a cooperative affair where players will fight against automated monsters using an innovative card system to determine the order of play and what a player does on their turn.",
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/51ulRXlJ7LL.jpg",
+      "thumb_url": "https://images-na.ssl-images-amazon.com/images/I/51ulRXlJ7LL.jpg",
+      "url": "https://www.boardgameatlas.com/search/game/RLlDWHh7hR",
+      "price": "106.00",
+      "msrp": "139.99",
+      "discount": "0.24",
+      "primary_publisher": "Cephalofair Games",
+      "publishers": [
+        "Cephalofair Games"
+      ],
+      "designers": [
+        "Isaac Childres"
+      ],
+      "developers": [],
+      "artists": [
+        "Alexandr Elichev",
+        "Josh T. McDowell",
+        "Alvaro Nebot"
+      ],
+      "names": [],
+      "num_user_ratings": 53,
+      "average_user_rating": 4.113207547169811
+    },
+    {
+      "id": "yqR4PtpO8X",
+      "name": "Scythe",
+      "year_published": 2016,
+      "min_players": 1,
+      "max_players": 5,
+      "min_playtime": 90,
+      "max_playtime": 120,
+      "min_age": 14,
+      "description": "<i>Scythe</i> gives players almost complete control over their fate. Other than each player's individual hidden objective card, the only elements of luck or variability are &quot;Encounter&quot; cards that players will draw as they interact with the citizens of newly explored lands. Each encounter card provides the player with several options, allowing them to mitigate the luck of the draw through their selection. Combat is also driven by choices, not luck or randomness.<br />\r\n<br />\r\n<i>Scythe</i> uses a streamlined action-selection mechanism (no rounds or phases) to keep gameplay moving at a brisk pace and reduce downtime between turns. While there is plenty of direct conflict for players who seek it, there is no player elimination.<br />\r\n<br />\r\nEvery part of <i>Scythe</i> has an aspect of engine-building to it. Players can upgrade actions to become more efficient, build structures that improve their position on the map, enlist new recruits to enhance character abilities, activate mechs to deter opponents from invading, and expand their borders to reap greater types and quantities of resources. These engine-building aspects create a sense of momentum and progress throughout the game. The order in which players improve their engine adds to the unique feel of each game, even when playing one faction multiple times.",
+      "description_preview": " Scythe  gives players almost complete control over their fate. Other than each player's individual hidden objective card, the only elements of luck or variability are \"Encounter\" cards that players will draw as they interact with the citizens of newly explored lands. Each encounter card provides the player with several options, allowing them to mitigate the luck of the draw through their selection. Combat is also driven by choices, not luck or randomness. \r\n \r\n Scythe  uses a streamlined action-selection mechanism (no rounds or phases) to keep gameplay moving at a brisk pace and reduce downtime between turns. While there is plenty of direct conflict for players who seek it, there is no player elimination. \r\n \r\nEvery part of  Scythe  has an aspect of engine-building to it. Players can upgrade actions to become more efficient, build structures that improve their position on the map, enlist new recruits to enhance character abilities, activate mechs to deter opponents from invading, and expand their borders to reap greater types and quantities of resources. These engine-building aspects create a sense of momentum and progress throughout the game. The order in which players improve their engine adds to the unique feel of each game, even when playing one faction multiple times.",
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/513-lrmjs2L.jpg",
+      "thumb_url": "https://images-na.ssl-images-amazon.com/images/I/513-lrmjs2L.jpg",
+      "url": "https://www.boardgameatlas.com/search/game/yqR4PtpO8X",
+      "price": "61.92",
+      "msrp": "80.00",
+      "discount": "0.23",
+      "primary_publisher": "Stonemaier Games",
+      "publishers": [
+        "Stonemaier Games"
+      ],
+      "designers": [
+        "\tJamey Stegmaier"
+      ],
+      "developers": [],
+      "artists": [
+        "Jakub Różalski"
+      ],
+      "names": [],
+      "num_user_ratings": 79,
+      "average_user_rating": 3.911392405063292
+    },
+    {
+      "id": "oGVgRSAKwX",
+      "name": "Carcassonne",
+      "year_published": 2000,
+      "min_players": 2,
+      "max_players": 5,
+      "min_playtime": 30,
+      "max_playtime": 45,
+      "min_age": 7,
+      "description": "Each game of <em>Carcassonne</em> reveals a unique environment as tiles form a landscape of cities, roads, fields, and monasteries. Claim these features with your followers to win the game.\r\n\r\n<p><em>Carcassonne</em> is a tile placement game where players collectively construct the area around the medieval French city of Carcassonne while competing to place followers on various features and score the most points. First published in 2000, the game's accessible yet deep design has attracted a wide fan base and led to the development of numerous expansions and standalone titles in the <em>Carcassonne</em> line.</p>",
+      "description_preview": "Each game of  Carcassonne  reveals a unique environment as tiles form a landscape of cities, roads, fields, and monasteries. Claim these features with your followers to win the game.\r\n\r\n  Carcassonne  is a tile placement game where players collectively construct the area around the medieval French city of Carcassonne while competing to place followers on various features and score the most points. First published in 2000, the game's accessible yet deep design has attracted a wide fan base and led to the development of numerous expansions and standalone titles in the  Carcassonne  line. ",
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/61HduAZGE7L.jpg",
+      "thumb_url": "https://images-na.ssl-images-amazon.com/images/I/61HduAZGE7L._SL75_.jpg",
+      "url": "https://www.boardgameatlas.com/search/game/oGVgRSAKwX",
+      "price": "31.49",
+      "msrp": "34.99",
+      "discount": "0.10",
+      "primary_publisher": "Z-Man Games",
+      "publishers": [
+        "Z-Man Games",
+        "Hans im Gluck (Germany)",
+        "999 Games (Netherlands)",
+        "Фантасмагория (Bulgaria)",
+        "Lautapelit.fi (Finland)",
+        "Κάισσα (Greece)",
+        "メビウスゲームズ (Japan)",
+        "Giochi Uniti (Italy)",
+        "Piatnik Budapest Kft. (Hungary)",
+        "Grow (Brazil)",
+        "Rio Grande Games (Sweden)",
+        "Hobby World (Russia)"
+      ],
+      "designers": [
+        "Klaus-Jurgen Wrede"
+      ],
+      "developers": [],
+      "artists": [],
+      "names": [
+        "carcassone"
+      ],
       "num_user_ratings": 112,
       "average_user_rating": 3.258928571428572
     },
@@ -197,14 +410,19 @@
         "Hobby Japan (Japan)",
         "Filosofia (France)"
       ],
-      "designers": ["Matt Leacock"],
+      "designers": [
+        "Matt Leacock"
+      ],
       "developers": [],
       "artists": [
         "Joshua Cappel (graphics and illustration)",
         " Régis Moulun (cover painting)",
         " Chris Quilliams (2013 edition)"
       ],
-      "names": ["Pandemic Board Game", "Pandemic"],
+      "names": [
+        "Pandemic Board Game",
+        "Pandemic"
+      ],
       "num_user_ratings": 114,
       "average_user_rating": 3.2456140350877205
     },
@@ -226,10 +444,18 @@
       "msrp": "39.99",
       "discount": "0.31",
       "primary_publisher": "Next Move Games",
-      "publishers": ["Next Move Games", "Plan B Games"],
-      "designers": ["Michael Kiesling"],
+      "publishers": [
+        "Next Move Games",
+        "Plan B Games"
+      ],
+      "designers": [
+        "Michael Kiesling"
+      ],
       "developers": [],
-      "artists": ["Philippe Guérin", "Chris Quilliams"],
+      "artists": [
+        "Philippe Guérin",
+        "Chris Quilliams"
+      ],
       "names": [],
       "num_user_ratings": 75,
       "average_user_rating": 3.6266666666666656
@@ -252,11 +478,21 @@
       "msrp": "69.95",
       "discount": "0.33",
       "primary_publisher": "Stronghold Games",
-      "publishers": ["Stronghold Games", "\tFryxGames "],
-      "designers": ["Jacob Fryxelius"],
+      "publishers": [
+        "Stronghold Games",
+        "\tFryxGames "
+      ],
+      "designers": [
+        "Jacob Fryxelius"
+      ],
       "developers": [],
-      "artists": ["Isaac Fryxelius"],
-      "names": ["Terraforming Mars", "Terraforming Mars"],
+      "artists": [
+        "Isaac Fryxelius"
+      ],
+      "names": [
+        "Terraforming Mars",
+        "Terraforming Mars"
+      ],
       "num_user_ratings": 64,
       "average_user_rating": 3.5781249999999996
     },
@@ -278,11 +514,21 @@
       "msrp": "60.00",
       "discount": "0.30",
       "primary_publisher": "Leder Games",
-      "publishers": ["Leder Games"],
-      "designers": ["Cole Wehrle", "Patrick Leder "],
+      "publishers": [
+        "Leder Games"
+      ],
+      "designers": [
+        "Cole Wehrle",
+        "Patrick Leder "
+      ],
       "developers": [],
-      "artists": ["Kyle Ferrin "],
-      "names": ["root ", "Root "],
+      "artists": [
+        "Kyle Ferrin "
+      ],
+      "names": [
+        "root ",
+        "Root "
+      ],
       "num_user_ratings": 27,
       "average_user_rating": 3.7037037037037037
     },
@@ -304,10 +550,18 @@
       "msrp": "64.95",
       "discount": "0.31",
       "primary_publisher": "Rio Grande Games",
-      "publishers": ["Rio Grande Games"],
-      "designers": [" Mac Gerdts"],
+      "publishers": [
+        "Rio Grande Games"
+      ],
+      "designers": [
+        " Mac Gerdts"
+      ],
       "developers": [],
-      "artists": ["Dominik Mayer", "Marina Fahrenbach", "Mac Gerdts"],
+      "artists": [
+        "Dominik Mayer",
+        "Marina Fahrenbach",
+        "Mac Gerdts"
+      ],
       "names": [],
       "num_user_ratings": 50,
       "average_user_rating": 3.9600000000000017
@@ -330,11 +584,21 @@
       "msrp": "44.95",
       "discount": "0.34",
       "primary_publisher": "Rio Grande Games",
-      "publishers": ["Rio Grande Games"],
-      "designers": ["Donald X. Vaccarino"],
+      "publishers": [
+        "Rio Grande Games"
+      ],
+      "designers": [
+        "Donald X. Vaccarino"
+      ],
       "developers": [],
-      "artists": [" Matthias Catrein", "Julien Delval", "Tomasz Jedruszek"],
-      "names": ["Dominion"],
+      "artists": [
+        " Matthias Catrein",
+        "Julien Delval",
+        "Tomasz Jedruszek"
+      ],
+      "names": [
+        "Dominion"
+      ],
       "num_user_ratings": 82,
       "average_user_rating": 3.4191814799503915
     },
@@ -363,10 +627,16 @@
         "999 Games (Netherlands)",
         "Homolúdicus (Spain)"
       ],
-      "designers": ["Uwe Rosenberg"],
+      "designers": [
+        "Uwe Rosenberg"
+      ],
       "developers": [],
-      "artists": ["Klemens Franz"],
-      "names": ["Agricola"],
+      "artists": [
+        "Klemens Franz"
+      ],
+      "names": [
+        "Agricola"
+      ],
       "num_user_ratings": 69,
       "average_user_rating": 3.750278706800446
     },
@@ -402,7 +672,9 @@
         "Galakta (Poland)",
         "Albi (Czech republic and Slovakia)"
       ],
-      "designers": ["Klaus Teuber"],
+      "designers": [
+        "Klaus Teuber"
+      ],
       "developers": [],
       "artists": [],
       "names": [
@@ -435,10 +707,17 @@
       "msrp": "49.99",
       "discount": "0.10",
       "primary_publisher": "Days of Wonder",
-      "publishers": ["Days of Wonder"],
-      "designers": ["\tAlan R. Moon"],
+      "publishers": [
+        "Days of Wonder"
+      ],
+      "designers": [
+        "\tAlan R. Moon"
+      ],
       "developers": [],
-      "artists": ["Julien Delval", "Cyrille Daujean"],
+      "artists": [
+        "Julien Delval",
+        "Cyrille Daujean"
+      ],
       "names": [],
       "num_user_ratings": 84,
       "average_user_rating": 3.251831501831502
@@ -461,10 +740,18 @@
       "msrp": "34.99",
       "discount": "0.00",
       "primary_publisher": "Rio Grande Games",
-      "publishers": ["Rio Grande Games"],
-      "designers": ["\tThomas Lehmann"],
+      "publishers": [
+        "Rio Grande Games"
+      ],
+      "designers": [
+        "\tThomas Lehmann"
+      ],
       "developers": [],
-      "artists": ["Claus Stephan", "Martin Hoffmann", "Mirko Suzuki"],
+      "artists": [
+        "Claus Stephan",
+        "Martin Hoffmann",
+        "Mirko Suzuki"
+      ],
       "names": [],
       "num_user_ratings": 47,
       "average_user_rating": 3.515704154002027
@@ -487,10 +774,17 @@
       "msrp": "39.99",
       "discount": "0.10",
       "primary_publisher": "Asmodee Editions",
-      "publishers": ["Asmodee Editions", "Space Cowboys"],
-      "designers": ["Marc Andre"],
+      "publishers": [
+        "Asmodee Editions",
+        "Space Cowboys"
+      ],
+      "designers": [
+        "Marc Andre"
+      ],
       "developers": [],
-      "artists": ["Pascal Quidault"],
+      "artists": [
+        "Pascal Quidault"
+      ],
       "names": [],
       "num_user_ratings": 89,
       "average_user_rating": 3.303370786516853
@@ -513,11 +807,20 @@
       "msrp": "20.00",
       "discount": "0.33",
       "primary_publisher": "Czech Games Edition",
-      "publishers": ["Czech Games Edition"],
-      "designers": ["Vlaada Chvátil"],
+      "publishers": [
+        "Czech Games Edition"
+      ],
+      "designers": [
+        "Vlaada Chvátil"
+      ],
       "developers": [],
-      "artists": [" Stéphane Gantiez", "Tomáš Kučerovský"],
-      "names": ["שם-קוד "],
+      "artists": [
+        " Stéphane Gantiez",
+        "Tomáš Kučerovský"
+      ],
+      "names": [
+        "שם-קוד "
+      ],
       "num_user_ratings": 111,
       "average_user_rating": 3.495495495495496
     },
@@ -560,9 +863,13 @@
         "テンデイズゲームズ (Ten Days Games)",
         "White Goblin Games"
       ],
-      "designers": ["Bruno Cathala"],
+      "designers": [
+        "Bruno Cathala"
+      ],
       "developers": [],
-      "artists": ["Cyril Bouquet"],
+      "artists": [
+        "Cyril Bouquet"
+      ],
       "names": [],
       "num_user_ratings": 58,
       "average_user_rating": 3.206896551724139
@@ -592,10 +899,18 @@
         " LLC",
         "One Moment Games"
       ],
-      "designers": ["Jeroen Doumen", "Joris Wiersinga"],
+      "designers": [
+        "Jeroen Doumen",
+        "Joris Wiersinga"
+      ],
       "developers": [],
-      "artists": ["Iris de Haan", " Ynze Moedt"],
-      "names": ["FCM"],
+      "artists": [
+        "Iris de Haan",
+        " Ynze Moedt"
+      ],
+      "names": [
+        "FCM"
+      ],
       "num_user_ratings": 22,
       "average_user_rating": 3.9545454545454555
     },
@@ -626,7 +941,9 @@
         "Rebel",
         "Vagabund"
       ],
-      "designers": ["Dan Cassar"],
+      "designers": [
+        "Dan Cassar"
+      ],
       "developers": [],
       "artists": [
         "Philippe Guérin",
@@ -681,7 +998,9 @@
         "Swan Panasia Co.",
         " Ltd."
       ],
-      "designers": [" Friedemann Friese"],
+      "designers": [
+        " Friedemann Friese"
+      ],
       "developers": [],
       "artists": [
         " Antonio Dessi",
@@ -733,10 +1052,16 @@
         "uplay.it edizioni",
         "Нескучные игры"
       ],
-      "designers": ["Uwe Rosenberg"],
+      "designers": [
+        "Uwe Rosenberg"
+      ],
       "developers": [],
-      "artists": ["Klemens Franz "],
-      "names": ["Patchwork"],
+      "artists": [
+        "Klemens Franz "
+      ],
+      "names": [
+        "Patchwork"
+      ],
       "num_user_ratings": 74,
       "average_user_rating": 3.508765522279035
     },
@@ -758,8 +1083,12 @@
       "msrp": "14.99",
       "discount": "0.31",
       "primary_publisher": "Indie Boards and Cards",
-      "publishers": ["Indie Boards and Cards"],
-      "designers": ["Rikki Tahta"],
+      "publishers": [
+        "Indie Boards and Cards"
+      ],
+      "designers": [
+        "Rikki Tahta"
+      ],
       "developers": [],
       "artists": [
         "Luis Francisco ",
@@ -810,9 +1139,14 @@
         "NeoTroy Games",
         "Rebel"
       ],
-      "designers": ["Antoine Bauza"],
+      "designers": [
+        "Antoine Bauza"
+      ],
       "developers": [],
-      "artists": ["Antoine Bauza", "Miguel Coimbra"],
+      "artists": [
+        "Antoine Bauza",
+        "Miguel Coimbra"
+      ],
       "names": [],
       "num_user_ratings": 90,
       "average_user_rating": 3.3376984126984137
@@ -845,9 +1179,14 @@
         "Portal Games",
         "Surfin' Meeple China"
       ],
-      "designers": [" Christian Martinez"],
+      "designers": [
+        " Christian Martinez"
+      ],
       "developers": [],
-      "artists": ["Dimitri Bielak", "Jim Fitzpatrick"],
+      "artists": [
+        "Dimitri Bielak",
+        "Jim Fitzpatrick"
+      ],
       "names": [],
       "num_user_ratings": 24,
       "average_user_rating": 3.8333333333333335
@@ -900,7 +1239,9 @@
         " Ltd.",
         "uplay.it edizioni"
       ],
-      "designers": ["Seiji Kanai"],
+      "designers": [
+        "Seiji Kanai"
+      ],
       "developers": [],
       "artists": [
         " Kali Fitzgerald",
@@ -912,7 +1253,10 @@
         "Noboru Sugiura",
         "Yating Sun"
       ],
-      "names": ["Love Letter (Clamshell)", "Love Letter - Clamshell Edition"],
+      "names": [
+        "Love Letter (Clamshell)",
+        "Love Letter - Clamshell Edition"
+      ],
       "num_user_ratings": 85,
       "average_user_rating": 3.1058823529411757
     },
@@ -944,10 +1288,19 @@
         "Pegasus Spiele",
         "REXhry"
       ],
-      "designers": [" Vlaada Chvátil"],
+      "designers": [
+        " Vlaada Chvátil"
+      ],
       "developers": [],
-      "artists": [" J. Lonnee", "Chris Raimo", "Milan Vavroň"],
-      "names": ["Mage Knight Board Game", "Mage Knight: Das Brettspiel "],
+      "artists": [
+        " J. Lonnee",
+        "Chris Raimo",
+        "Milan Vavroň"
+      ],
+      "names": [
+        "Mage Knight Board Game",
+        "Mage Knight: Das Brettspiel "
+      ],
       "num_user_ratings": 23,
       "average_user_rating": 3.652173913043478
     },
@@ -969,11 +1322,23 @@
       "msrp": "60.00",
       "discount": "0.23",
       "primary_publisher": "Stonemaier Games",
-      "publishers": ["Stonemaier Games"],
-      "designers": ["Morten Monrad Pedersen", "Jamey Stegmaier", "Alan Stone"],
+      "publishers": [
+        "Stonemaier Games"
+      ],
+      "designers": [
+        "Morten Monrad Pedersen",
+        "Jamey Stegmaier",
+        "Alan Stone"
+      ],
       "developers": [],
-      "artists": ["Jacqui Davis", "David Montgomery", "Beth Sobel"],
-      "names": ["Viticulture"],
+      "artists": [
+        "Jacqui Davis",
+        "David Montgomery",
+        "Beth Sobel"
+      ],
+      "names": [
+        "Viticulture"
+      ],
       "num_user_ratings": 62,
       "average_user_rating": 3.706989247311827
     },
@@ -995,10 +1360,16 @@
       "msrp": "69.99",
       "discount": "0.31",
       "primary_publisher": "Eggertspiele",
-      "publishers": ["Eggertspiele"],
-      "designers": ["Alexander Pfister"],
+      "publishers": [
+        "Eggertspiele"
+      ],
+      "designers": [
+        "Alexander Pfister"
+      ],
       "developers": [],
-      "artists": ["Andreas Resch"],
+      "artists": [
+        "Andreas Resch"
+      ],
       "names": [
         "Great Western Trail: Aventură prin Vestul Sălbatic ",
         "Great Western Trail: Aventura prin Vestul Salbatic "
@@ -1043,10 +1414,18 @@
         "White Goblin Games",
         "Zoch Verlag"
       ],
-      "designers": [" Phil Walker-Harding"],
+      "designers": [
+        " Phil Walker-Harding"
+      ],
       "developers": [],
-      "artists": [" Nan Rangsima", "Tobias Schweiger", "Phil Walker-Harding"],
-      "names": ["sushi go"],
+      "artists": [
+        " Nan Rangsima",
+        "Tobias Schweiger",
+        "Phil Walker-Harding"
+      ],
+      "names": [
+        "sushi go"
+      ],
       "num_user_ratings": 68,
       "average_user_rating": 3.0882352941176476
     },
@@ -1068,8 +1447,12 @@
       "msrp": "39.99",
       "discount": "0.20",
       "primary_publisher": "Flat River Group",
-      "publishers": ["Flat River Group"],
-      "designers": ["Richard Garfield"],
+      "publishers": [
+        "Flat River Group"
+      ],
+      "designers": [
+        "Richard Garfield"
+      ],
       "developers": [],
       "artists": [
         "Gabriel Butik",
@@ -1081,7 +1464,9 @@
         "Régis Torres",
         "Anthony Wolff"
       ],
-      "names": ["King of Tokyo 2nd Edition"],
+      "names": [
+        "King of Tokyo 2nd Edition"
+      ],
       "num_user_ratings": 84,
       "average_user_rating": 2.9642857142857135
     },
@@ -1103,10 +1488,22 @@
       "msrp": "59.99",
       "discount": "0.00",
       "primary_publisher": "Roxley Games",
-      "publishers": ["Roxley Games", "Crowd Games", "Funforge"],
-      "designers": ["Gavan Brown", "Matt Tolman", "Martin Wallace"],
+      "publishers": [
+        "Roxley Games",
+        "Crowd Games",
+        "Funforge"
+      ],
+      "designers": [
+        "Gavan Brown",
+        "Matt Tolman",
+        "Martin Wallace"
+      ],
       "developers": [],
-      "artists": ["Lina Cossette", "David Forest", "Damien Mammoliti"],
+      "artists": [
+        "Lina Cossette",
+        "David Forest",
+        "Damien Mammoliti"
+      ],
       "names": [],
       "num_user_ratings": 17,
       "average_user_rating": 4.352941176470589
@@ -1129,11 +1526,19 @@
       "msrp": "24.99",
       "discount": "0.20",
       "primary_publisher": "Asmodee Editions",
-      "publishers": ["Asmodee Editions"],
-      "designers": [" Sébastien Pauchon"],
+      "publishers": [
+        "Asmodee Editions"
+      ],
+      "designers": [
+        " Sébastien Pauchon"
+      ],
       "developers": [],
-      "artists": [" Alexandre Roche"],
-      "names": ["Jaipur"],
+      "artists": [
+        " Alexandre Roche"
+      ],
+      "names": [
+        "Jaipur"
+      ],
       "num_user_ratings": 59,
       "average_user_rating": 3.4406779661016955
     },
@@ -1155,11 +1560,20 @@
       "msrp": "15.00",
       "discount": "0.30",
       "primary_publisher": "Renegade Game Studios",
-      "publishers": ["Renegade Game Studios"],
-      "designers": ["Joshua Buergel"],
+      "publishers": [
+        "Renegade Game Studios"
+      ],
+      "designers": [
+        "Joshua Buergel"
+      ],
       "developers": [],
-      "artists": ["Jennifer L. Meyer", "Keith Pishnery"],
-      "names": ["Fox in the Forest"],
+      "artists": [
+        "Jennifer L. Meyer",
+        "Keith Pishnery"
+      ],
+      "names": [
+        "Fox in the Forest"
+      ],
       "num_user_ratings": 28,
       "average_user_rating": 3.2928571428571427
     },
@@ -1181,8 +1595,13 @@
       "msrp": "60.00",
       "discount": "0.42",
       "primary_publisher": "Flat River Group",
-      "publishers": ["Flat River Group"],
-      "designers": [" Ananda Gupta", "Jason Matthews"],
+      "publishers": [
+        "Flat River Group"
+      ],
+      "designers": [
+        " Ananda Gupta",
+        "Jason Matthews"
+      ],
       "developers": [],
       "artists": [
         " Viktor Csete",
@@ -1191,7 +1610,9 @@
         "Guillaume Ries",
         "Mark Simonitch"
       ],
-      "names": ["Twilight Struggle Deluxe Edition"],
+      "names": [
+        "Twilight Struggle Deluxe Edition"
+      ],
       "num_user_ratings": 33,
       "average_user_rating": 3.7575757575757573
     },
@@ -1213,10 +1634,18 @@
       "msrp": "79.99",
       "discount": "0.26",
       "primary_publisher": "CMON",
-      "publishers": ["CMON"],
-      "designers": ["Eric M. Lang"],
+      "publishers": [
+        "CMON"
+      ],
+      "designers": [
+        "Eric M. Lang"
+      ],
       "developers": [],
-      "artists": ["Henning Ludvigsen", "Mike McVey", "Adrian Smith"],
+      "artists": [
+        "Henning Ludvigsen",
+        "Mike McVey",
+        "Adrian Smith"
+      ],
       "names": [],
       "num_user_ratings": 47,
       "average_user_rating": 3.595744680851064
@@ -1239,10 +1668,18 @@
       "msrp": "29.99",
       "discount": "0.20",
       "primary_publisher": "Spin Master",
-      "publishers": ["Spin Master", "Roxley"],
-      "designers": ["Gord!"],
+      "publishers": [
+        "Spin Master",
+        "Roxley"
+      ],
+      "designers": [
+        "Gord!"
+      ],
       "developers": [],
-      "artists": [" Lina Cossette", "David Forest"],
+      "artists": [
+        " Lina Cossette",
+        "David Forest"
+      ],
       "names": [],
       "num_user_ratings": 48,
       "average_user_rating": 3.5
@@ -1265,11 +1702,20 @@
       "msrp": "14.95",
       "discount": "0.31",
       "primary_publisher": "Flat River Group",
-      "publishers": ["Flat River Group"],
-      "designers": ["Robert Dougherty", "Darwin Kastle"],
+      "publishers": [
+        "Flat River Group"
+      ],
+      "designers": [
+        "Robert Dougherty",
+        "Darwin Kastle"
+      ],
       "developers": [],
-      "artists": ["Vito Gesualdi"],
-      "names": ["Star Realms"],
+      "artists": [
+        "Vito Gesualdi"
+      ],
+      "names": [
+        "Star Realms"
+      ],
       "num_user_ratings": 67,
       "average_user_rating": 3.2985074626865667
     },
@@ -1291,7 +1737,9 @@
       "msrp": "50.99",
       "discount": "0.06",
       "primary_publisher": "Fantasy Flight Games",
-      "publishers": ["Fantasy Flight Games"],
+      "publishers": [
+        "Fantasy Flight Games"
+      ],
       "designers": [
         " Bill Eberle",
         "Jack Kittredge",
@@ -1309,7 +1757,9 @@
         "Brian Schomburg",
         "WiL Springer"
       ],
-      "names": ["Cosmic Encounter (42nd Anniversary Edition)"],
+      "names": [
+        "Cosmic Encounter (42nd Anniversary Edition)"
+      ],
       "num_user_ratings": 44,
       "average_user_rating": 3.227272727272727
     },
@@ -1331,10 +1781,20 @@
       "msrp": "21.29",
       "discount": "0.25",
       "primary_publisher": "Asmodee Editions",
-      "publishers": ["Asmodee Editions", "Gém Klub Kft.", "Granna", "Lui-même"],
-      "designers": [" Hervé Marly"],
+      "publishers": [
+        "Asmodee Editions",
+        "Gém Klub Kft.",
+        "Granna",
+        "Lui-même"
+      ],
+      "designers": [
+        " Hervé Marly"
+      ],
       "developers": [],
-      "artists": ["Rose Kipik", "Thomas Vuarchex"],
+      "artists": [
+        "Rose Kipik",
+        "Thomas Vuarchex"
+      ],
       "names": [],
       "num_user_ratings": 36,
       "average_user_rating": 3.361111111111111
@@ -1357,8 +1817,13 @@
       "msrp": "49.99",
       "discount": "0.41",
       "primary_publisher": "Wizards of the Coast",
-      "publishers": ["Wizards of the Coast"],
-      "designers": ["Peter Lee", "Rodney Thompson"],
+      "publishers": [
+        "Wizards of the Coast"
+      ],
+      "designers": [
+        "Peter Lee",
+        "Rodney Thompson"
+      ],
       "developers": [],
       "artists": [
         " Eric Belisle",
@@ -1395,7 +1860,9 @@
         "Ben Wootten",
         "James Zhang"
       ],
-      "names": ["Lords of Waterdeep: Dungeons & Dragons"],
+      "names": [
+        "Lords of Waterdeep: Dungeons & Dragons"
+      ],
       "num_user_ratings": 56,
       "average_user_rating": 3.3035714285714284
     },
@@ -1417,10 +1884,19 @@
       "msrp": "69.99",
       "discount": "0.20",
       "primary_publisher": "Publisher Services Inc (PSI)",
-      "publishers": ["Matagot"],
-      "designers": [" Jacques Bariot", "Guillaume Montiage"],
+      "publishers": [
+        "Matagot"
+      ],
+      "designers": [
+        " Jacques Bariot",
+        "Guillaume Montiage"
+      ],
       "developers": [],
-      "artists": ["Dimitri Bielak", "Emile Denis", "Nicolas Fructus"],
+      "artists": [
+        "Dimitri Bielak",
+        "Emile Denis",
+        "Nicolas Fructus"
+      ],
       "names": [],
       "num_user_ratings": 28,
       "average_user_rating": 3.678571428571429
@@ -1443,10 +1919,17 @@
       "msrp": "79.99",
       "discount": "0.20",
       "primary_publisher": "Z-Man Games",
-      "publishers": ["Z-Man Games"],
-      "designers": ["Jens Drögemüller", "Helge Ostertag"],
+      "publishers": [
+        "Z-Man Games"
+      ],
+      "designers": [
+        "Jens Drögemüller",
+        "Helge Ostertag"
+      ],
       "developers": [],
-      "artists": [" Dennis Lohausen"],
+      "artists": [
+        " Dennis Lohausen"
+      ],
       "names": [],
       "num_user_ratings": 28,
       "average_user_rating": 3.7142857142857144
@@ -1469,8 +1952,12 @@
       "msrp": "29.99",
       "discount": "0.00",
       "primary_publisher": "CMON",
-      "publishers": ["CMON"],
-      "designers": [" Reiner Knizia"],
+      "publishers": [
+        "CMON"
+      ],
+      "designers": [
+        " Reiner Knizia"
+      ],
       "developers": [],
       "artists": [
         "Carole Carrion",
@@ -1507,11 +1994,21 @@
       "msrp": "84.99",
       "discount": "0.06",
       "primary_publisher": "Z-Man Games",
-      "publishers": ["Z-Man Games"],
-      "designers": ["Jens Drögemüller", "Helge Ostertag"],
+      "publishers": [
+        "Z-Man Games"
+      ],
+      "designers": [
+        "Jens Drögemüller",
+        "Helge Ostertag"
+      ],
       "developers": [],
-      "artists": ["Dennis Lohausen"],
-      "names": ["Gaia Project: A Terra Mystica Game", "Progetto Gaia "],
+      "artists": [
+        "Dennis Lohausen"
+      ],
+      "names": [
+        "Gaia Project: A Terra Mystica Game",
+        "Progetto Gaia "
+      ],
       "num_user_ratings": 16,
       "average_user_rating": 4.312500000000001
     },
@@ -1533,8 +2030,13 @@
       "msrp": "44.99",
       "discount": "0.00",
       "primary_publisher": "Asmodee Editions",
-      "publishers": ["Asmodee Editions"],
-      "designers": ["Oleksandr Nevskiy", "Oleg Sidorenko"],
+      "publishers": [
+        "Asmodee Editions"
+      ],
+      "designers": [
+        "Oleksandr Nevskiy",
+        "Oleg Sidorenko"
+      ],
       "developers": [],
       "artists": [
         " Igor Burlakov",
@@ -1564,11 +2066,17 @@
       "msrp": "39.95",
       "discount": "-0.63",
       "primary_publisher": "Fantasy Flight Games",
-      "publishers": ["Fantasy Flight Games"],
-      "designers": ["RIchard Garfield "],
+      "publishers": [
+        "Fantasy Flight Games"
+      ],
+      "designers": [
+        "RIchard Garfield "
+      ],
       "developers": [],
       "artists": [],
-      "names": ["KeyForge"],
+      "names": [
+        "KeyForge"
+      ],
       "num_user_ratings": 14,
       "average_user_rating": 3.285714285714285
     },
@@ -1590,10 +2098,18 @@
       "msrp": "10.95",
       "discount": "0.29",
       "primary_publisher": "R and R Games",
-      "publishers": ["R and R Games"],
-      "designers": ["Antoine Bauza"],
+      "publishers": [
+        "R and R Games"
+      ],
+      "designers": [
+        "Antoine Bauza"
+      ],
       "developers": [],
-      "artists": ["Antoine Bauza", "Gérald Guerlais", "Albertine Ralenti"],
+      "artists": [
+        "Antoine Bauza",
+        "Gérald Guerlais",
+        "Albertine Ralenti"
+      ],
       "names": [],
       "num_user_ratings": 69,
       "average_user_rating": 3.0153452685421995
@@ -1616,11 +2132,20 @@
       "msrp": "39.99",
       "discount": "0.33",
       "primary_publisher": "Plan B Games",
-      "publishers": ["Plan B Games"],
-      "designers": ["Emerson Matsuuchi"],
+      "publishers": [
+        "Plan B Games"
+      ],
+      "designers": [
+        "Emerson Matsuuchi"
+      ],
       "developers": [],
-      "artists": [" David Richards", "Fernanda Suárez"],
-      "names": ["century"],
+      "artists": [
+        " David Richards",
+        "Fernanda Suárez"
+      ],
+      "names": [
+        "century"
+      ],
       "num_user_ratings": 33,
       "average_user_rating": 3.3636363636363646
     },
@@ -1642,8 +2167,12 @@
       "msrp": "19.95",
       "discount": "0.32",
       "primary_publisher": "Rio Grande Games",
-      "publishers": ["Rio Grande Games"],
-      "designers": [" Uwe Rosenberg"],
+      "publishers": [
+        "Rio Grande Games"
+      ],
+      "designers": [
+        " Uwe Rosenberg"
+      ],
       "developers": [],
       "artists": [
         "Fréderic Bertrand",
@@ -1686,10 +2215,18 @@
       "msrp": "35.00",
       "discount": "0.00",
       "primary_publisher": "Secret Hitler",
-      "publishers": ["Secret Hitler"],
-      "designers": [" Mike Boxleiter", "Tommy Maranges", "Max Temkin"],
+      "publishers": [
+        "Secret Hitler"
+      ],
+      "designers": [
+        " Mike Boxleiter",
+        "Tommy Maranges",
+        "Max Temkin"
+      ],
       "developers": [],
-      "artists": ["Mackenzie Schubert"],
+      "artists": [
+        "Mackenzie Schubert"
+      ],
       "names": [],
       "num_user_ratings": 32,
       "average_user_rating": 3.53125
@@ -1712,11 +2249,19 @@
       "msrp": "22.00",
       "discount": "0.29",
       "primary_publisher": "Gamewright",
-      "publishers": ["Gamewright"],
-      "designers": [" Phil Walker-Harding"],
+      "publishers": [
+        "Gamewright"
+      ],
+      "designers": [
+        " Phil Walker-Harding"
+      ],
       "developers": [],
-      "artists": ["Nan Rangsima"],
-      "names": ["sushi go party"],
+      "artists": [
+        "Nan Rangsima"
+      ],
+      "names": [
+        "sushi go party"
+      ],
       "num_user_ratings": 52,
       "average_user_rating": 3.2884615384615397
     },
@@ -1738,7 +2283,9 @@
       "msrp": "50.00",
       "discount": "0.44",
       "primary_publisher": "Wizards of the Coast",
-      "publishers": ["Wizards of the Coast"],
+      "publishers": [
+        "Wizards of the Coast"
+      ],
       "designers": [
         " Rob Daviau",
         "Bruce Glassco",
@@ -1777,11 +2324,22 @@
       "msrp": "59.95",
       "discount": "0.10",
       "primary_publisher": "Plaid Hat Games",
-      "publishers": ["Plaid Hat Games"],
-      "designers": [" Jonathan Gilmour", "Isaac Vega"],
+      "publishers": [
+        "Plaid Hat Games"
+      ],
+      "designers": [
+        " Jonathan Gilmour",
+        "Isaac Vega"
+      ],
       "developers": [],
-      "artists": ["David Richards", "Fernanda Suárez", "Peter Wocken"],
-      "names": [" Dead of Winter"],
+      "artists": [
+        "David Richards",
+        "Fernanda Suárez",
+        "Peter Wocken"
+      ],
+      "names": [
+        " Dead of Winter"
+      ],
       "num_user_ratings": 56,
       "average_user_rating": 3.410714285714286
     },
@@ -1803,11 +2361,19 @@
       "msrp": "19.99",
       "discount": "0.31",
       "primary_publisher": "Gamewright",
-      "publishers": ["Gamewright"],
-      "designers": ["Matt Leacock"],
+      "publishers": [
+        "Gamewright"
+      ],
+      "designers": [
+        "Matt Leacock"
+      ],
       "developers": [],
-      "artists": [" C. B. Canga"],
-      "names": ["Forbidden Island"],
+      "artists": [
+        " C. B. Canga"
+      ],
+      "names": [
+        "Forbidden Island"
+      ],
       "num_user_ratings": 76,
       "average_user_rating": 3.092105263157896
     },
@@ -1829,10 +2395,16 @@
       "msrp": "14.99",
       "discount": "0.38",
       "primary_publisher": "Pandasaurus Games",
-      "publishers": ["Pandasaurus Games"],
-      "designers": ["Wolfgang Warsch"],
+      "publishers": [
+        "Pandasaurus Games"
+      ],
+      "designers": [
+        "Wolfgang Warsch"
+      ],
       "developers": [],
-      "artists": [" Oliver Freudenreich"],
+      "artists": [
+        " Oliver Freudenreich"
+      ],
       "names": [],
       "num_user_ratings": 22,
       "average_user_rating": 3.090909090909091
@@ -1855,11 +2427,19 @@
       "msrp": "34.99",
       "discount": "0.10",
       "primary_publisher": "Asmodee Editions",
-      "publishers": ["Asmodee Editions"],
-      "designers": ["Jean-Louis Roubira"],
+      "publishers": [
+        "Asmodee Editions"
+      ],
+      "designers": [
+        "Jean-Louis Roubira"
+      ],
       "developers": [],
-      "artists": ["Marie Cardouat"],
-      "names": ["Dixit"],
+      "artists": [
+        "Marie Cardouat"
+      ],
+      "names": [
+        "Dixit"
+      ],
       "num_user_ratings": 50,
       "average_user_rating": 3.1000000000000005
     },
@@ -1881,10 +2461,17 @@
       "msrp": "99.99",
       "discount": "0.20",
       "primary_publisher": "CMON",
-      "publishers": ["CMON"],
-      "designers": [" Eric M. Lang"],
+      "publishers": [
+        "CMON"
+      ],
+      "designers": [
+        " Eric M. Lang"
+      ],
       "developers": [],
-      "artists": [" Edgar Skomorowski", "Adrian Smith"],
+      "artists": [
+        " Edgar Skomorowski",
+        "Adrian Smith"
+      ],
       "names": [],
       "num_user_ratings": 12,
       "average_user_rating": 3.7499999999999996
@@ -1907,10 +2494,19 @@
       "msrp": "39.95",
       "discount": "0.32",
       "primary_publisher": "Floodgate Games",
-      "publishers": ["Floodgate Games"],
-      "designers": ["Adrian Adamescu", "Daryl Andrews"],
+      "publishers": [
+        "Floodgate Games"
+      ],
+      "designers": [
+        "Adrian Adamescu",
+        "Daryl Andrews"
+      ],
       "developers": [],
-      "artists": [" Adrian Adamescu", "Daryl Andrews", "Peter Wocken"],
+      "artists": [
+        " Adrian Adamescu",
+        "Daryl Andrews",
+        "Peter Wocken"
+      ],
       "names": [],
       "num_user_ratings": 38,
       "average_user_rating": 3.526315789473684
@@ -1933,8 +2529,12 @@
       "msrp": "20.00",
       "discount": "0.00",
       "primary_publisher": "Asmadi Games",
-      "publishers": ["Asmadi Games"],
-      "designers": ["Carl Chudyk"],
+      "publishers": [
+        "Asmadi Games"
+      ],
+      "designers": [
+        "Carl Chudyk"
+      ],
       "developers": [],
       "artists": [
         " Carl Chudyk",
@@ -1944,7 +2544,9 @@
         "Christophe Swal",
         "Cyril Van Der Haegen"
       ],
-      "names": ["innovation"],
+      "names": [
+        "innovation"
+      ],
       "num_user_ratings": 25,
       "average_user_rating": 3.08
     },
@@ -1966,10 +2568,18 @@
       "msrp": "44.99",
       "discount": "0.00",
       "primary_publisher": "Asmodee Editions",
-      "publishers": ["Asmodee Editions"],
-      "designers": [" Roberto Fraga", "Yohan Lemonnier"],
+      "publishers": [
+        "Asmodee Editions"
+      ],
+      "designers": [
+        " Roberto Fraga",
+        "Yohan Lemonnier"
+      ],
       "developers": [],
-      "artists": [" Ervin", "Sabrina Tobal"],
+      "artists": [
+        " Ervin",
+        "Sabrina Tobal"
+      ],
       "names": [],
       "num_user_ratings": 32,
       "average_user_rating": 3.5937499999999996
@@ -1992,10 +2602,17 @@
       "msrp": "26.99",
       "discount": "0.11",
       "primary_publisher": "Asmodee Editions",
-      "publishers": ["Asmodee Editions"],
-      "designers": ["Antoine Bauza", "Bruno Cathala"],
+      "publishers": [
+        "Asmodee Editions"
+      ],
+      "designers": [
+        "Antoine Bauza",
+        "Bruno Cathala"
+      ],
       "developers": [],
-      "artists": [" Miguel Coimbra"],
+      "artists": [
+        " Miguel Coimbra"
+      ],
       "names": [],
       "num_user_ratings": 70,
       "average_user_rating": 3.485714285714286
@@ -2018,8 +2635,13 @@
       "msrp": "59.95",
       "discount": "0.10",
       "primary_publisher": "Fantasy Flight Games",
-      "publishers": ["Fantasy Flight Games"],
-      "designers": [" Corey Konieczka", "Nikki Valens"],
+      "publishers": [
+        "Fantasy Flight Games"
+      ],
+      "designers": [
+        " Corey Konieczka",
+        "Nikki Valens"
+      ],
       "developers": [],
       "artists": [
         "Anders Finér",
@@ -2053,10 +2675,16 @@
       "msrp": "99.99",
       "discount": "0.10",
       "primary_publisher": "Z-Man Games",
-      "publishers": ["Z-Man Games"],
-      "designers": [" Uwe Rosenberg"],
+      "publishers": [
+        "Z-Man Games"
+      ],
+      "designers": [
+        " Uwe Rosenberg"
+      ],
       "developers": [],
-      "artists": [" Dennis Lohausen"],
+      "artists": [
+        " Dennis Lohausen"
+      ],
       "names": [],
       "num_user_ratings": 18,
       "average_user_rating": 3.777777777777778
@@ -2079,10 +2707,18 @@
       "msrp": "19.99",
       "discount": "0.20",
       "primary_publisher": "IELLO",
-      "publishers": ["IELLO"],
-      "designers": ["Thomas Dagenais-Lespérance"],
+      "publishers": [
+        "IELLO"
+      ],
+      "designers": [
+        "Thomas Dagenais-Lespérance"
+      ],
       "developers": [],
-      "artists": [" Fabien Fulchiron", "NILS", "Manuel Sanchez"],
+      "artists": [
+        " Fabien Fulchiron",
+        "NILS",
+        "Manuel Sanchez"
+      ],
       "names": [],
       "num_user_ratings": 14,
       "average_user_rating": 3.7142857142857144
@@ -2105,10 +2741,17 @@
       "msrp": "49.99",
       "discount": "0.32",
       "primary_publisher": "Alderac Entertainment Group",
-      "publishers": ["Alderac Entertainment Group"],
-      "designers": ["Rüdiger Dorn"],
+      "publishers": [
+        "Alderac Entertainment Group"
+      ],
+      "designers": [
+        "Rüdiger Dorn"
+      ],
       "developers": [],
-      "artists": ["Andreas Resch", "Hans-Georg Schneider"],
+      "artists": [
+        "Andreas Resch",
+        "Hans-Georg Schneider"
+      ],
       "names": [],
       "num_user_ratings": 34,
       "average_user_rating": 3.4705882352941173
@@ -2131,11 +2774,19 @@
       "msrp": "31.45",
       "discount": "0.27",
       "primary_publisher": "Gen Four Two Games",
-      "publishers": ["Gen Four Two Games"],
-      "designers": ["John Yianni"],
+      "publishers": [
+        "Gen Four Two Games"
+      ],
+      "designers": [
+        "John Yianni"
+      ],
       "developers": [],
-      "artists": ["John Yianni"],
-      "names": ["Hive"],
+      "artists": [
+        "John Yianni"
+      ],
+      "names": [
+        "Hive"
+      ],
       "num_user_ratings": 39,
       "average_user_rating": 3.2307692307692304
     },
@@ -2157,10 +2808,17 @@
       "msrp": "39.99",
       "discount": "-0.15",
       "primary_publisher": "Z-Man Games",
-      "publishers": ["Z-Man Games"],
-      "designers": ["Steffen Bogen"],
+      "publishers": [
+        "Z-Man Games"
+      ],
+      "designers": [
+        "Steffen Bogen"
+      ],
       "developers": [],
-      "artists": ["Dennis Lohausen", "Chris Quilliams"],
+      "artists": [
+        "Dennis Lohausen",
+        "Chris Quilliams"
+      ],
       "names": [],
       "num_user_ratings": 36,
       "average_user_rating": 3.250000000000001
@@ -2183,8 +2841,12 @@
       "msrp": "18.49",
       "discount": "0.19",
       "primary_publisher": "Eagle-Gryphon Games",
-      "publishers": ["Eagle-Gryphon Games"],
-      "designers": ["Stefan Dorra"],
+      "publishers": [
+        "Eagle-Gryphon Games"
+      ],
+      "designers": [
+        "Stefan Dorra"
+      ],
       "developers": [],
       "artists": [
         "Óscar Aguado",
@@ -2215,10 +2877,19 @@
       "msrp": "60.00",
       "discount": "0.17",
       "primary_publisher": "R&D Games",
-      "publishers": ["R&D Games"],
-      "designers": ["Sebastian Bleasdale", "Richard Breese"],
+      "publishers": [
+        "R&D Games"
+      ],
+      "designers": [
+        "Sebastian Bleasdale",
+        "Richard Breese"
+      ],
       "developers": [],
-      "artists": ["Juliet Breese", "Jo Breese", "Gemma Tegelaers"],
+      "artists": [
+        "Juliet Breese",
+        "Jo Breese",
+        "Gemma Tegelaers"
+      ],
       "names": [],
       "num_user_ratings": 34,
       "average_user_rating": 3.852941176470588
@@ -2241,11 +2912,19 @@
       "msrp": "24.95",
       "discount": "0.30",
       "primary_publisher": "Blue Cocker",
-      "publishers": ["Blue Cocker"],
-      "designers": ["Benoit Turpin"],
+      "publishers": [
+        "Blue Cocker"
+      ],
+      "designers": [
+        "Benoit Turpin"
+      ],
       "developers": [],
-      "artists": ["Anne Heidsieck"],
-      "names": ["Welcome to Your Perfect Home"],
+      "artists": [
+        "Anne Heidsieck"
+      ],
+      "names": [
+        "Welcome to Your Perfect Home"
+      ],
       "num_user_ratings": 12,
       "average_user_rating": 3.416666666666667
     },
@@ -2267,10 +2946,16 @@
       "msrp": "60.00",
       "discount": "0.33",
       "primary_publisher": "Days of Wonder",
-      "publishers": ["Days of Wonder"],
-      "designers": ["Bruno Cathala"],
+      "publishers": [
+        "Days of Wonder"
+      ],
+      "designers": [
+        "Bruno Cathala"
+      ],
       "developers": [],
-      "artists": ["Clément Masson"],
+      "artists": [
+        "Clément Masson"
+      ],
       "names": [],
       "num_user_ratings": 44,
       "average_user_rating": 3.5592885375494068
@@ -2293,10 +2978,17 @@
       "msrp": "25.00",
       "discount": "0.31",
       "primary_publisher": "Asmadi Games",
-      "publishers": ["Asmadi Games"],
-      "designers": [" Chris Cieslik"],
+      "publishers": [
+        "Asmadi Games"
+      ],
+      "designers": [
+        " Chris Cieslik"
+      ],
       "developers": [],
-      "artists": [" Alanna Cervenak", "Will Pitzer"],
+      "artists": [
+        " Alanna Cervenak",
+        "Will Pitzer"
+      ],
       "names": [],
       "num_user_ratings": 18,
       "average_user_rating": 3.111111111111111
@@ -2319,8 +3011,12 @@
       "msrp": "19.99",
       "discount": "0.33",
       "primary_publisher": "Indie Boards & Cards",
-      "publishers": ["Indie Boards & Cards"],
-      "designers": ["Don Eskridge"],
+      "publishers": [
+        "Indie Boards & Cards"
+      ],
+      "designers": [
+        "Don Eskridge"
+      ],
       "developers": [],
       "artists": [
         "Luis Francisco",
@@ -2337,7 +3033,9 @@
         "Jordan Saia",
         "Luis Thomas"
       ],
-      "names": ["The Resistance (3rd Edition)"],
+      "names": [
+        "The Resistance (3rd Edition)"
+      ],
       "num_user_ratings": 57,
       "average_user_rating": 3.017971758664955
     },
@@ -2359,14 +3057,18 @@
       "msrp": "127.49",
       "discount": "0.06",
       "primary_publisher": "Fantasy Flight Games",
-      "publishers": ["Fantasy Flight Games"],
+      "publishers": [
+        "Fantasy Flight Games"
+      ],
       "designers": [
         " Dane Beltrami",
         "Corey Konieczka",
         "Christian T. Petersen"
       ],
       "developers": [],
-      "artists": [" Scott Schomburg"],
+      "artists": [
+        " Scott Schomburg"
+      ],
       "names": [],
       "num_user_ratings": 11,
       "average_user_rating": 4.2727272727272725
@@ -2389,10 +3091,17 @@
       "msrp": "44.95",
       "discount": "0.33",
       "primary_publisher": "Rio Grande Games",
-      "publishers": ["Rio Grande Games"],
-      "designers": ["Andreas Seyfarth"],
+      "publishers": [
+        "Rio Grande Games"
+      ],
+      "designers": [
+        "Andreas Seyfarth"
+      ],
       "developers": [],
-      "artists": [" Harald Lieske", "Franz Vohwinkel"],
+      "artists": [
+        " Harald Lieske",
+        "Franz Vohwinkel"
+      ],
       "names": [],
       "num_user_ratings": 45,
       "average_user_rating": 3.666666666666666
@@ -2415,8 +3124,12 @@
       "msrp": "79.00",
       "discount": "0.33",
       "primary_publisher": "GMT Games",
-      "publishers": ["GMT Games"],
-      "designers": ["Chad Jensen"],
+      "publishers": [
+        "GMT Games"
+      ],
+      "designers": [
+        "Chad Jensen"
+      ],
       "developers": [],
       "artists": [
         " Chad Jensen",
@@ -2446,10 +3159,19 @@
       "msrp": "59.95",
       "discount": "0.33",
       "primary_publisher": "Rio Grande Games",
-      "publishers": ["Rio Grande Games"],
-      "designers": ["Wei-Hwa Huang", "Thomas Lehmann"],
+      "publishers": [
+        "Rio Grande Games"
+      ],
+      "designers": [
+        "Wei-Hwa Huang",
+        "Thomas Lehmann"
+      ],
       "developers": [],
-      "artists": ["Martin Hoffmann", "Claus Stephan", "Mirko Suzuki"],
+      "artists": [
+        "Martin Hoffmann",
+        "Claus Stephan",
+        "Mirko Suzuki"
+      ],
       "names": [],
       "num_user_ratings": 49,
       "average_user_rating": 3.730806608357629
@@ -2472,10 +3194,17 @@
       "msrp": "69.99",
       "discount": "0.10",
       "primary_publisher": "Z-Man Games",
-      "publishers": ["Z-Man Games"],
-      "designers": ["Rob Daviau", "Matt Leacock"],
+      "publishers": [
+        "Z-Man Games"
+      ],
+      "designers": [
+        "Rob Daviau",
+        "Matt Leacock"
+      ],
       "developers": [],
-      "artists": ["Chris Quilliams"],
+      "artists": [
+        "Chris Quilliams"
+      ],
       "names": [
         "Pandemic Legacy S1",
         "Pandemic: Legacy Season 1 - Red",
@@ -2502,10 +3231,16 @@
       "msrp": "39.99",
       "discount": "0.13",
       "primary_publisher": "CMON",
-      "publishers": ["CMON"],
-      "designers": [" Paolo Mori"],
+      "publishers": [
+        "CMON"
+      ],
+      "designers": [
+        " Paolo Mori"
+      ],
       "developers": [],
-      "artists": ["John Howe"],
+      "artists": [
+        "John Howe"
+      ],
       "names": [],
       "num_user_ratings": 16,
       "average_user_rating": 3.375
@@ -2528,8 +3263,13 @@
       "msrp": "0.00",
       "discount": "0.00",
       "primary_publisher": "Fantasy Flight Publishing",
-      "publishers": ["Fantasy Flight Publishing"],
-      "designers": ["Nate French", "Matthew Newman"],
+      "publishers": [
+        "Fantasy Flight Publishing"
+      ],
+      "designers": [
+        "Nate French",
+        "Matthew Newman"
+      ],
       "developers": [],
       "artists": [
         " Christopher Hosch",
@@ -2540,7 +3280,10 @@
         "Zoe Robinson",
         "Evan Simonet"
       ],
-      "names": ["Arkham Horror LCG", "Arkham Horror: Das Kartenspiel "],
+      "names": [
+        "Arkham Horror LCG",
+        "Arkham Horror: Das Kartenspiel "
+      ],
       "num_user_ratings": 37,
       "average_user_rating": 3.6756756756756745
     },
@@ -2569,7 +3312,9 @@
         "Maldito Games",
         "Matagot"
       ],
-      "designers": ["Elizabeth Hargrave"],
+      "designers": [
+        "Elizabeth Hargrave"
+      ],
       "developers": [],
       "artists": [
         "Ana Maria Martinez Jaramillo",
@@ -2598,10 +3343,17 @@
       "msrp": "46.99",
       "discount": "-0.10",
       "primary_publisher": "WizKids Games",
-      "publishers": ["WizKids Games"],
-      "designers": ["TauCeti Deichmann"],
+      "publishers": [
+        "WizKids Games"
+      ],
+      "designers": [
+        "TauCeti Deichmann"
+      ],
       "developers": [],
-      "artists": ["Jesse Seidule", "Nakarin Sukontakorn"],
+      "artists": [
+        "Jesse Seidule",
+        "Nakarin Sukontakorn"
+      ],
       "names": [
         "Sidereal Confluence: Trading and Negotiation in the Elysian Quadrant"
       ],
@@ -2626,10 +3378,18 @@
       "msrp": "59.99",
       "discount": "0.33",
       "primary_publisher": "Bezier Games",
-      "publishers": ["Bezier Games"],
-      "designers": ["Ted Alspach"],
+      "publishers": [
+        "Bezier Games"
+      ],
+      "designers": [
+        "Ted Alspach"
+      ],
       "developers": [],
-      "artists": ["Ted Alspach", "Klemens Franz", "Ollin Timm"],
+      "artists": [
+        "Ted Alspach",
+        "Klemens Franz",
+        "Ollin Timm"
+      ],
       "names": [],
       "num_user_ratings": 37,
       "average_user_rating": 3.405405405405405
@@ -2652,10 +3412,19 @@
       "msrp": "39.99",
       "discount": "0.30",
       "primary_publisher": "Grey Fox Games",
-      "publishers": ["Grey Fox Games"],
-      "designers": [" Tobey Ho"],
+      "publishers": [
+        "Grey Fox Games"
+      ],
+      "designers": [
+        " Tobey Ho"
+      ],
       "developers": [],
-      "artists": ["Marcin Adamski", "Ben Carre", "Tommy Ng", "Ari Wong"],
+      "artists": [
+        "Marcin Adamski",
+        "Ben Carre",
+        "Tommy Ng",
+        "Ari Wong"
+      ],
       "names": [],
       "num_user_ratings": 34,
       "average_user_rating": 3.5
@@ -2678,11 +3447,20 @@
       "msrp": "50.00",
       "discount": "0.10",
       "primary_publisher": "Days of Wonder",
-      "publishers": ["Days of Wonder"],
-      "designers": [" Philippe Keyaerts"],
+      "publishers": [
+        "Days of Wonder"
+      ],
+      "designers": [
+        " Philippe Keyaerts"
+      ],
       "developers": [],
-      "artists": ["Miguel Coimbra", "Cyrille Daujean"],
-      "names": ["Small World"],
+      "artists": [
+        "Miguel Coimbra",
+        "Cyrille Daujean"
+      ],
+      "names": [
+        "Small World"
+      ],
       "num_user_ratings": 65,
       "average_user_rating": 3.0153846153846158
     },
@@ -2704,11 +3482,23 @@
       "msrp": "39.99",
       "discount": "0.29",
       "primary_publisher": "Pretzel Games",
-      "publishers": ["Pretzel Games", "Plan B Games", "Pretzel Games "],
-      "designers": [" Jay Cormier", "Sen-Foong Lim"],
+      "publishers": [
+        "Pretzel Games",
+        "Plan B Games",
+        "Pretzel Games "
+      ],
+      "designers": [
+        " Jay Cormier",
+        "Sen-Foong Lim"
+      ],
       "developers": [],
-      "artists": ["Philippe Guérin", "Chris Quilliams"],
-      "names": ["Junk Art 3rd Edition"],
+      "artists": [
+        "Philippe Guérin",
+        "Chris Quilliams"
+      ],
+      "names": [
+        "Junk Art 3rd Edition"
+      ],
       "num_user_ratings": 14,
       "average_user_rating": 3.1428571428571432
     },
@@ -2730,8 +3520,12 @@
       "msrp": "0.00",
       "discount": "0.00",
       "primary_publisher": "Fantasy Flight Publishing",
-      "publishers": ["Fantasy Flight Publishing"],
-      "designers": ["Corey Konieczka"],
+      "publishers": [
+        "Fantasy Flight Publishing"
+      ],
+      "designers": [
+        "Corey Konieczka"
+      ],
       "developers": [],
       "artists": [
         " Kevin Childress",
@@ -2739,7 +3533,9 @@
         "Brian Schomburg",
         "WiL Springer"
       ],
-      "names": ["Battlestar Galactica: The Board Game"],
+      "names": [
+        "Battlestar Galactica: The Board Game"
+      ],
       "num_user_ratings": 29,
       "average_user_rating": 3.4827586206896552
     },
@@ -2761,10 +3557,16 @@
       "msrp": "42.99",
       "discount": "0.02",
       "primary_publisher": "Grey Fox Games",
-      "publishers": ["Grey Fox Games"],
-      "designers": [" Ole Steiness"],
+      "publishers": [
+        "Grey Fox Games"
+      ],
+      "designers": [
+        " Ole Steiness"
+      ],
       "developers": [],
-      "artists": ["Víctor Pérez Corbella"],
+      "artists": [
+        "Víctor Pérez Corbella"
+      ],
       "names": [],
       "num_user_ratings": 20,
       "average_user_rating": 3.5500000000000003
@@ -2787,11 +3589,20 @@
       "msrp": "41.99",
       "discount": "0.29",
       "primary_publisher": "Ravensburger",
-      "publishers": ["Ravensburger"],
-      "designers": [" Stefan Feld"],
+      "publishers": [
+        "Ravensburger"
+      ],
+      "designers": [
+        " Stefan Feld"
+      ],
       "developers": [],
-      "artists": ["Julien Delval", "Harald Lieske"],
-      "names": ["Die Burgen von Burgund "],
+      "artists": [
+        "Julien Delval",
+        "Harald Lieske"
+      ],
+      "names": [
+        "Die Burgen von Burgund "
+      ],
       "num_user_ratings": 74,
       "average_user_rating": 3.783783783783784
     },
@@ -2813,10 +3624,17 @@
       "msrp": "35.99",
       "discount": "0.06",
       "primary_publisher": "Renegade Game Studios",
-      "publishers": ["Renegade Game Studios"],
-      "designers": [" Shem Phillips", "S J Macdonald"],
+      "publishers": [
+        "Renegade Game Studios"
+      ],
+      "designers": [
+        " Shem Phillips",
+        "S J Macdonald"
+      ],
       "developers": [],
-      "artists": [" Mihajlo Dimitrievski"],
+      "artists": [
+        " Mihajlo Dimitrievski"
+      ],
       "names": [],
       "num_user_ratings": 8,
       "average_user_rating": 3.8749999999999996
@@ -2839,11 +3657,21 @@
       "msrp": "49.99",
       "discount": "0.30",
       "primary_publisher": "Publisher Services Inc (PSI)",
-      "publishers": ["Indie Boards & Cards"],
-      "designers": [" Kevin Riley"],
+      "publishers": [
+        "Indie Boards & Cards"
+      ],
+      "designers": [
+        " Kevin Riley"
+      ],
       "developers": [],
-      "artists": [" Gong Studios", "Scott Hartman"],
-      "names": ["Aeon's End (Second Edition)", "aons end"],
+      "artists": [
+        " Gong Studios",
+        "Scott Hartman"
+      ],
+      "names": [
+        "Aeon's End (Second Edition)",
+        "aons end"
+      ],
       "num_user_ratings": 14,
       "average_user_rating": 3.928571428571429
     },
@@ -2865,8 +3693,12 @@
       "msrp": "19.99",
       "discount": "0.32",
       "primary_publisher": "Thames & Kosmos",
-      "publishers": ["Thames & Kosmos"],
-      "designers": [" Reiner Knizia"],
+      "publishers": [
+        "Thames & Kosmos"
+      ],
+      "designers": [
+        " Reiner Knizia"
+      ],
       "developers": [],
       "artists": [
         "Vincent Dutrait",
@@ -2876,7 +3708,10 @@
         "Thilo Rick",
         "Claus Stephan"
       ],
-      "names": ["Lost Cities: The Card Game", "Lost Cities"],
+      "names": [
+        "Lost Cities: The Card Game",
+        "Lost Cities"
+      ],
       "num_user_ratings": 46,
       "average_user_rating": 3.239130434782608
     },
@@ -2898,10 +3733,16 @@
       "msrp": "32.99",
       "discount": "0.29",
       "primary_publisher": "Dude Games",
-      "publishers": ["Dude Games"],
-      "designers": [" Kasper Lapp"],
+      "publishers": [
+        "Dude Games"
+      ],
+      "designers": [
+        " Kasper Lapp"
+      ],
       "developers": [],
-      "artists": ["Gyom"],
+      "artists": [
+        "Gyom"
+      ],
       "names": [],
       "num_user_ratings": 22,
       "average_user_rating": 3.4545454545454546
@@ -2924,10 +3765,17 @@
       "msrp": "59.95",
       "discount": "0.33",
       "primary_publisher": "Czech Games Edition",
-      "publishers": ["Czech Games Edition"],
-      "designers": [" Vlaada Chvátil"],
+      "publishers": [
+        "Czech Games Edition"
+      ],
+      "designers": [
+        " Vlaada Chvátil"
+      ],
       "developers": [],
-      "artists": [" Radim Pech", "Milan Vavroň"],
+      "artists": [
+        " Radim Pech",
+        "Milan Vavroň"
+      ],
       "names": [],
       "num_user_ratings": 17,
       "average_user_rating": 3.1764705882352935
@@ -2950,11 +3798,20 @@
       "msrp": "49.95",
       "discount": "0.30",
       "primary_publisher": "NSKN Games",
-      "publishers": ["NSKN Games"],
-      "designers": ["Daniele Tascini", "Dávid Turczi"],
+      "publishers": [
+        "NSKN Games"
+      ],
+      "designers": [
+        "Daniele Tascini",
+        "Dávid Turczi"
+      ],
       "developers": [],
-      "artists": ["Odysseas Stamoglou"],
-      "names": ["Teotihuacan"],
+      "artists": [
+        "Odysseas Stamoglou"
+      ],
+      "names": [
+        "Teotihuacan"
+      ],
       "num_user_ratings": 5,
       "average_user_rating": 3.8
     },
@@ -2976,10 +3833,19 @@
       "msrp": "79.95",
       "discount": "0.37",
       "primary_publisher": "Pandasaurus Games",
-      "publishers": ["Pandasaurus Games"],
-      "designers": ["Jonathan Gilmour", "Brian Lewis"],
+      "publishers": [
+        "Pandasaurus Games"
+      ],
+      "designers": [
+        "Jonathan Gilmour",
+        "Brian Lewis"
+      ],
       "developers": [],
-      "artists": ["Kwanchai Moriya", "Peter Wocken", "Anthony Wocken"],
+      "artists": [
+        "Kwanchai Moriya",
+        "Peter Wocken",
+        "Anthony Wocken"
+      ],
       "names": [],
       "num_user_ratings": 12,
       "average_user_rating": 3.7499999999999996
@@ -3002,10 +3868,14 @@
       "msrp": "33.99",
       "discount": "-0.18",
       "primary_publisher": "Z-Man Games",
-      "publishers": ["Z-Man Games"],
+      "publishers": [
+        "Z-Man Games"
+      ],
       "designers": [],
       "developers": [],
-      "artists": [" Michael Menzel"],
+      "artists": [
+        " Michael Menzel"
+      ],
       "names": [],
       "num_user_ratings": 32,
       "average_user_rating": 3.125
@@ -3028,10 +3898,17 @@
       "msrp": "59.95",
       "discount": "0.34",
       "primary_publisher": "Czech Games Edition",
-      "publishers": ["Czech Games Edition"],
-      "designers": [" Vlaada Chvátil"],
+      "publishers": [
+        "Czech Games Edition"
+      ],
+      "designers": [
+        " Vlaada Chvátil"
+      ],
       "developers": [],
-      "artists": ["Tomáš Kučerovský", "Radim Pech"],
+      "artists": [
+        "Tomáš Kučerovský",
+        "Radim Pech"
+      ],
       "names": [],
       "num_user_ratings": 34,
       "average_user_rating": 3.264705882352941
@@ -3054,10 +3931,17 @@
       "msrp": "24.99",
       "discount": "0.49",
       "primary_publisher": "Bezier Games",
-      "publishers": ["Bezier Games"],
-      "designers": [" Ted Alspach", "Akihisa Okui"],
+      "publishers": [
+        "Bezier Games"
+      ],
+      "designers": [
+        " Ted Alspach",
+        "Akihisa Okui"
+      ],
       "developers": [],
-      "artists": [" Gus Batts"],
+      "artists": [
+        " Gus Batts"
+      ],
       "names": [],
       "num_user_ratings": 46,
       "average_user_rating": 3.282608695652174
@@ -3080,11 +3964,22 @@
       "msrp": "89.90",
       "discount": "0.00",
       "primary_publisher": "Ares Games",
-      "publishers": ["Ares Games"],
-      "designers": ["Roberto Di Meglio", "Marco Maggi", "Francesco Nepitello"],
+      "publishers": [
+        "Ares Games"
+      ],
+      "designers": [
+        "Roberto Di Meglio",
+        "Marco Maggi",
+        "Francesco Nepitello"
+      ],
       "developers": [],
-      "artists": ["John Howe", "Fabio Maiorana"],
-      "names": ["War of the ring"],
+      "artists": [
+        "John Howe",
+        "Fabio Maiorana"
+      ],
+      "names": [
+        "War of the ring"
+      ],
       "num_user_ratings": 14,
       "average_user_rating": 4.071428571428571
     }
