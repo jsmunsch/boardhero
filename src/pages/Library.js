@@ -11,6 +11,7 @@ import gameCollection from "../api/CollectionData";
 import gameWishlist from "../api/WishlistData";
 import browseData from "../api/FakeData";
 import CardModal from "../components/CardModal";
+
 export default function Library() {
   const [navigation, setNavigation] = useState("");
   const [options, setOptions] = useState(false);
@@ -22,14 +23,17 @@ export default function Library() {
   const searchContent = browseData.filter(info =>
     info.name.toLowerCase().includes(textInput.toLowerCase())
   );
+
   function handleSearch(value) {
     setTextInput(value);
   }
   return (
     <>
+
       {showModal && (
         <CardModal handleOutsideClick={() => setShowModal(false)} />
       )}
+    
       <Header
         toggleOptions={() => setOptions(!options)}
         toggleSearchbar={() => setVisibility(!visibility)}

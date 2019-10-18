@@ -10,7 +10,3 @@ export const ImageContainer = styled.img`
   border-radius: 15px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
 `;
-
-export default function CollectionItem({ className, onClick, src }) {
-  return <ImageContainer classname={className} onClick={onClick} src={src} />;
-}
