@@ -10,13 +10,9 @@ const StyledSearchBar = styled.div`
   background-color: inherit;
   color: white;
   margin-left: 10px;
-  visibility: ${props => (props.active ? "visible" : "hidden")};
 `;
 
 const StyledInput = styled.input`
-  display: flex;
-  justify-content: flex-start;
-  flex-grow: 1;
   background-color: inherit;
   border: 1px solid ${props => props.theme.brightEffect};
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
@@ -28,14 +24,25 @@ const StyledInput = styled.input`
   }
   font-size: 18px;
   padding: 10px;
+  width: 100%;
   fill: white;
   color: white;
 `;
 
-export default function SearchBar({ active }) {
+export default function SearchBar({ active, onSearch }) {
+  function handleInputChange(event) {
+    const value = event.target.value;
+    onSearch(value);
+  }
   return (
     <StyledSearchBar active={active}>
-      <StyledInput type="search" placeholder="Enter Game Name" />
+      {active && (
+        <StyledInput
+          type="search"
+          placeholder="Enter Game Name"
+          onChange={handleInputChange}
+        />
+      )}
     </StyledSearchBar>
   );
 }

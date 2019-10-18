@@ -18,14 +18,25 @@ const HeaderContainer = styled.header`
   position: sticky;
   top: 0;
 `;
-export default function Header({ toggleOptions, toggleSearchbar, active }) {
+
+export default function Header({
+  toggleOptions,
+  toggleSearchbar,
+  active,
+  handleInputChange,
+  onSearch
+}) {
   return (
     <HeaderContainer>
       <IconButton>
         <BurgerMenu />
       </IconButton>
       Library
-      <SearchBar active={active} />
+      <SearchBar
+        active={active}
+        onChange={event => handleInputChange(event.target.value)}
+        onSearch={onSearch}
+      />
       <IconButton onClick={toggleSearchbar}>
         <Magnifier />
       </IconButton>
