@@ -19,53 +19,53 @@ import {
 } from "../api/GameCollection";
 
 export default function Library() {
-  const [navigation, setNavigation] = useState("");
-  const [options, setOptions] = useState(false);
-  const [showSort, setShowSort] = useState(false);
-  const [visibility, setVisibility] = useState(false);
-  const [textInput, setTextInput] = React.useState("");
+  const [currentNavigation, setCurrentNavigation] = useState("");
+  const [toggleOptions, setToggleOptions] = useState(false);
+  const [displaySort, setDisplaySort] = useState(false);
+  const [showSearchbar, setShowSearchbar] = useState(false);
+  const [inputValue, setInputValue] = React.useState("");
   const [showModal, setShowModal] = useState(false);
   const [selectGame, setSelectGame] = useState();
   const [browseGame, setBrowseGame] = useState([]);
   const [wishlistGame, setWishlistGame] = useState([]);
   const [collectionGame, setCollectionGame] = useState([]);
-  const [bla, setBla] = useState(true);
+  const [boolean, setBoolean] = useState(true);
 
   React.useEffect(() => {
     getAsyncBrowseGames().then(gameArray => {
       setBrowseGame(gameArray);
     });
-  }, [bla]);
+  }, [boolean]);
 
   React.useEffect(() => {
     getAsyncWishlistGames().then(gameArray => {
       setWishlistGame(gameArray);
     });
-  }, [bla]);
+  }, [boolean]);
   React.useEffect(() => {
     getAsyncCollectionGames().then(gameArray => {
       setCollectionGame(gameArray);
     });
-  }, [bla]);
+  }, [boolean]);
 
   const searchCollectionGames = collectionGame.filter(info =>
-    info.name.toLowerCase().includes(textInput.toLowerCase())
+    info.name.toLowerCase().includes(inputValue.toLowerCase())
   );
   const searchWishlistGames = wishlistGame.filter(info =>
-    info.name.toLowerCase().includes(textInput.toLowerCase())
+    info.name.toLowerCase().includes(inputValue.toLowerCase())
   );
   const searchBrowseGames = browseGame.filter(info =>
-    info.name.toLowerCase().includes(textInput.toLowerCase())
+    info.name.toLowerCase().includes(inputValue.toLowerCase())
   );
   async function addGameToCollection() {
     postGameToCollection(selectGame);
-    setBla(!bla);
+    setBoolean(!boolean);
   }
   async function addGameToWishlist() {
     postGameToWishlist(selectGame);
   }
   function handleSearch(value) {
-    setTextInput(value);
+    setInputValue(value);
   }
   return (
     <>
@@ -78,15 +78,21 @@ export default function Library() {
         />
       )}
       <Header
-        toggleOptions={() => setOptions(!options)}
-        toggleSearchbar={() => setVisibility(!visibility)}
-        active={visibility}
+        toggleOptions={() => setToggleOptions(!toggleOptions)}
+        toggleSearchbar={() => setShowSearchbar(!showSearchbar)}
+        active={showSearchbar}
         handleInputChange={setTextInput}
         onSearch={handleSearch}
       />
-      <OptionBox show={options} onClick={() => setShowSort(!showSort)} />
-      <SortModal show={showSort} />
-      <LibraryNav selected={navigation} onNavigationChange={setNavigation} />
+      <OptionBox
+        show={toggleOptions}
+        onClick={() => setDisplaySort(!displaySort)}
+      />
+      <SortModal show={displaySort} />
+      <LibraryNav
+        selected={currentNavigation}
+        onNavigationChange={setCurrentNavigation}
+      />
       <Switch>
         <Route exact path="/Library/Collection">
           <CollectionGrid>
