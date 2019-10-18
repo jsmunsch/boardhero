@@ -10,7 +10,6 @@ import AddButtonCollection from "./AddButtonCollection";
 import Star from "../icons/Star";
 import Dice from "../icons/Dice";
 import AddButtonWishlist from "./AddButtonWishlist";
-import { postGameCollection } from "../api/GameCollection";
 
 const Background = styled.img`
   height: 100%;
