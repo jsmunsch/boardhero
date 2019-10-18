@@ -1,5 +1,7 @@
 import React from "react";
-import { GamePositioned } from "../components/CollectionItem";
+import CollectionItemPositioned, {
+  GamePositioned
+} from "../components/GamePositioned";
 import CardModal from "../components/CardModal";
 import CardBadge from "../components/CardBadge";
 import CardDetails from "../components/CardDetails";
@@ -19,7 +21,7 @@ export const CardWithImage = () => (
 
 export const test = () => (
   <CardModal>
-    <GamePositioned />
+    <CollectionItemPositioned />
     <CardFlip>Fest für Odin</CardFlip>
     <CardDetails>
       <CardTitle>Players: 2-4</CardTitle>
