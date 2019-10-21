@@ -25,33 +25,9 @@ export default function Library() {
   const [showSearchbar, setShowSearchbar] = useState(false);
   const [inputValue, setInputValue] = React.useState("");
   const [showModal, setShowModal] = useState(false);
-  const [selectGame, setSelectGame] = useState();
-  const [browseGame, setBrowseGame] = useState([]);
-  const [wishlistGame, setWishlistGame] = useState([]);
-  const [collectionGame, setCollectionGame] = useState([]);
-  const [boolean, setBoolean] = useState(true);
+  const [selectGame, setSelectedGame] = useState();
+  const [boolean, setBoolean] = useState(false);
 
-  React.useEffect(() => {
-    getBrowseCollection().then(gameArray => {
-      setBrowseGame(gameArray);
-    });
-  }, [boolean]);
-
-  React.useEffect(() => {
-    getWishlistCollection().then(gameArray => {
-      setWishlistGame(gameArray);
-    });
-  }, [boolean]);
-  React.useEffect(() => {
-    // Also export into respective Collection grid component
-    getGameCollection().then(gameArray => {
-      setCollectionGame(gameArray);
-    });
-  }, [boolean]);
-
-  const searchBrowseGames = browseGame.filter(info =>
-    info.name.toLowerCase().includes(inputValue.toLowerCase())
-  );
   async function addGameToCollection() {
     postGameToCollection(selectGame);
     setBoolean(!boolean);
@@ -94,10 +70,10 @@ export default function Library() {
           <LibraryCollection currywurst={inputValue} />
         </Route>
         <Route exact path="/Library/Browse">
-          <LibraryBrowse />
+          <LibraryBrowse currywurst={inputValue} />
         </Route>
         <Route exact path="/Library/Wishlist">
-          <LibraryWishlist />
+          <LibraryWishlist currywurst={inputValue} />
         </Route>
       </Switch>
     </>

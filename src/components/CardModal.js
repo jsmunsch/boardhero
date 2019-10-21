@@ -40,24 +40,23 @@ const StyledDiv = styled.div`
 
 export default function CardModal({
   handleOutsideClick,
-  selectedGame,
+  penis,
   onCollectionButton,
   onWishlistButton
 }) {
-  console.log(selectedGame);
   return (
     <>
       <Background onClick={handleOutsideClick} />
       <FlexContainer>
         <StyledDiv>
-          <CollectionItemPositioned src={selectedGame.image_url} />
-          <CardFlip>{selectedGame.name}</CardFlip>
+          <CollectionItemPositioned src={penis.image_url} />
+          <CardFlip>{penis.name}</CardFlip>
           <CardDetails>
             <CardTitle>
-              Players: {selectedGame.min_players}-{selectedGame.max_players}
+              Players: {penis.min_players}-{penis.max_players}
             </CardTitle>
             <CardTitle>
-              Time: {selectedGame.min_playtime}-{selectedGame.max_playtime} min
+              Time: {penis.min_playtime}-{penis.max_playtime} min
             </CardTitle>
             <CardTitle>Categories</CardTitle>
             <CardCategories>
