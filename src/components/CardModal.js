@@ -10,6 +10,8 @@ import AddButtonCollection from "./AddButtonCollection";
 import Star from "../icons/Star";
 import Dice from "../icons/Dice";
 import AddButtonWishlist from "./AddButtonWishlist";
+import { postGameToCollection } from "../api/GameCollection";
+import { postGameToWishlist } from "../api/WishlistCollection";
 
 export const Background = styled.img`
   height: 100%;
@@ -38,12 +40,14 @@ const StyledDiv = styled.div`
   backdrop-filter: blur(2px);
 `;
 
-export default function CardModal({
-  handleOutsideClick,
-  penis,
-  onCollectionButton,
-  onWishlistButton
-}) {
+export default function CardModal({ handleOutsideClick, penis, enabled }) {
+  async function addGameToCollection() {
+    postGameToCollection(penis);
+  }
+  async function addGameToWishlist() {
+    postGameToWishlist(penis);
+  }
+
   return (
     <>
       <Background onClick={handleOutsideClick} />
@@ -69,12 +73,18 @@ export default function CardModal({
               <CardBadge>Area Control</CardBadge>
               <CardBadge>Route/Network Building</CardBadge>
             </CardCategories>
-            <AddButtonCollection handleAddButton={onCollectionButton}>
-              <Star />
-            </AddButtonCollection>
-            <AddButtonWishlist handleAddButton={onWishlistButton}>
-              <Dice />
-            </AddButtonWishlist>
+            {enabled && (
+              <AddButtonCollection
+                handleClick={() => postGameToCollection(penis)}
+              >
+                <Star />
+              </AddButtonCollection>
+            )}
+            {enabled && (
+              <AddButtonWishlist onclick={() => addGameToWishlist(penis)}>
+                <Dice />
+              </AddButtonWishlist>
+            )}
           </CardDetails>
         </StyledDiv>
       </FlexContainer>

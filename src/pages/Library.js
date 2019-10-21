@@ -1,19 +1,9 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import LibraryNav from "../components/LibraryNav";
-import CollectionGrid from "../components/CollectionGrid";
-import CollectionItem from "../components/CollectionItem";
 import OptionBox from "../components/OptionBox";
 import SortModal from "../components/SortModal";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import BrowseEmpty from "../components/BrowseEmpty";
-import CardModal from "../components/CardModal";
-import { getBrowseCollection } from "../api/BrowseCollection";
-import {
-  postGameToWishlist,
-  getWishlistCollection
-} from "../api/WishlistCollection";
-import { postGameToCollection, getGameCollection } from "../api/GameCollection";
 import LibraryCollection from "./LibraryCollection";
 import LibraryBrowse from "./LibraryBrowse";
 import LibraryWishlist from "./LibraryWishlist";
@@ -24,7 +14,6 @@ export default function Library() {
   const [displaySort, setDisplaySort] = useState(false);
   const [showSearchbar, setShowSearchbar] = useState(false);
   const [inputValue, setInputValue] = React.useState("");
-  const [boolean, setBoolean] = useState(false);
 
   function handleSearch(value) {
     setInputValue(value);

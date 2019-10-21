@@ -13,6 +13,6 @@ export default function LibraryCollection({ currywurst }) {
   const searchCollectionGames = collectionGame.filter(info =>
     info.name.toLowerCase().includes(currywurst.toLowerCase())
   );
-  console.log(currywurst);
+
   return <CollectionGrid collection={searchCollectionGames} />;
 }

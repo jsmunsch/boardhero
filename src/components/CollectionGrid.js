@@ -21,7 +21,7 @@ const WrapperDiv = styled.div`
   background-color: ${props => props.theme.main};
   padding: 10px;
 `;
-export default function CollectionGrid({ collection }) {
+export default function CollectionGrid({ collection, enabled }) {
   const [showModal, setShowModal] = useState(false);
   const [selectedGame, setSelectedGame] = useState();
 
@@ -31,6 +31,7 @@ export default function CollectionGrid({ collection }) {
         <CardModal
           penis={selectedGame}
           handleOutsideClick={() => setShowModal(false)}
+          enabled={enabled}
         />
       )}
       <WrapperDiv>
