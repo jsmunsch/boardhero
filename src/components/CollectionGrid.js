@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import CollectionItem from "./CollectionItem";
+import CardModal from "./CardModal";
 
 const BodyGrid = styled.div`
   width: 320px;
@@ -19,10 +21,33 @@ const WrapperDiv = styled.div`
   background-color: ${props => props.theme.main};
   padding: 10px;
 `;
-export default function CollectionGrid({ children }) {
+export default function CollectionGrid({ collection, enabled }) {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedGame, setSelectedGame] = useState();
+
   return (
-    <WrapperDiv>
-      <BodyGrid>{children}</BodyGrid>
-    </WrapperDiv>
+    <>
+      {showModal && (
+        <CardModal
+          singleGame={selectedGame}
+          handleOutsideClick={() => setShowModal(false)}
+          enabled={enabled}
+        />
+      )}
+      <WrapperDiv>
+        <BodyGrid>
+          {collection.map(game => (
+            <CollectionItem
+              key={game.id}
+              onClick={() => {
+                setSelectedGame(game);
+                setShowModal(true);
+              }}
+              src={game.image_url}
+            />
+          ))}
+        </BodyGrid>
+      </WrapperDiv>
+    </>
   );
 }

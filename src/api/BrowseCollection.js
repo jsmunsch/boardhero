@@ -5,15 +5,3 @@ export function getBrowseCollection() {
     })
   );
 }
-
-export function waitTwoSeconds() {
-  return new Promise(resolve => {
-    setTimeout(resolve, 10);
-  });
-}
-
-export async function getAsyncBrowseGames() {
-  await waitTwoSeconds();
-  const games = await getBrowseCollection();
-  return games;
-}

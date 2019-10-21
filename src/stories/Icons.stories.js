@@ -1,5 +1,5 @@
 import React from "react";
-import BurgerMenu from "../icons/BurgerMenu";
+import BurgerMenu from "../icons/BurgerMenuIcon";
 import Dice from "../icons/Dice";
 import Logout from "../icons/Logout";
 import Star from "../icons/Star";
