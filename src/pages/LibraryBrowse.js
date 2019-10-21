@@ -3,7 +3,7 @@ import { getBrowseCollection } from "../api/BrowseCollection";
 import BrowseEmpty from "../components/BrowseEmpty";
 import CollectionGrid from "../components/CollectionGrid";
 
-export default function LibraryBrowse({ currywurst }) {
+export default function LibraryBrowse({ inputValue }) {
   React.useEffect(() => {
     getBrowseCollection().then(gameArray => {
       setBrowseGame(gameArray);
@@ -12,27 +12,18 @@ export default function LibraryBrowse({ currywurst }) {
 
   const [browseGame, setBrowseGame] = useState([]);
   const searchBrowseGames = browseGame.filter(info =>
-    info.name.toLowerCase().includes(currywurst.toLowerCase())
+    info.name.toLowerCase().includes(inputValue.toLowerCase())
   );
   return (
     <>
-      {!currywurst && (
+      {!inputValue && (
         <BrowseEmpty>
           Please use the searchbar to browse through our available games.
         </BrowseEmpty>
       )}
-      {currywurst && (
+      {inputValue && (
         <CollectionGrid collection={searchBrowseGames} enabled={true} />
       )}
     </>
   );
 }
-
-// async function addGameToCollection() {
-//   postGameToCollection(selectGame);
-//   setBoolean(!boolean);
-// }
-// async function addGameToWishlist() {
-//   postGameToWishlist(selectGame);
-//   setBoolean(!boolean);
-// }

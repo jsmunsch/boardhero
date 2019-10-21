@@ -38,13 +38,13 @@ export default function Library() {
       />
       <Switch>
         <Route exact path="/Library/Collection">
-          <LibraryCollection currywurst={inputValue} />
+          <LibraryCollection inputValue={inputValue} />
         </Route>
         <Route exact path="/Library/Browse">
-          <LibraryBrowse currywurst={inputValue} />
+          <LibraryBrowse inputValue={inputValue} />
         </Route>
         <Route exact path="/Library/Wishlist">
-          <LibraryWishlist currywurst={inputValue} />
+          <LibraryWishlist inputValue={inputValue} />
         </Route>
       </Switch>
     </>

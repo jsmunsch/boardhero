@@ -40,12 +40,12 @@ const StyledDiv = styled.div`
   backdrop-filter: blur(2px);
 `;
 
-export default function CardModal({ handleOutsideClick, penis, enabled }) {
+export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
   async function addGameToCollection() {
-    postGameToCollection(penis);
+    postGameToCollection(singleGame);
   }
   async function addGameToWishlist() {
-    postGameToWishlist(penis);
+    postGameToWishlist(singleGame);
   }
 
   return (
@@ -53,14 +53,14 @@ export default function CardModal({ handleOutsideClick, penis, enabled }) {
       <Background onClick={handleOutsideClick} />
       <FlexContainer>
         <StyledDiv>
-          <CollectionItemPositioned src={penis.image_url} />
-          <CardFlip>{penis.name}</CardFlip>
+          <CollectionItemPositioned src={singleGame.image_url} />
+          <CardFlip>{singleGame.name}</CardFlip>
           <CardDetails>
             <CardTitle>
-              Players: {penis.min_players}-{penis.max_players}
+              Players: {singleGame.min_players}-{singleGame.max_players}
             </CardTitle>
             <CardTitle>
-              Time: {penis.min_playtime}-{penis.max_playtime} min
+              Time: {singleGame.min_playtime}-{singleGame.max_playtime} min
             </CardTitle>
             <CardTitle>Categories</CardTitle>
             <CardCategories>
@@ -75,13 +75,13 @@ export default function CardModal({ handleOutsideClick, penis, enabled }) {
             </CardCategories>
             {enabled && (
               <AddButtonCollection
-                handleClick={() => postGameToCollection(penis)}
+                handleClick={() => postGameToCollection(singleGame)}
               >
                 <Star />
               </AddButtonCollection>
             )}
             {enabled && (
-              <AddButtonWishlist onclick={() => addGameToWishlist(penis)}>
+              <AddButtonWishlist onclick={() => addGameToWishlist(singleGame)}>
                 <Dice />
               </AddButtonWishlist>
             )}

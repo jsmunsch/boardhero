@@ -29,7 +29,7 @@ export default function CollectionGrid({ collection, enabled }) {
     <>
       {showModal && (
         <CardModal
-          penis={selectedGame}
+          singleGame={selectedGame}
           handleOutsideClick={() => setShowModal(false)}
           enabled={enabled}
         />
