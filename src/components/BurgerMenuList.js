@@ -7,31 +7,46 @@ import Upload from "../icons/Upload";
 import Star from "../icons/Star";
 import { Background } from "./CardModal";
 
-const positionContainer = styled.div`
-  position: absolute;
-  top: 50px;
-  left: 50px;
+const morph = keyframes`
+  0% { width: 0px;}
+  100% { width: 100%}
 `;
 
-export default function BurgerMenuList() {
+const PositionContainer = styled.div`
+  position: absolute;
+  left: 0px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70vw;
+  height: 100vh;
+  background-color: ${props => props.theme.accent};
+  animation: ${morph} 0.3s ease-in-out;
+`;
+
+export default function BurgerMenuList({ handleOutsideClick }) {
   return (
-    <positionContainer>
-      <StyledMenuButton onClick={() => console.log("Collection")} selected>
-        <Dice selected />
-        Collection
-      </StyledMenuButton>
-      <StyledMenuButton onClick={() => console.log("User")}>
-        <Person />
-        User
-      </StyledMenuButton>
-      <StyledMenuButton onClick={() => console.log("Share")}>
-        <Upload />
-        Share
-      </StyledMenuButton>
-      <StyledMenuButton onClick={() => console.log("Wishlist")}>
-        <Star />
-        Wishlist
-      </StyledMenuButton>
-    </positionContainer>
+    <>
+      <Background onClick={handleOutsideClick} />
+      <PositionContainer>
+        <StyledMenuButton onClick={() => console.log("Collection")} selected>
+          <Dice selected />
+          Collection
+        </StyledMenuButton>
+        <StyledMenuButton onClick={() => console.log("User")}>
+          <Person />
+          User
+        </StyledMenuButton>
+        <StyledMenuButton onClick={() => console.log("Share")}>
+          <Upload />
+          Share
+        </StyledMenuButton>
+        <StyledMenuButton onClick={() => console.log("Wishlist")}>
+          <Star />
+          Wishlist
+        </StyledMenuButton>
+      </PositionContainer>
+    </>
   );
 }

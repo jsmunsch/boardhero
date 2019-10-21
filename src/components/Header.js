@@ -30,7 +30,10 @@ export default function Header({
   const [showMenu, setShowMenu] = React.useState(false);
   return (
     <>
-      {showMenu && <BurgerMenuList />}
+      {showMenu && (
+        <BurgerMenuList handleOutsideClick={() => setShowMenu(false)} />
+      )}
+
       <HeaderContainer>
         <IconButton onClick={() => setShowMenu(!showMenu)}>
           <BurgerMenu />
