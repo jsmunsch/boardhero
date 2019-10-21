@@ -13,10 +13,8 @@ const ButtonContainer = styled.button`
   fill: white;
 `;
 
-export default function AddButtonWishlist({ children, handleAddButton }) {
-  return (
-    <ButtonContainer onClick={handleAddButton}>{children}</ButtonContainer>
-  );
+export default function AddButtonWishlist({ children, handleAddClick }) {
+  return <ButtonContainer onClick={handleAddClick}>{children}</ButtonContainer>;
 }
 
 AddButtonWishlist.propTypes = {

@@ -10,8 +10,10 @@ import AddButtonCollection from "./AddButtonCollection";
 import Star from "../icons/Star";
 import Dice from "../icons/Dice";
 import AddButtonWishlist from "./AddButtonWishlist";
+import { postGameToCollection } from "../api/GameCollection";
+import { postGameToWishlist } from "../api/WishlistCollection";
 
-const Background = styled.img`
+export const Background = styled.img`
   height: 100%;
   width: 100%;
   background: transparent;
@@ -38,26 +40,27 @@ const StyledDiv = styled.div`
   backdrop-filter: blur(2px);
 `;
 
-export default function CardModal({
-  handleOutsideClick,
-  selectedGame,
-  onCollectionButton,
-  onWishlistButton
-}) {
-  console.log(selectedGame);
+export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
+  async function addGameToCollection() {
+    postGameToCollection(singleGame);
+  }
+  async function addGameToWishlist() {
+    postGameToWishlist(singleGame);
+  }
+
   return (
     <>
       <Background onClick={handleOutsideClick} />
       <FlexContainer>
         <StyledDiv>
-          <CollectionItemPositioned src={selectedGame.image_url} />
-          <CardFlip>{selectedGame.name}</CardFlip>
+          <CollectionItemPositioned src={singleGame.image_url} />
+          <CardFlip>{singleGame.name}</CardFlip>
           <CardDetails>
             <CardTitle>
-              Players: {selectedGame.min_players}-{selectedGame.max_players}
+              Players: {singleGame.min_players}-{singleGame.max_players}
             </CardTitle>
             <CardTitle>
-              Time: {selectedGame.min_playtime}-{selectedGame.max_playtime} min
+              Time: {singleGame.min_playtime}-{singleGame.max_playtime} min
             </CardTitle>
             <CardTitle>Categories</CardTitle>
             <CardCategories>
@@ -70,12 +73,20 @@ export default function CardModal({
               <CardBadge>Area Control</CardBadge>
               <CardBadge>Route/Network Building</CardBadge>
             </CardCategories>
-            <AddButtonCollection handleAddButton={onCollectionButton}>
-              <Star />
-            </AddButtonCollection>
-            <AddButtonWishlist handleAddButton={onWishlistButton}>
-              <Dice />
-            </AddButtonWishlist>
+            {enabled && (
+              <AddButtonCollection
+                handleAddClick={() => addGameToCollection(singleGame)}
+              >
+                <Star />
+              </AddButtonCollection>
+            )}
+            {enabled && (
+              <AddButtonWishlist
+                handleAddClick={() => addGameToWishlist(singleGame)}
+              >
+                <Dice />
+              </AddButtonWishlist>
+            )}
           </CardDetails>
         </StyledDiv>
       </FlexContainer>
