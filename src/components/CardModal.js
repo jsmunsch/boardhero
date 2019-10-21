@@ -32,8 +32,11 @@ const FlexContainer = styled.div`
 const StyledDiv = styled.div`
   width: 320px;
   height: 480px;
-  top: 110px;
-  right: 25px;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 150px;
   background: white;
   position: fixed;
   z-index: 2;
