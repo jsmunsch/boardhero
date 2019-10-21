@@ -1,5 +1,5 @@
 import React from "react";
-import AddButton from "../components/AddButton";
+import AddButton from "../components/AddButtonCollection";
 import Star from "../icons/Star";
 
 export default {

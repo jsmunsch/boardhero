@@ -1,6 +1,6 @@
 import React from "react";
 import IconButton from "../components/IconButton";
-import BurgerMenu from "../icons/BurgerMenu";
+import BurgerMenu from "../icons/BurgerMenuIcon";
 import Magnifier from "../icons/Magnifier";
 import VerticalPoints from "../icons/VerticalPoints";
 

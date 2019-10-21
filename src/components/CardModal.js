@@ -1,15 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import CollectionItemPositioned, {
-  GamePositioned
-} from "../components/GamePositioned";
+import CollectionItemPositioned from "../components/GamePositioned";
 import CardBadge from "../components/CardBadge";
 import CardDetails from "../components/CardDetails";
 import CardCategories from "../components/CardCategories";
 import CardTitle from "../components/CardTitle";
 import CardFlip from "../components/CardFlip";
+import AddButtonCollection from "./AddButtonCollection";
+import Star from "../icons/Star";
+import Dice from "../icons/Dice";
+import AddButtonWishlist from "./AddButtonWishlist";
+import { postGameToCollection } from "../api/GameCollection";
+import { postGameToWishlist } from "../api/WishlistCollection";
 
-const Background = styled.img`
+export const Background = styled.img`
   height: 100%;
   width: 100%;
   background: transparent;
@@ -36,17 +40,28 @@ const StyledDiv = styled.div`
   backdrop-filter: blur(2px);
 `;
 
-export default function CardModal({ handleOutsideClick }) {
+export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
+  async function addGameToCollection() {
+    postGameToCollection(singleGame);
+  }
+  async function addGameToWishlist() {
+    postGameToWishlist(singleGame);
+  }
+
   return (
     <>
       <Background onClick={handleOutsideClick} />
       <FlexContainer>
         <StyledDiv>
-          <CollectionItemPositioned />
-          <CardFlip>Fest für Odin</CardFlip>
+          <CollectionItemPositioned src={singleGame.image_url} />
+          <CardFlip>{singleGame.name}</CardFlip>
           <CardDetails>
-            <CardTitle>Players: 2-4</CardTitle>
-            <CardTitle>Time: test</CardTitle>
+            <CardTitle>
+              Players: {singleGame.min_players}-{singleGame.max_players}
+            </CardTitle>
+            <CardTitle>
+              Time: {singleGame.min_playtime}-{singleGame.max_playtime} min
+            </CardTitle>
             <CardTitle>Categories</CardTitle>
             <CardCategories>
               <CardBadge>Economics</CardBadge>
@@ -58,6 +73,20 @@ export default function CardModal({ handleOutsideClick }) {
               <CardBadge>Area Control</CardBadge>
               <CardBadge>Route/Network Building</CardBadge>
             </CardCategories>
+            {enabled && (
+              <AddButtonCollection
+                handleAddClick={() => addGameToCollection(singleGame)}
+              >
+                <Star />
+              </AddButtonCollection>
+            )}
+            {enabled && (
+              <AddButtonWishlist
+                handleAddClick={() => addGameToWishlist(singleGame)}
+              >
+                <Dice />
+              </AddButtonWishlist>
+            )}
           </CardDetails>
         </StyledDiv>
       </FlexContainer>
