@@ -24,31 +24,13 @@ export default function Library() {
   const [displaySort, setDisplaySort] = useState(false);
   const [showSearchbar, setShowSearchbar] = useState(false);
   const [inputValue, setInputValue] = React.useState("");
-  const [showModal, setShowModal] = useState(false);
-  const [selectGame, setSelectedGame] = useState();
   const [boolean, setBoolean] = useState(false);
 
-  async function addGameToCollection() {
-    postGameToCollection(selectGame);
-    setBoolean(!boolean);
-  }
-  async function addGameToWishlist() {
-    postGameToWishlist(selectGame);
-    setBoolean(!boolean);
-  }
   function handleSearch(value) {
     setInputValue(value);
   }
   return (
     <>
-      {showModal && (
-        <CardModal
-          handleOutsideClick={() => setShowModal(false)}
-          selectedGame={selectGame}
-          onCollectionButton={addGameToCollection}
-          onWishlistButton={addGameToWishlist}
-        />
-      )}
       <Header
         toggleOptions={() => setToggleOptions(!toggleOptions)}
         toggleSearchbar={() => setShowSearchbar(!showSearchbar)}
