@@ -52,7 +52,7 @@ const LoginButton = styled.button`
   font-size: 1.2em;
 `;
 
-export default function LoginData() {
+export default function Login() {
   let history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
