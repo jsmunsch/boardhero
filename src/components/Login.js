@@ -62,9 +62,9 @@ export default function Login() {
       setData(UserCredentials);
     });
   }, []);
-  data.find(isUser);
+  data.find(validateUser);
   // data.find(isPassword);
-  function isUser(user) {
+  function validateUser(user) {
     const usernameTrue = user.user_id === username;
     const passwordTrue = user.password === password;
     if (usernameTrue && passwordTrue) {
@@ -81,7 +81,7 @@ export default function Login() {
       </VectorContainer>
       <FlexForm
         onSubmit={() => {
-          isUser();
+          validateUser();
         }}
       >
         <InputContainer
