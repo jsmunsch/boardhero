@@ -8,15 +8,12 @@ import SortModal from "../components/SortModal";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import BrowseEmpty from "../components/BrowseEmpty";
 import CardModal from "../components/CardModal";
-import { getAsyncBrowseGames } from "../api/BrowseCollection";
+import { getBrowseCollection } from "../api/BrowseCollection";
 import {
-  getAsyncWishlistGames,
-  postGameToWishlist
+  postGameToWishlist,
+  getWishlistCollection
 } from "../api/WishlistCollection";
-import {
-  getAsyncCollectionGames,
-  postGameToCollection
-} from "../api/GameCollection";
+import { postGameToCollection, getGameCollection } from "../api/GameCollection";
 
 export default function Library() {
   const [currentNavigation, setCurrentNavigation] = useState("");
@@ -32,18 +29,18 @@ export default function Library() {
   const [boolean, setBoolean] = useState(true);
 
   React.useEffect(() => {
-    getAsyncBrowseGames().then(gameArray => {
+    getBrowseCollection().then(gameArray => {
       setBrowseGame(gameArray);
     });
   }, [boolean]);
 
   React.useEffect(() => {
-    getAsyncWishlistGames().then(gameArray => {
+    getWishlistCollection().then(gameArray => {
       setWishlistGame(gameArray);
     });
   }, [boolean]);
   React.useEffect(() => {
-    getAsyncCollectionGames().then(gameArray => {
+    getGameCollection().then(gameArray => {
       setCollectionGame(gameArray);
     });
   }, [boolean]);
@@ -63,6 +60,7 @@ export default function Library() {
   }
   async function addGameToWishlist() {
     postGameToWishlist(selectGame);
+    setBoolean(!boolean);
   }
   function handleSearch(value) {
     setInputValue(value);
@@ -81,7 +79,7 @@ export default function Library() {
         toggleOptions={() => setToggleOptions(!toggleOptions)}
         toggleSearchbar={() => setShowSearchbar(!showSearchbar)}
         active={showSearchbar}
-        handleInputChange={setTextInput}
+        handleInputChange={setInputValue}
         onSearch={handleSearch}
       />
       <OptionBox
@@ -109,12 +107,12 @@ export default function Library() {
           </CollectionGrid>
         </Route>
         <Route exact path="/Library/Browse">
-          {!textInput && (
+          {!inputValue && (
             <BrowseEmpty>
               Please use the searchbar to browse through our available games.
             </BrowseEmpty>
           )}
-          {textInput && (
+          {inputValue && (
             <CollectionGrid>
               {searchBrowseGames.map(game => (
                 <CollectionItem
@@ -147,3 +145,7 @@ export default function Library() {
     </>
   );
 }
+
+// filter by number of players etc
+// Set own "nickname", individualizing
+// different grid options on button click

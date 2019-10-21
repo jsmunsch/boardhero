@@ -11,7 +11,7 @@ import Star from "../icons/Star";
 import Dice from "../icons/Dice";
 import AddButtonWishlist from "./AddButtonWishlist";
 
-const Background = styled.img`
+export const Background = styled.img`
   height: 100%;
   width: 100%;
   background: transparent;
