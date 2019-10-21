@@ -75,13 +75,15 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
             </CardCategories>
             {enabled && (
               <AddButtonCollection
-                handleClick={() => addGameToCollection(singleGame)}
+                handleAddClick={() => addGameToCollection(singleGame)}
               >
                 <Star />
               </AddButtonCollection>
             )}
             {enabled && (
-              <AddButtonWishlist onclick={() => addGameToWishlist(singleGame)}>
+              <AddButtonWishlist
+                handleAddClick={() => addGameToWishlist(singleGame)}
+              >
                 <Dice />
               </AddButtonWishlist>
             )}
