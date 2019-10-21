@@ -14,6 +14,9 @@ import {
   getWishlistCollection
 } from "../api/WishlistCollection";
 import { postGameToCollection, getGameCollection } from "../api/GameCollection";
+import LibraryCollection from "./LibraryCollection";
+import LibraryBrowse from "./LibraryBrowse";
+import LibraryWishlist from "./LibraryWishlist";
 
 export default function Library() {
   const [currentNavigation, setCurrentNavigation] = useState("");
@@ -40,6 +43,7 @@ export default function Library() {
     });
   }, [boolean]);
   React.useEffect(() => {
+    // Also export into respective Collection grid component
     getGameCollection().then(gameArray => {
       setCollectionGame(gameArray);
     });
@@ -93,53 +97,13 @@ export default function Library() {
       />
       <Switch>
         <Route exact path="/Library/Collection">
-          <CollectionGrid>
-            {searchCollectionGames.map(game => (
-              <CollectionItem
-                key={game.id}
-                onClick={() => {
-                  setSelectGame(game);
-                  setShowModal(!showModal);
-                }}
-                src={game.image_url}
-              />
-            ))}
-          </CollectionGrid>
+          <LibraryCollection />
         </Route>
         <Route exact path="/Library/Browse">
-          {!inputValue && (
-            <BrowseEmpty>
-              Please use the searchbar to browse through our available games.
-            </BrowseEmpty>
-          )}
-          {inputValue && (
-            <CollectionGrid>
-              {searchBrowseGames.map(game => (
-                <CollectionItem
-                  key={game.id}
-                  onClick={() => {
-                    setSelectGame(game);
-                    setShowModal(!showModal);
-                  }}
-                  src={game.image_url}
-                />
-              ))}
-            </CollectionGrid>
-          )}
+          <LibraryBrowse />
         </Route>
         <Route exact path="/Library/Wishlist">
-          <CollectionGrid>
-            {searchWishlistGames.map(game => (
-              <CollectionItem
-                key={game.id}
-                onClick={() => {
-                  setSelectGame(game);
-                  setShowModal(!showModal);
-                }}
-                src={game.image_url}
-              />
-            ))}
-          </CollectionGrid>
+          <LibraryWishlist />
         </Route>
       </Switch>
     </>

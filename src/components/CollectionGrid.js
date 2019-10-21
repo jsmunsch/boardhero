@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import CollectionItem from "./CollectionItem";
 
 const BodyGrid = styled.div`
   width: 320px;
@@ -19,10 +20,18 @@ const WrapperDiv = styled.div`
   background-color: ${props => props.theme.main};
   padding: 10px;
 `;
-export default function CollectionGrid({ children }) {
+export default function CollectionGrid({ onItemClick }) {
   return (
     <WrapperDiv>
-      <BodyGrid>{children}</BodyGrid>
+      <BodyGrid>
+        {collection.map(game => (
+          <CollectionItem
+            key={game.id}
+            onClick={() => onItemClick(game)}
+            src={game.image_url}
+          />
+        ))}
+      </BodyGrid>
     </WrapperDiv>
   );
 }
