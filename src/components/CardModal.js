@@ -75,7 +75,7 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
             </CardCategories>
             {enabled && (
               <AddButtonCollection
-                handleClick={() => postGameToCollection(singleGame)}
+                handleClick={() => addGameToCollection(singleGame)}
               >
                 <Star />
               </AddButtonCollection>
