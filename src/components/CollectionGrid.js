@@ -20,7 +20,7 @@ const WrapperDiv = styled.div`
   background-color: ${props => props.theme.main};
   padding: 10px;
 `;
-export default function CollectionGrid({ onItemClick }) {
+export default function CollectionGrid({ onItemClick, collection }) {
   return (
     <WrapperDiv>
       <BodyGrid>

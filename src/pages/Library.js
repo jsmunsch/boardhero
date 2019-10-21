@@ -49,12 +49,6 @@ export default function Library() {
     });
   }, [boolean]);
 
-  const searchCollectionGames = collectionGame.filter(info =>
-    info.name.toLowerCase().includes(inputValue.toLowerCase())
-  );
-  const searchWishlistGames = wishlistGame.filter(info =>
-    info.name.toLowerCase().includes(inputValue.toLowerCase())
-  );
   const searchBrowseGames = browseGame.filter(info =>
     info.name.toLowerCase().includes(inputValue.toLowerCase())
   );
@@ -97,7 +91,7 @@ export default function Library() {
       />
       <Switch>
         <Route exact path="/Library/Collection">
-          <LibraryCollection />
+          <LibraryCollection currywurst={inputValue} />
         </Route>
         <Route exact path="/Library/Browse">
           <LibraryBrowse />
