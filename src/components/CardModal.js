@@ -18,6 +18,7 @@ export const Background = styled.img`
   width: 100%;
   background: transparent;
   position: fixed;
+  top: 0;
   z-index: 1;
   backdrop-filter: blur(1.2px);
   overflow-y: hidden;
