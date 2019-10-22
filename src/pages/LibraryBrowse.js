@@ -5,11 +5,10 @@ import axios from "axios";
 
 export default function LibraryBrowse({ inputValue }) {
   const [apiGame, setApiGame] = useState();
-  console.log(apiGame);
 
   useEffect(() => {
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-    const targetUrl = `https://www.boardgameatlas.com/api/search?name=${inputValue}&client_id=5cIY9zBPpt`;
+    const targetUrl = `https://www.boardgameatlas.com/api/search?name=${inputValue}&limit=10&fields=name,description,image_url,mechanics,categories,min_players,max_players,min_playtime,max_playtime&client_id=5cIY9zBPpt`;
     axios({
       url: proxyUrl + targetUrl,
       method: "GET",
@@ -19,7 +18,6 @@ export default function LibraryBrowse({ inputValue }) {
       }
     })
       .then(response => {
-        console.log(response.data);
         setApiGame(response.data);
       })
       .catch(err => {
@@ -34,7 +32,11 @@ export default function LibraryBrowse({ inputValue }) {
         </BrowseEmpty>
       )}
       {inputValue && (
-        <CollectionGrid collection={apiGame.games} enabled={true} />
+        <CollectionGrid
+          collection={apiGame.games}
+          limit={"10"}
+          enabled={true}
+        />
       )}
     </>
   );
