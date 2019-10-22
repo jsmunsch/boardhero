@@ -1,0 +1,67 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
+// export default function GetDataFromApi() {
+//   const [apiGame, setApiGame] = useState([]);
+//   useEffect(() => {
+//     axios
+//       .get(
+//         "https://www.boardgameatlas.com/api/search?order_by=popularity&ascending=false&client_id=SB1VGnDv7M"
+//       )
+//       .then(response => {
+//         console.log("promise fulfilled");
+//         setApiGame(response.data);
+//       });
+//   }, []);
+//   console.log(apiGame.length);
+//   return (
+//     <>
+//       <div>
+//         {apiGame.map(game => (
+//           <div>
+//             <h1>{game.name}</h1>
+//           </div>
+//         ))}
+//       </div>
+//     </>
+//   );
+// }
+
+export default function GetDataFromApi() {
+  const [apiGame, setApiGame] = useState();
+  console.log(apiGame);
+
+  useEffect(() => {
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    const targetUrl =
+      "https://www.boardgameatlas.com/api/search?order_by=popularity&ascending=false&client_id=SB1VGnDv7M";
+    axios({
+      url: proxyUrl + targetUrl,
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "client-id": "5cIY9zBPpt"
+      }
+    })
+      .then(response => {
+        console.log(response.data);
+        return response.data;
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }, []);
+  return (
+    <>
+      {apiGame && (
+        <div>
+          {apiGame.games.map(game => (
+            <div>
+              <h1>{game.name}</h1>
+            </div>
+          ))}
+        </div>
+      )}
+    </>
+  );
+}
