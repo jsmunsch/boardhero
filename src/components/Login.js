@@ -20,10 +20,6 @@ const VectorContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
-const ScreenContainer = styled.div`
-  display: grid;
-  grid-column: 1fr 60% 1fr;
-`;
 
 const Headline = styled.h1`
   text-align: center;
@@ -63,7 +59,7 @@ export default function Login() {
     });
   }, []);
   data.find(validateUser);
-  // data.find(isPassword);
+
   function validateUser(user) {
     const usernameTrue = user.user_id === username;
     const passwordTrue = user.password === password;
@@ -74,7 +70,7 @@ export default function Login() {
   }
 
   return (
-    <ScreenContainer>
+    <>
       <Headline>Boardhero</Headline>
       <VectorContainer>
         <Hero />
@@ -97,6 +93,6 @@ export default function Login() {
         />
         <LoginButton>Login</LoginButton>
       </FlexForm>
-    </ScreenContainer>
+    </>
   );
 }

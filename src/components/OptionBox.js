@@ -14,7 +14,6 @@ const OptionBoxDiv = styled.div`
   top: 35px;
   right: 25px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
-  display: ${props => (props.show ? "block" : "none")};
 `;
 
 const OptionButton = styled.button`
@@ -29,9 +28,13 @@ const OptionButton = styled.button`
 
 export default function OptionBox({ show, onClick }) {
   return (
-    <OptionBoxDiv show={show}>
-      <OptionButton onClick={() => onClick("Sort")}>Sort</OptionButton>
-      <OptionButton>Filter</OptionButton>
-    </OptionBoxDiv>
+    <>
+      {show && (
+        <OptionBoxDiv>
+          <OptionButton onClick={() => onClick("Sort")}>Sort</OptionButton>
+          <OptionButton>Filter</OptionButton>
+        </OptionBoxDiv>
+      )}
+    </>
   );
 }

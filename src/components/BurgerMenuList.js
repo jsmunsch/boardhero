@@ -28,7 +28,6 @@ const PositionContainer = styled.div`
 export default function BurgerMenuList({ handleOutsideClick }) {
   return (
     <>
-      <Background onClick={handleOutsideClick} />
       <PositionContainer>
         <StyledMenuButton onClick={() => console.log("Collection")} selected>
           <Dice selected />
