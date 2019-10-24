@@ -1,11 +1,9 @@
 export function getGameCollection() {
-  return fetch("http://localhost:3000/gameCollection").then(response =>
-    response.json()
-  );
+  return fetch("/gameCollection").then(response => response.json());
 }
 
 export function postGameToCollection(game) {
-  return fetch("http://localhost:3000/gameCollection", {
+  return fetch("/gameCollection", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import CollectionItemPositioned from "../components/GamePositioned";
 import CardBadge from "../components/CardBadge";
 import CardDetails from "../components/CardDetails";
@@ -44,16 +44,26 @@ const StyledDiv = styled.div`
   position: fixed;
   z-index: 2;
   backdrop-filter: blur(2px);
+  /* @keyframes turner {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(180deg);
+    }
+  }
+  animation: turner 1s ease-in-out; */
 `;
 
 const DescriptionContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin: 40px 20px
+  margin: 40px 20px;
   max-height: 75%;
   overflow-x: scroll;
   font-size: 1.2em;
 `;
+
 export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
   const [showBack, setShowBack] = useState(false);
   async function addGameToCollection() {

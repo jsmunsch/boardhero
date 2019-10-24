@@ -14,8 +14,8 @@ const ButtonContainer = styled.button`
   fill: white;
 `;
 
-export default function AddButtonCollection({ children, handleClick }) {
-  return <ButtonContainer onClick={handleClick}>{children}</ButtonContainer>;
+export default function AddButtonCollection({ children, handleAddClick }) {
+  return <ButtonContainer onClick={handleAddClick}>{children}</ButtonContainer>;
 }
 
 AddButtonCollection.propTypes = {
