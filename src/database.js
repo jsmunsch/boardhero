@@ -11,11 +11,11 @@ async function initDatabase() {
   db = client.db(dbName);
 }
 
-async function getCollection() {
+async function getCollection(CollectionName) {
   if (!db) {
     await initDatabase();
   }
-  return db.collection("Collection");
+  return db.collection(CollectionName);
 }
 
 exports.initDatabase = initDatabase;

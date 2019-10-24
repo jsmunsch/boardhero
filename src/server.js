@@ -7,11 +7,7 @@ app.use(cors());
 
 const port = 8080;
 
-app.get("/api/games", (request, response) => {
-  response.end("lena ist so toll");
-});
-
-app.get("/api/games", async (request, response) => {
+app.get("/api/gamesCollection", async (request, response) => {
   try {
     response.writeHead(200, { "Content-Type": "application/json" });
     const gameName = await get(request.params.name);
@@ -21,7 +17,7 @@ app.get("/api/games", async (request, response) => {
   }
 });
 
-app.post("/api/games", async (request, response) => {
+app.post("/api/gamesCollection", async (request, response) => {
   try {
     let body = {};
     request.on("data", function(data) {
@@ -45,6 +41,7 @@ async function set(game) {
 async function get(key) {
   const gameCollection = await getCollection();
   const result = await gameCollection.find({}).toArray();
+  console.log(result);
   return result;
 }
 
