@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Hero from "../icons/Hero";
 import { useHistory } from "react-router-dom";
-import { getUserData } from "../api/FetchUserData";
+import { getUserData } from "../api/UserData";
 
 const FlexForm = styled.form`
   display: flex;

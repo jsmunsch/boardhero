@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import CollectionItemPositioned from "../components/GamePositioned";
-import CardBadge from "../components/CardBadge";
-import CardDetails from "../components/CardDetails";
-import CardCategories from "../components/CardCategories";
-import CardTitle from "../components/CardTitle";
-import CardFlip from "../components/CardFlip";
-import AddButtonCollection from "./AddButtonCollection";
-import Star from "../icons/Star";
-import Dice from "../icons/Dice";
-import AddButtonWishlist from "./AddButtonWishlist";
-import { postGameToCollection } from "../api/GameCollection";
-import { postGameToWishlist } from "../api/WishlistCollection";
-import DetailButton from "./DetailButton";
+import CollectionItemPositioned from "../GamePositioned";
+import CardBadge from "./CardBadge";
+import CardDetails from "./CardDetails";
+import CardCategories from "./CardCategories";
+import CardSection from "./CardSection";
+import CardGameName from "./CardGameName";
+import AddButtonCollection from "../AddButtonCollection";
+import Star from "../../icons/Star";
+import Dice from "../../icons/Dice";
+import AddButtonWishlist from "../AddButtonWishlist";
+import { postGameToCollection } from "../../api/GameCollection";
+import { postGameToWishlist } from "../../api/WishlistCollection";
+import DetailButton from "../DetailButton";
 
 export const Background = styled.img`
   height: 100%;
@@ -80,21 +80,21 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
         {!showBack && (
           <StyledDiv>
             <CollectionItemPositioned src={singleGame.image_url} />
-            <CardFlip>{singleGame.name}</CardFlip>
+            <CardGameName>{singleGame.name}</CardGameName>
             <CardDetails>
-              <CardTitle>
+              <CardSection>
                 Players: {singleGame.min_players}-{singleGame.max_players}
-              </CardTitle>
-              <CardTitle>
+              </CardSection>
+              <CardSection>
                 Time: {singleGame.min_playtime}-{singleGame.max_playtime} min
-              </CardTitle>
-              <CardTitle>Categories</CardTitle>
+              </CardSection>
+              <CardSection>Categories</CardSection>
               <CardCategories>
                 <CardBadge>Economics</CardBadge>
                 <CardBadge>Sci-Fi</CardBadge>
                 <CardBadge>Territory-Building</CardBadge>
               </CardCategories>
-              <CardTitle>Mechanics</CardTitle>
+              <CardSection>Mechanics</CardSection>
               <CardCategories>
                 <CardBadge>Area Control</CardBadge>
                 <CardBadge>Route/Network Building</CardBadge>
@@ -121,7 +121,7 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
           <StyledDiv>
             <CollectionItemPositioned src={singleGame.image_url} />
             <DetailButton handleClick={() => setShowBack(false)} />
-            <CardFlip>Description</CardFlip>
+            <CardGameName>Description</CardGameName>
             <DescriptionContainer>
               {singleGame.description}
             </DescriptionContainer>
