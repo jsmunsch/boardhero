@@ -4,7 +4,7 @@ import CollectionGrid from "../components/CollectionGrid";
 import axios from "axios";
 
 export default function LibraryBrowse({ inputValue }) {
-  const [apiGame, setApiGame] = useState();
+  const [apiGame, setApiGame] = useState(null);
 
   useEffect(() => {
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
@@ -31,7 +31,7 @@ export default function LibraryBrowse({ inputValue }) {
           Please use the searchbar to browse through our available games.
         </BrowseEmpty>
       )}
-      {inputValue && (
+      {inputValue && apiGame && (
         <CollectionGrid
           collection={apiGame.games}
           limit={"10"}

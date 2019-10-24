@@ -7,14 +7,11 @@ app.use(cors());
 
 const port = 8080;
 
-app.get("/gamess", (request, response) => {
-  response.json("Got a Post request");
-});
-app.get("/games", (request, response) => {
-  response.end("Hallo Jonas du ficker");
+app.get("/api/games", (request, response) => {
+  response.end("lena ist so toll");
 });
 
-app.get("/Collection", async (request, response) => {
+app.get("/api/games", async (request, response) => {
   try {
     response.writeHead(200, { "Content-Type": "application/json" });
     const gameName = await get(request.params.name);
@@ -24,7 +21,7 @@ app.get("/Collection", async (request, response) => {
   }
 });
 
-app.post("/Collection", async (request, response) => {
+app.post("/api/games", async (request, response) => {
   try {
     let body = {};
     request.on("data", function(data) {
