@@ -20,7 +20,8 @@ app.get(`/api/wishlist`, async (request, response) => {
 app.get(`/api/collection`, async (request, response) => {
   try {
     response.writeHead(200, { "Content-Type": "application/json" });
-    const gameName = await get(request.params);
+    const gameName = await get(request.params.id);
+    console.log(gameName);
     return response.end(gameName);
   } catch (error) {
     return response.end("Error");
@@ -52,7 +53,7 @@ app.post("/api/collection", async (request, response) => {
     request.on("end", async function() {
       response.writeHead(200, { "Content-Type": "application/json" });
       const game = await setCollection(body);
-      return response.end({ game });
+      return response.end(game);
     });
   } catch (error) {
     response.end("Error");
@@ -61,19 +62,18 @@ app.post("/api/collection", async (request, response) => {
 
 async function setCollection(game) {
   const gameCollection = await getCollection();
-  await gameCollection.insertOne({ game });
+  await gameCollection.insertOne(JSON.parse(game));
 }
 
 async function setWishlist(game) {
   const gameCollection = await getWishlist();
-  await gameCollection.insertOne({ game });
+  await gameCollection.insertOne(JSON.parse(game));
 }
 
 async function get(key) {
   const gameCollection = await getCollection();
   const result = await gameCollection.find({}).toArray();
-  console.log(result);
-  return result;
+  return JSON.stringify(result);
 }
 
 initDatabase().then(() => {

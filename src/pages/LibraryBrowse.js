@@ -5,7 +5,6 @@ import axios from "axios";
 
 export default function LibraryBrowse({ inputValue }) {
   const [apiGame, setApiGame] = useState(null);
-
   useEffect(() => {
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     const targetUrl = `https://www.boardgameatlas.com/api/search?name=${inputValue}&limit=10&fields=name,description,image_url,mechanics,categories,min_players,max_players,min_playtime,max_playtime&client_id=5cIY9zBPpt`;
