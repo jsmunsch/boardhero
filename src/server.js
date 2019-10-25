@@ -29,7 +29,7 @@ app.get(`/api/collection`, async (request, response) => {
 
 app.post("/api/wishlist", async (request, response) => {
   try {
-    let body = {};
+    let body = "";
     request.on("data", function(data) {
       body += data;
     });
@@ -45,7 +45,7 @@ app.post("/api/wishlist", async (request, response) => {
 
 app.post("/api/collection", async (request, response) => {
   try {
-    let body = {};
+    let body = "";
     request.on("data", function(data) {
       body += data;
     });
