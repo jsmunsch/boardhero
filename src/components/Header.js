@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import IconButton from "./IconButton";
 import BurgerMenu from "../icons/BurgerMenuIcon";
@@ -6,6 +6,9 @@ import Magnifier from "../icons/Magnifier";
 import VerticalPoints from "../icons/VerticalPoints";
 import SearchBar from "./SearchBar";
 import BurgerMenuList from "./BurgerMenuList";
+import { useOnClickOutside } from "../hooks";
+import OptionBox from "./OptionBox";
+import SortModal from "./SortModal";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -28,10 +31,20 @@ export default function Header({
   onSearch
 }) {
   const [showMenu, setShowMenu] = React.useState(false);
+  const [showOptions, setShowOptions] = useState(false);
+  const [showSort, setShowSort] = useState(false);
+  const node = useRef();
+  useOnClickOutside(node, () => {
+    setShowMenu(false);
+    setShowOptions(false);
+    setShowSort(false);
+  });
   return (
     <>
       {showMenu && (
-        <BurgerMenuList handleOutsideClick={() => setShowMenu(false)} />
+        <div ref={node}>
+          <BurgerMenuList />
+        </div>
       )}
 
       <HeaderContainer>
@@ -50,6 +63,12 @@ export default function Header({
         <IconButton onClick={toggleOptions}>
           <VerticalPoints />
         </IconButton>
+        {showOptions && (
+          <div ref={node}>
+            <OptionBox />
+            {/* {showSort && <SortModal />} */}
+          </div>
+        )}
       </HeaderContainer>
     </>
   );

@@ -8,6 +8,7 @@ const FlexContainer = styled.div`
   align-items: center;
   text-align: center;
   height: 60vh;
+  justify-content: center;
 `;
 
 export default function BrowseEmpty({ children }) {
