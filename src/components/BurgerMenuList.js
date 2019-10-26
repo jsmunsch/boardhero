@@ -5,7 +5,7 @@ import Dice from "../icons/Dice";
 import Person from "../icons/Person";
 import Upload from "../icons/Upload";
 import Star from "../icons/Star";
-import { Background } from "./CardModal";
+import { Background } from "./popup-card/CardModal";
 
 const morph = keyframes`
   0% { width: 0px;}
