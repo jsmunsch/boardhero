@@ -11,13 +11,12 @@ const ButtonContainer = styled.button`
   height: 60px;
   width: 60px;
   color: white;
-  fill: white;
 `;
 
-export default function AddButtonCollection({ children, handleAddClick }) {
-  return <ButtonContainer onClick={handleAddClick}>{children}</ButtonContainer>;
+export default function AddButton({ children }) {
+  return <ButtonContainer>{children}</ButtonContainer>;
 }
 
-AddButtonCollection.propTypes = {
+AddButton.propTypes = {
   children: PropTypes.node.isRequired
 };

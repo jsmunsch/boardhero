@@ -9,6 +9,6 @@ const CardTitleContainer = styled.div`
   border-bottom: 0.5px solid black;
 `;
 
-export default function CardSection({ children }) {
+export default function CardTitle({ children }) {
   return <CardTitleContainer>{children}</CardTitleContainer>;
 }
