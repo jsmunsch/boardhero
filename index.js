@@ -1,18 +1,20 @@
 const express = require("express");
-const { getCollection, getWishlist } = require("./lib/database");
+const { getCollectionData, setCollectionData } = require("./lib/collection");
+const { getWishlistData, setWishlistData } = require("./lib/wishlist");
 const { initDatabase } = require("./lib/database");
 const app = express();
 const cors = require("cors");
 const path = require("path");
 
+const dbName = "boardhero";
 const port = process.env.PORT || 8080;
 app.use(cors());
+app.use(express.json());
 
 app.get(`/api/wishlist`, async (request, response) => {
   try {
-    response.writeHead(200, { "Content-Type": "application/json" });
-    const gameName = await get(request.params);
-    return response.end(gameName);
+    const gameName = await getWishlistData(request.params);
+    return response.json(gameName);
   } catch (error) {
     return response.end("Error");
   }
@@ -20,9 +22,8 @@ app.get(`/api/wishlist`, async (request, response) => {
 
 app.get(`/api/collection`, async (request, response) => {
   try {
-    response.writeHead(200, { "Content-Type": "application/json" });
-    const gameName = await get(request.params.id);
-    return response.end(gameName);
+    const gameName = await getCollectionData(request.params);
+    return response.json(gameName);
   } catch (error) {
     return response.end("Error");
   }
@@ -30,15 +31,8 @@ app.get(`/api/collection`, async (request, response) => {
 
 app.post("/api/wishlist", async (request, response) => {
   try {
-    let body = "";
-    request.on("data", function(data) {
-      body += data;
-    });
-    request.on("end", async function() {
-      response.writeHead(200, { "Content-Type": "application/json" });
-      const game = await setWishlist(body);
-      return response.end({ game });
-    });
+    const game = await setWishlistData(request.body);
+    return response.json({ game });
   } catch (error) {
     response.end("Error");
   }
@@ -46,15 +40,8 @@ app.post("/api/wishlist", async (request, response) => {
 
 app.post("/api/collection", async (request, response) => {
   try {
-    let body = "";
-    request.on("data", function(data) {
-      body += data;
-    });
-    request.on("end", async function() {
-      response.writeHead(200, { "Content-Type": "application/json" });
-      const game = await setCollection(body);
-      return response.end(game);
-    });
+    const game = await setCollectionData(request.body);
+    return response.json({ game });
   } catch (error) {
     response.end("Error");
   }
@@ -67,25 +54,8 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "../client/build", "index.html"));
   });
 }
-
-async function setCollection(game) {
-  const gameCollection = await getCollection();
-  await gameCollection.insertOne(JSON.parse(game));
-}
-
-async function setWishlist(game) {
-  const gameCollection = await getWishlist();
-  await gameCollection.insertOne(JSON.parse(game));
-}
-
-async function get(key) {
-  const gameCollection = await getCollection();
-  const result = await gameCollection.find({}).toArray();
-  return JSON.stringify(result);
-}
-
-initDatabase().then(() => {
-  console.log("Database connected");
+initDatabase(dbName).then(() => {
+  console.log(`Database ${dbName} is ready`);
 
   app.listen(port, () => {
     console.log(`Server listens on http://localhost:${port}`);
