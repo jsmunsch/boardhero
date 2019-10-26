@@ -15,11 +15,6 @@
       "dest": "/index.js"
     }
   ],
-  "env": {
-    "DB_URL": "@db_url",
-    "DB_NAME": "@db_name",
-    "NODE_ENV": "production"
-  },
   "github": {
     "autoAlias": false
   }
