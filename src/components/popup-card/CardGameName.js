@@ -11,6 +11,6 @@ const FlipContainer = styled.div`
   font-size: 1.4em;
 `;
 
-export default function CardFlip({ children }) {
+export default function CardGameName({ children }) {
   return <FlipContainer>{children}</FlipContainer>;
 }

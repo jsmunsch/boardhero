@@ -4,8 +4,7 @@ import CollectionGrid from "../components/CollectionGrid";
 import axios from "axios";
 
 export default function LibraryBrowse({ inputValue }) {
-  const [apiGame, setApiGame] = useState();
-
+  const [apiGame, setApiGame] = useState(null);
   useEffect(() => {
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     const targetUrl = `https://www.boardgameatlas.com/api/search?name=${inputValue}&limit=10&fields=name,description,image_url,mechanics,categories,min_players,max_players,min_playtime,max_playtime&client_id=5cIY9zBPpt`;
@@ -31,7 +30,7 @@ export default function LibraryBrowse({ inputValue }) {
           Please use the searchbar to browse through our available games.
         </BrowseEmpty>
       )}
-      {inputValue && (
+      {inputValue && apiGame && (
         <CollectionGrid
           collection={apiGame.games}
           limit={"10"}
