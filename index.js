@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const { getCollectionData, setCollectionData } = require("./lib/collection");
 const { getWishlistData, setWishlistData } = require("./lib/wishlist");
@@ -6,8 +8,6 @@ const app = express();
 const cors = require("cors");
 const path = require("path");
 
-const dbName = "boardhero";
-const port = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
 
@@ -18,6 +18,7 @@ app.get(`/api/wishlist`, async (request, response) => {
   } catch (error) {
     return response.end("Error");
   }
+  x;
 });
 
 app.get(`/api/collection`, async (request, response) => {
@@ -54,10 +55,10 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "../client/build", "index.html"));
   });
 }
-initDatabase(dbName).then(() => {
-  console.log(`Database ${dbName} is ready`);
+initDatabase(process.env.DB_URL, process.env.DB_NAME).then(() => {
+  console.log(`Database ${(process.env.DB_URL, process.env.DB_NAME)} is ready`);
 
-  app.listen(port, () => {
-    console.log(`Server listens on http://localhost:${port}`);
+  app.listen(process.env.PORT, () => {
+    console.log(`Server listens on http://localhost:${process.env.PORT}`);
   });
 });
