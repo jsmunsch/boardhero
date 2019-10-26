@@ -5,7 +5,6 @@ export function getWishlistCollection() {
 }
 
 export function postGameToWishlist(game) {
-  console.log(game);
   return fetch("http://localhost:8080/api/wishlist", {
     method: "POST",
     headers: {

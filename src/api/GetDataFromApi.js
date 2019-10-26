@@ -3,7 +3,6 @@ import axios from "axios";
 
 export default function GetDataFromApi() {
   const [apiGame, setApiGame] = useState();
-  console.log(apiGame);
 
   useEffect(() => {
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
@@ -18,7 +17,6 @@ export default function GetDataFromApi() {
       }
     })
       .then(response => {
-        console.log(response.data);
         setApiGame(response.data);
       })
       .catch(err => {

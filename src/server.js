@@ -21,7 +21,6 @@ app.get(`/api/collection`, async (request, response) => {
   try {
     response.writeHead(200, { "Content-Type": "application/json" });
     const gameName = await get(request.params.id);
-    console.log(gameName);
     return response.end(gameName);
   } catch (error) {
     return response.end("Error");
