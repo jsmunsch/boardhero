@@ -5,14 +5,9 @@
   "main": "server.js",
   "scripts": {
     "client": "cd client && npm start",
-<<<<<<< HEAD
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "dev:server": "cd client && npm run build && cd .. && npm start",
-=======
     "build": "cd client && npm run build",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "dev:server": "npm run build && cd .. && npm start",
->>>>>>> master
     "server": "nodemon index.js",
     "start": "node index.js"
   },
@@ -20,11 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/jsmunsch/boardhero"
   },
-<<<<<<< HEAD
-  "author": "Leon Machens",
-=======
   "author": "Jonas Munsch",
->>>>>>> master
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jsmunsch/boardhero"

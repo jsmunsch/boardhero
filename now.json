@@ -17,11 +17,7 @@
   ],
   "env": {
     "DB_URL": "@db_url",
-<<<<<<< HEAD
-    "DB_NAME": "@db_name"
-=======
     "DB_NAME": "@db_name",
     "NODE_ENV": "production"
->>>>>>> master
   }
 }
