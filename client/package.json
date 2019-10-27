@@ -47,8 +47,12 @@
     "@storybook/react": "^5.2.3",
     "eslint": "^6.5.1",
     "nodemon": "^1.19.4",
+<<<<<<< HEAD
     "prettier": "^1.18.2",
     "dotenv": "^8.2.0"
+=======
+    "prettier": "^1.18.2"
+>>>>>>> master
   },
   "proxy": "http://localhost:8080"
 }
