@@ -44,7 +44,7 @@ const StyledDiv = styled.div`
   position: fixed;
   z-index: 2;
   backdrop-filter: blur(2px);
-  /* @keyframes turner {
+  @keyframes turner {
     from {
       transform: rotateY(0deg);
     }
@@ -52,7 +52,7 @@ const StyledDiv = styled.div`
       transform: rotateY(180deg);
     }
   }
-  animation: turner 1s ease-in-out; */
+  animation: turner 1s ease-in-out;
 `;
 
 const DescriptionContainer = styled.div`
