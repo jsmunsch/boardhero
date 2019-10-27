@@ -1,11 +1,12 @@
 const express = require("express");
-const { getCollection, getWishlist } = require("./database");
-const { initDatabase } = require("./database");
-const cors = require("cors");
+const { getCollection, getWishlist } = require("./lib/database");
+const { initDatabase } = require("./lib/database");
 const app = express();
-app.use(cors());
+const cors = require("cors");
+const path = require("path");
 
-const port = 8080;
+const port = process.env.PORT || 8080;
+app.use(cors());
 
 app.get(`/api/wishlist`, async (request, response) => {
   try {
@@ -58,6 +59,14 @@ app.post("/api/collection", async (request, response) => {
     response.end("Error");
   }
 });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "client/build")));
+
+  app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  });
+}
 
 async function setCollection(game) {
   const gameCollection = await getCollection();
