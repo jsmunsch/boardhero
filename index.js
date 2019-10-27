@@ -1,10 +1,12 @@
 const express = require("express");
+
 const { getCollectionData, setCollectionData } = require("./lib/collection");
 const { getWishlistData, setWishlistData } = require("./lib/wishlist");
 const { initDatabase } = require("./lib/database");
 const app = express();
 const cors = require("cors");
 const path = require("path");
+
 
 const dbName = "boardhero";
 const port = process.env.PORT || 8080;
@@ -15,6 +17,15 @@ app.get(`/api/wishlist`, async (request, response) => {
   try {
     const gameName = await getWishlistData(request.params);
     return response.json(gameName);
+const port = process.env.PORT || 8080;
+app.use(cors());
+
+app.get(`/api/wishlist`, async (request, response) => {
+  try {
+    response.writeHead(200, { "Content-Type": "application/json" });
+    const gameName = await get(request.params);
+    return response.end(gameName);
+
   } catch (error) {
     return response.end("Error");
   }
@@ -31,6 +42,7 @@ app.get(`/api/collection`, async (request, response) => {
 
 app.post("/api/wishlist", async (request, response) => {
   try {
+
     const game = await setWishlistData(request.body);
     return response.json({ game });
   } catch (error) {
@@ -40,6 +52,7 @@ app.post("/api/wishlist", async (request, response) => {
 
 app.post("/api/collection", async (request, response) => {
   try {
+
     const game = await setCollectionData(request.body);
     return response.json({ game });
   } catch (error) {
@@ -54,8 +67,10 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "../client/build", "index.html"));
   });
 }
+
 initDatabase(dbName).then(() => {
   console.log(`Database ${dbName} is ready`);
+
 
   app.listen(port, () => {
     console.log(`Server listens on http://localhost:${port}`);
