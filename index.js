@@ -1,29 +1,27 @@
 require("dotenv").config();
 
 const express = require("express");
-const { getCollectionData, setCollectionData } = require("./lib/collection");
-const { getWishlistData, setWishlistData } = require("./lib/wishlist");
+const { getGames, setGames } = require("./lib/games");
+const { getWishlist, setWishlist } = require("./lib/wishlist");
 const { initDatabase } = require("./lib/database");
 const app = express();
-const cors = require("cors");
 const path = require("path");
 
-app.use(cors());
 app.use(express.json());
 
 app.get(`/api/wishlist`, async (request, response) => {
   try {
-    const gameName = await getWishlistData(request.params);
-    return response.json(gameName);
+    const wishlist = await getWishlist(request.params);
+    return response.json(wishlist);
   } catch (error) {
     return response.end("Error");
   }
 });
 
-app.get(`/api/collection`, async (request, response) => {
+app.get(`/api/games`, async (request, response) => {
   try {
-    const gameName = await getCollectionData(request.params);
-    return response.json(gameName);
+    const games = await getGames(request.params);
+    return response.json(games);
   } catch (error) {
     return response.end("Error");
   }
@@ -31,20 +29,35 @@ app.get(`/api/collection`, async (request, response) => {
 
 app.post("/api/wishlist", async (request, response) => {
   try {
-    const game = await setWishlistData(request.body);
-    return response.json({ game });
+    const WishlistEntry = await setWishlist(request.body);
+    return response.json({ WishlistEntry });
   } catch (error) {
     response.end("Error");
   }
 });
 
-app.post("/api/collection", async (request, response) => {
+app.post("/api/games", async (request, response) => {
   try {
-    const game = await setCollectionData(request.body);
-    return response.json({ game });
+    const newGame = await setGames(request.body);
+    return response.json({ newGame });
   } catch (error) {
     response.end("Error");
   }
+});
+
+app.get("/api/search", async (request, response) => {
+  const name = request.query.name;
+  const targetUrl = `https://www.boardgameatlas.com/api/search?name=${name}&limit=10&fields=name,description,image_url,mechanics,categories,min_players,max_players,min_playtime,max_playtime&client_id=5cIY9zBPpt`;
+  axios({
+    url: targetUrl,
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "client-id": "5cIY9zBPpt"
+    }
+  });
+  const game = response.data;
+  return response.json(game);
 });
 
 if (process.env.NODE_ENV === "production") {

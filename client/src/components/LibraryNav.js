@@ -40,28 +40,28 @@ export default function LibraryNav({ selected, onNavigationChange }) {
   let { url } = useRouteMatch();
   return (
     <NavGrid>
-      <StyledLink to={`${url}/Collection`}>
+      <StyledLink to={`${url}/games`}>
         <NavGridButton
-          selected={selected === "Collection"}
-          value="Collection"
+          selected={selected === "Games"}
+          value="games"
           onClick={event => onNavigationChange(event.target.innerHTML)}
         >
-          Collection
+          Games
         </NavGridButton>
       </StyledLink>
-      <StyledLink to={`${url}/Browse`}>
+      <StyledLink to={`${url}/browse`}>
         <NavGridButton
           selected={selected === "Browse"}
-          value="Browse"
+          value="browse"
           onClick={event => onNavigationChange(event.target.innerHTML)}
         >
           Browse
         </NavGridButton>
       </StyledLink>
-      <StyledLink to={`${url}/Wishlist`}>
+      <StyledLink to={`${url}/wishlist`}>
         <NavGridButton
           selected={selected === "Wishlist"}
-          value="Wishlist"
+          value="wishlist"
           onClick={event => onNavigationChange(event.target.innerHTML)}
         >
           Wishlist
