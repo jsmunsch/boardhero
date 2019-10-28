@@ -1,113 +1,8 @@
 import React, { useState } from "react";
-import styled, { keyframes, css } from "styled-components";
+import styled, { css } from "styled-components";
+import { alert } from "../../animations/alert";
+import { textFadeIn } from "../../animations/textFadeIn";
 
-const moveup = keyframes`
- 0% {
-      bottom: -5em;
-      width: 65px;
-      margin-left: -32.5px;
-      border-radius: 50%;
-    }
-    7% {
-      bottom: 3em;
-      width: 65px;
-      margin-left: -32.5px;
-      border-radius: 50%;
-    }
-    12% {
-      bottom: 3em;
-      width: 65px;
-      margin-left: -32.5px;
-      border-radius: 50%;
-    }
-    25% {
-      bottom: 3em;
-      width: 380px;
-      margin-left: -190px;
-      border-radius: 0;
-    }
-    37% {
-      bottom: 3em;
-      width: 380px;
-      margin-left: -190px;
-    }
-    42% {
-      bottom: 3em;
-      width: 380px;
-      margin-left: -190px;
-    }
-    47% {
-      bottom: 3.5em;
-      width: 380px;
-      margin-left: -190px;
-      border-radius: 0;
-    }
-    50% {
-      bottom: 3.5em;
-      width: 380px;
-      margin-left: -190px;
-      border-radius: 0;
-    }
-    53% {
-      bottom: 3.5em;
-      width: 380px;
-      margin-left: -190px;
-      border-radius: 0;
-    }
-    58% {
-      bottom: 3em;
-      width: 380px;
-      margin-left: -190px;
-    }
-    63% {
-      bottom: 3em;
-      width: 380px;
-      margin-left: -190px;
-    }
-    75% {
-      bottom: 3em;
-      width: 380px;
-      margin-left: -190px;
-      border-radius: 0;
-    }
-    87% {
-      bottom: 3em;
-      width: 65px;
-      margin-left: -32.5px;
-      border-radius: 50%;
-    }
-    92% {
-      bottom: 3em;
-      width: 65px;
-      margin-left: -32.5px;
-      border-radius: 50%;
-    }
-    100% {
-      bottom: -5em;
-      width: 65px;
-      margin-left: -32.5px;
-      border-radius: 50%;
-    }
-  }
-`;
-const showText = keyframes`
-    0% {
-      opacity: 0;
-    }
-    30% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    75% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-`;
 const MessageBox = styled.div`
   background: green;
   display: flex;
@@ -127,7 +22,7 @@ const MessageBox = styled.div`
   ${props =>
     props.alert
       ? css`
-          animation: ${moveup} 2.5s ease-in-out;
+          animation: ${alert} 2.5s ease-in-out;
           display: "block";
         `
       : css`
@@ -140,7 +35,7 @@ const MessageText = styled.text`
   ${props =>
     props.alert
       ? css`
-          animation: ${showText} 2.5s ease-in-out;
+          animation: ${textFadeIn} 2.5s ease-in-out;
           display: "block";
         `
       : css`

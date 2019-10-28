@@ -1,11 +1,9 @@
 export function getWishlistCollection() {
-  return fetch("http://localhost:8080/api/wishlist").then(response =>
-    response.json()
-  );
+  return fetch("/api/wishlist").then(response => response.json());
 }
 
-export function postGameToWishlist(game) {
-  return fetch("http://localhost:8080/api/wishlist", {
+export function newWishlistEntry(game) {
+  return fetch("/api/wishlist", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

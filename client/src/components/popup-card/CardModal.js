@@ -10,8 +10,8 @@ import AddButtonCollection from "./AddButtonCollection";
 import Star from "../../icons/Star";
 import Dice from "../../icons/Dice";
 import AddButtonWishlist from "./AddButtonWishlist";
-import { postGameToCollection } from "../../api/fetchGames";
-import { postGameToWishlist } from "../../api/fetchWishlist";
+import { newGame } from "../../api/fetchGames";
+import { newWishlistEntry } from "../../api/fetchWishlist";
 import DetailButton from "./DetailButton";
 import ConfirmationMessage from "./ConfirmationMessage";
 
@@ -68,10 +68,10 @@ const DescriptionContainer = styled.div`
 export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
   const [showBack, setShowBack] = useState(false);
   async function addGameToCollection() {
-    postGameToCollection(singleGame);
+    newGame(singleGame);
   }
   async function addGameToWishlist() {
-    postGameToWishlist(singleGame);
+    newWishlistEntry(singleGame);
   }
 
   return (
@@ -103,9 +103,9 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
               <DetailButton onClick={() => setShowBack(true)} />
               {enabled && (
                 <AddButtonCollection
-                  handleAddClick={() => {
+                  onClick={() => {
                     addGameToCollection(singleGame);
-setetShowConfirmation()true
+                    // setetShowConfirmation()true
                   }}
                 >
                   <Star />
@@ -113,7 +113,7 @@ setetShowConfirmation()true
               )}
               {enabled && (
                 <AddButtonWishlist
-                  handleAddClick={() => addGameToWishlist(singleGame)}
+                  onClick={() => addGameToWishlist(singleGame)}
                 >
                   <Dice />
                 </AddButtonWishlist>
@@ -132,7 +132,10 @@ setetShowConfirmation()true
           </StyledDiv>
         )}
       </FlexContainer>
-      <ConfirmationMessage show={showConformation} onClose={() => setShowConfirmation(false)} />
+      <ConfirmationMessage
+      // show={showConformation}
+      // onClose={() => setShowConfirmation(false)}
+      />
     </>
   );
 }

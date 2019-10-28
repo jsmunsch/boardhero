@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Hero from "../icons/Hero";
 import { useHistory } from "react-router-dom";
-import { getUserData } from "../api/UserData";
+import { getUserData } from "../api/fetchUser";
 
 const FlexForm = styled.form`
   display: flex;
@@ -13,19 +12,6 @@ const FlexForm = styled.form`
   width: 80%;
 `;
 
-const VectorContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  margin: 5px;
-  display: flex;
-  justify-content: center;
-`;
-
-const Headline = styled.h1`
-  text-align: center;
-  color: white;
-  font-size: 2.5em;
-`;
 const InputContainer = styled.input`
   padding: 10px;
   margin-top: 10px;
@@ -48,17 +34,17 @@ const LoginButton = styled.button`
   font-size: 1.2em;
 `;
 
-export default function Login() {
+export default function LoginForm() {
   let history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [data, setData] = useState([]);
+  const [userData, setUserData] = useState([]);
   React.useEffect(() => {
     getUserData().then(UserCredentials => {
-      setData(UserCredentials);
+      setUserData(UserCredentials);
     });
   }, []);
-  data.find(validateUser);
+  userData.forEach(validateUser);
 
   function validateUser(user) {
     const usernameTrue = user.user_id === username;
@@ -71,10 +57,6 @@ export default function Login() {
 
   return (
     <>
-      <Headline>Boardhero</Headline>
-      <VectorContainer>
-        <Hero />
-      </VectorContainer>
       <FlexForm onSubmit={validateUser}>
         <InputContainer
           placeholder="Username"

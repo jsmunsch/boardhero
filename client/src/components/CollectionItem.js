@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const CollectionItem = styled.img`
+export const ImageContainer = styled.img`
   width: 88px;
   height: 88px;
   border: 4px solid white;
@@ -11,4 +11,13 @@ export const CollectionItem = styled.img`
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
 `;
 
-export default CollectionItem;
+export default function CollectionItem({ game, src, onClick, className }) {
+  return (
+    <ImageContainer
+      classname={className}
+      onClick={onClick}
+      src={src}
+      game={game}
+    />
+  );
+}

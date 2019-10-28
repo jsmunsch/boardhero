@@ -1,4 +1,4 @@
-export async function getGameCollection() {
+export async function getGamesCollection() {
   return fetch("/api/games").then(response => response.json());
 }
 

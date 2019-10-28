@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ardCategories = styled.div`
+const CardCategories = styled.div`
   display: flex;
   overflow-x: auto;
   flex-direction: row;
