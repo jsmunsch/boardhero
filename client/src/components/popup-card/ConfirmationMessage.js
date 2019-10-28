@@ -1,24 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
+import styled, { keyframes, css } from "styled-components";
 
-const MessageBox = styled.div`
-  background: green;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: -5em;
-  left: 50%;
-  margin-left: -175px;
-  width: 350px;
-  height: 65px;
-  display: ${props => props.theme.accent};
-  color: #fff;
-  font-size: 22px;
-  padding: 0 1.2em 0 0;
-  z-index: 10;
-  @keyframes moveup {
-    0% {
+const moveup = keyframes`
+ 0% {
       bottom: -5em;
       width: 65px;
       margin-left: -32.5px;
@@ -105,12 +89,8 @@ const MessageBox = styled.div`
       border-radius: 50%;
     }
   }
-
-  animation: moveup 2.5s ease-in-out;
 `;
-
-const MessageText = styled.text`
-  @keyframes showText {
+const showText = keyframes`
     0% {
       opacity: 0;
     }
@@ -127,13 +107,61 @@ const MessageText = styled.text`
       opacity: 0;
     }
   }
-  animation: showText 2.5s ease-in-out;
+`;
+const MessageBox = styled.div`
+  background: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: -5em;
+  left: 50%;
+  margin-left: -175px;
+  width: 350px;
+  height: 65px;
+  color: #fff;
+  font-size: 22px;
+  padding: 0 1.2em 0 0;
+  z-index: 10;
+
+  ${props =>
+    props.alert
+      ? css`
+          animation: ${moveup} 2.5s ease-in-out;
+          display: "block";
+        `
+      : css`
+          animation: none;
+          display: none;
+        `}
+`;
+
+const MessageText = styled.text`
+  ${props =>
+    props.alert
+      ? css`
+          animation: ${showText} 2.5s ease-in-out;
+          display: "block";
+        `
+      : css`
+          animation: none;
+          display: none;
+        `}
 `;
 
 export default function ConfirmationMessage() {
+  const [alert, setAlert] = useState(true);
+
+  function alertUser() {
+    setAlert(true);
+  }
+  function resetAlert() {
+    setAlert(false);
+  }
+
   return (
-    <MessageBox>
-      <MessageText>Game Succesfully added</MessageText>
+    <MessageBox alert={alert} resetAlert={resetAlert} x>
+      <MessageText alert={alert}>Game Succesfully added</MessageText>
     </MessageBox>
   );
 }

@@ -8,6 +8,4 @@ export const PositionedImageContainer = styled(ImageContainer)`
   left: 30px;
 `;
 
-export default function GamePositioned({ className, src }) {
-  return <PositionedImageContainer className={className} src={src} />;
-}
+export default GamePositioned;

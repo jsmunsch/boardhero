@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledMenuButton = styled.button`
+const NavigationMenuButton = styled.button`
   display: flex;
   width: inherit;
   height: 8vh;
@@ -16,7 +16,4 @@ const StyledMenuButton = styled.button`
   font-size: 20px;
 `;
 
-function NavigationMenuButton({ children }) {
-  return <StyledMenuButton>{children}</StyledMenuButton>;
-}
 export default NavigationMenuButton;

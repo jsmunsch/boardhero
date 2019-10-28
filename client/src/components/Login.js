@@ -75,11 +75,7 @@ export default function Login() {
       <VectorContainer>
         <Hero />
       </VectorContainer>
-      <FlexForm
-        onSubmit={() => {
-          validateUser();
-        }}
-      >
+      <FlexForm onSubmit={validateUser}>
         <InputContainer
           placeholder="Username"
           required

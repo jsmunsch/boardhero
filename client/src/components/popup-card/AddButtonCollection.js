@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-const ButtonContainer = styled.button`
+const AddButtonCollection = styled.button`
   border-radius: 50%;
   background-color: red;
   position: absolute;
@@ -14,10 +14,4 @@ const ButtonContainer = styled.button`
   fill: white;
 `;
 
-export default function AddButtonCollection({ children, handleAddClick }) {
-  return <ButtonContainer onClick={handleAddClick}>{children}</ButtonContainer>;
-}
-
-AddButtonCollection.propTypes = {
-  children: PropTypes.node.isRequired
-};
+export default AddButtonCollection;

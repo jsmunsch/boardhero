@@ -14,9 +14,11 @@ export default function Library() {
   const [displaySort, setDisplaySort] = useState(false);
   const [showSearchbar, setShowSearchbar] = useState(false);
   const [inputValue, setInputValue] = React.useState("");
+
   function handleSearch(value) {
     setInputValue(value);
   }
+
   return (
     <>
       <Header

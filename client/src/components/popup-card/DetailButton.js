@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import DoubleArrow from "../icons/DoubleArrow";
+import DoubleArrow from "../../icons/DoubleArrow";
 
 const ButtonContainer = styled.button`
   position: absolute;
@@ -9,9 +9,9 @@ const ButtonContainer = styled.button`
   top: 50%;
   right: 10px;
 `;
-export default function DetailButton({ handleClick }) {
+export default function DetailButton({ onClick }) {
   return (
-    <ButtonContainer onClick={handleClick}>
+    <ButtonContainer onClick={onClick}>
       <DoubleArrow />
     </ButtonContainer>
   );

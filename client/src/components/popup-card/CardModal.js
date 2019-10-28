@@ -10,9 +10,9 @@ import AddButtonCollection from "./AddButtonCollection";
 import Star from "../../icons/Star";
 import Dice from "../../icons/Dice";
 import AddButtonWishlist from "./AddButtonWishlist";
-import { postGameToCollection } from "../../api/GameCollection";
-import { postGameToWishlist } from "../../api/WishlistCollection";
-import DetailButton from "../DetailButton";
+import { postGameToCollection } from "../../api/fetchGames";
+import { postGameToWishlist } from "../../api/fetchWishlist";
+import DetailButton from "./DetailButton";
 import ConfirmationMessage from "./ConfirmationMessage";
 
 export const Background = styled.img`
@@ -100,10 +100,13 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
                 <CardBadge>Area Control</CardBadge>
                 <CardBadge>Route/Network Building</CardBadge>
               </CardCategories>
-              <DetailButton handleClick={() => setShowBack(true)} />
+              <DetailButton onClick={() => setShowBack(true)} />
               {enabled && (
                 <AddButtonCollection
-                  handleAddClick={() => addGameToCollection(singleGame)}
+                  handleAddClick={() => {
+                    addGameToCollection(singleGame);
+setetShowConfirmation()true
+                  }}
                 >
                   <Star />
                 </AddButtonCollection>
@@ -129,7 +132,7 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
           </StyledDiv>
         )}
       </FlexContainer>
-      <ConfirmationMessage />
+      <ConfirmationMessage show={showConformation} onClose={() => setShowConfirmation(false)} />
     </>
   );
 }

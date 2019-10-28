@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const FlipContainer = styled.div`
+const CardGameName = styled.div`
   display: flex;
   justify-content: flex-start;
   padding: 20px;
@@ -11,6 +11,4 @@ const FlipContainer = styled.div`
   font-size: 1.4em;
 `;
 
-export default function CardGameName({ children }) {
-  return <FlipContainer>{children}</FlipContainer>;
-}
+export default CardGameName;
