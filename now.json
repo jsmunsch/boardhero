@@ -19,5 +19,11 @@
     "DB_URL": "@db_url",
     "DB_NAME": "@db_name",
     "NODE_ENV": "production"
+<<<<<<< HEAD
+=======
+  },
+  "github": {
+    "autoAlias": false
+>>>>>>> parent of 5a612bb... dunno
   }
 }
