@@ -1,5 +1,6 @@
-const express = require("express");
+require("dotenv").config();
 
+const express = require("express");
 const { getCollectionData, setCollectionData } = require("./lib/collection");
 const { getWishlistData, setWishlistData } = require("./lib/wishlist");
 const { initDatabase } = require("./lib/database");
@@ -50,14 +51,13 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
 
   app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+    res.sendFile(path.join(__dirname, "client/build", "index.html"));
   });
 }
+initDatabase(process.env.DB_URL, process.env.DB_NAME).then(() => {
+  console.log(`Database ${(process.env.DB_URL, process.env.DB_NAME)} is ready`);
 
-initDatabase(process.env.DB_NAME).then(() => {
-  console.log(`Database ${process.env.DB_NAME} is ready`);
-
-  app.listen(port, () => {
+  app.listen(process.env.PORT, () => {
     console.log(`Server listens on http://localhost:${process.env.PORT}`);
   });
 });

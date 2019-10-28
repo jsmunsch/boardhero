@@ -12,6 +12,7 @@ const MessageBox = styled.div`
   margin-left: -175px;
   width: 350px;
   height: 65px;
+  display: ${props => props.theme.accent};
   color: #fff;
   font-size: 22px;
   padding: 0 1.2em 0 0;

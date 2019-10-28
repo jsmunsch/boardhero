@@ -49,11 +49,12 @@ const StyledDiv = styled.div`
 const DescriptionContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin: 40px 20px
+  margin: 40px 20px;
   max-height: 75%;
   overflow-x: scroll;
   font-size: 1.2em;
 `;
+
 export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
   const [showBack, setShowBack] = useState(false);
   async function addGameToCollection() {
