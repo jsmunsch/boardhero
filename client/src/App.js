@@ -1,10 +1,10 @@
 import React from "react";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 import darkTheme from "./themes/dark";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Library from "./pages/library";
 import Login from "./pages/login";
+import Library from "./pages/library";
 
 function App() {
   return (

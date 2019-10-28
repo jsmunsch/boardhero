@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import CollectionItemPositioned from "../GamePositioned";
 import CardBadge from "./CardBadge";
 import CardDetails from "./CardDetails";
