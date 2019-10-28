@@ -5,7 +5,7 @@ import CardBadge from "./CardBadge";
 import CardDetails from "./CardDetails";
 import CardCategories from "./CardCategories";
 import CardSection from "./CardSection";
-import CardGameName from "./CardGameName";
+import CardGameName from "./GameName";
 import AddButtonCollection from "./AddButtonCollection";
 import Star from "../../icons/Star";
 import Dice from "../../icons/Dice";
@@ -14,6 +14,10 @@ import { newGame } from "../../api/fetchGames";
 import { newWishlistEntry } from "../../api/fetchWishlist";
 import DetailButton from "./DetailButton";
 import ConfirmationMessage from "./ConfirmationMessage";
+import Woodsign from "../../icons/WoodSign";
+import Grid from "./Grid";
+import GameName from "./GameName";
+import Players from "./Players";
 
 export const Background = styled.img`
   height: 100%;
@@ -41,9 +45,11 @@ const StyledDiv = styled.div`
   margin-right: auto;
   top: 50%;
   margin-top: -240px;
-  background: white;
+  background: ${props => props.theme.main};
   position: fixed;
   z-index: 2;
+  border: 4px solid ${props => props.theme.accent};
+  border-radius: 15px;
   backdrop-filter: blur(2px);
   /* @keyframes turner {
     from {
@@ -81,44 +87,34 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
         {!showBack && (
           <StyledDiv>
             <CollectionItemPositioned src={singleGame.image_url} />
-            <CardGameName>{singleGame.name}</CardGameName>
-            <CardDetails>
-              <CardSection>
+            <Grid>
+              <span></span>
+              <GameName>{singleGame.name}</GameName>
+              <Players>
                 Players: {singleGame.min_players}-{singleGame.max_players}
-              </CardSection>
-              <CardSection>
-                Time: {singleGame.min_playtime}-{singleGame.max_playtime} min
-              </CardSection>
-              <CardSection>Categories</CardSection>
-              <CardCategories>
-                <CardBadge>Economics</CardBadge>
-                <CardBadge>Sci-Fi</CardBadge>
-                <CardBadge>Territory-Building</CardBadge>
-              </CardCategories>
-              <CardSection>Mechanics</CardSection>
-              <CardCategories>
-                <CardBadge>Area Control</CardBadge>
-                <CardBadge>Route/Network Building</CardBadge>
-              </CardCategories>
-              <DetailButton onClick={() => setShowBack(true)} />
-              {enabled && (
-                <AddButtonCollection
-                  onClick={() => {
-                    addGameToCollection(singleGame);
-                    // setetShowConfirmation()true
-                  }}
-                >
-                  <Star />
-                </AddButtonCollection>
-              )}
-              {enabled && (
-                <AddButtonWishlist
-                  onClick={() => addGameToWishlist(singleGame)}
-                >
-                  <Dice />
-                </AddButtonWishlist>
-              )}
-            </CardDetails>
+              </Players>
+              <Players>
+                Players: {singleGame.min_players}-{singleGame.max_players}
+              </Players>
+              <Players>
+                Players: {singleGame.min_players}-{singleGame.max_players}
+              </Players>
+            </Grid>
+            {enabled && (
+              <AddButtonCollection
+                onClick={() => {
+                  addGameToCollection(singleGame);
+                  // setetShowConfirmation()true
+                }}
+              >
+                <Star />
+              </AddButtonCollection>
+            )}
+            {enabled && (
+              <AddButtonWishlist onClick={() => addGameToWishlist(singleGame)}>
+                <Dice />
+              </AddButtonWishlist>
+            )}
           </StyledDiv>
         )}
         {showBack && (
