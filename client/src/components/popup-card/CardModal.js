@@ -22,7 +22,7 @@ export const Background = styled.img`
   position: fixed;
   top: 0;
   z-index: 1;
-  backdrop-filter: blur(1.2px);
+  backdrop-filter: blur(2.8px);
   overflow-y: hidden;
 `;
 
