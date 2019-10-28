@@ -66,7 +66,7 @@ export default function Header({
         {showOptions && (
           <div ref={node}>
             <OptionBox />
-            {/* {showSort && <SortModal />} */}
+            {showSort && <SortModal />}
           </div>
         )}
       </HeaderContainer>

@@ -4,26 +4,28 @@ import LibraryNav from "../components/LibraryNav";
 import OptionBox from "../components/OptionBox";
 import SortModal from "../components/SortModal";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import LibraryCollection from "./LibraryCollection";
-import LibraryBrowse from "./LibraryBrowse";
-import LibraryWishlist from "./LibraryWishlist";
+import LibraryCollection from "./libraryGames";
+import LibraryBrowse from "./libraryBrowse";
+import LibraryWishlist from "./libraryWishlist";
 
 export default function Library() {
   const [currentNavigation, setCurrentNavigation] = useState("");
   const [toggleOptions, setToggleOptions] = useState(false);
   const [displaySort, setDisplaySort] = useState(false);
   const [showSearchbar, setShowSearchbar] = useState(false);
-  const [inputValue, setInputValue] = React.useState("");
+  const [searchbarInput, setSearchbarInput] = React.useState("");
+
   function handleSearch(value) {
-    setInputValue(value);
+    setSearchbarInput(value);
   }
+
   return (
     <>
       <Header
         toggleOptions={() => setToggleOptions(!toggleOptions)}
         toggleSearchbar={() => setShowSearchbar(!showSearchbar)}
         active={showSearchbar}
-        handleInputChange={setInputValue}
+        handleInputChange={setSearchbarInput}
         onSearch={handleSearch}
       />
       <OptionBox
@@ -36,14 +38,14 @@ export default function Library() {
         onNavigationChange={setCurrentNavigation}
       />
       <Switch>
-        <Route exact path="/Library/Collection">
-          <LibraryCollection inputValue={inputValue} />
+        <Route exact path="/library/games">
+          <LibraryCollection searchbarInput={searchbarInput} />
         </Route>
-        <Route exact path="/Library/Browse">
-          <LibraryBrowse inputValue={inputValue} />
+        <Route exact path="/library/browse">
+          <LibraryBrowse searchbarInput={searchbarInput} />
         </Route>
-        <Route exact path="/Library/Wishlist">
-          <LibraryWishlist inputValue={inputValue} />
+        <Route exact path="/library/wishlist">
+          <LibraryWishlist searchbarInput={searchbarInput} />
         </Route>
       </Switch>
     </>

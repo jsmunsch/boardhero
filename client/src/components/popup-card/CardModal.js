@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import CollectionItemPositioned from "../GamePositioned";
 import CardBadge from "./CardBadge";
 import CardDetails from "./CardDetails";
@@ -10,9 +10,10 @@ import AddButtonCollection from "./AddButtonCollection";
 import Star from "../../icons/Star";
 import Dice from "../../icons/Dice";
 import AddButtonWishlist from "./AddButtonWishlist";
-import { postGameToCollection } from "../../api/GameCollection";
-import { postGameToWishlist } from "../../api/WishlistCollection";
-import DetailButton from "../DetailButton";
+import { newGame } from "../../api/fetchGames";
+import { newWishlistEntry } from "../../api/fetchWishlist";
+import DetailButton from "./DetailButton";
+import ConfirmationMessage from "./ConfirmationMessage";
 
 export const Background = styled.img`
   height: 100%;
@@ -44,7 +45,7 @@ const StyledDiv = styled.div`
   position: fixed;
   z-index: 2;
   backdrop-filter: blur(2px);
-  @keyframes turner {
+  /* @keyframes turner {
     from {
       transform: rotateY(0deg);
     }
@@ -52,7 +53,7 @@ const StyledDiv = styled.div`
       transform: rotateY(180deg);
     }
   }
-  animation: turner 1s ease-in-out;
+  animation: turner 1s ease-in-out; */
 `;
 
 const DescriptionContainer = styled.div`
@@ -67,10 +68,10 @@ const DescriptionContainer = styled.div`
 export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
   const [showBack, setShowBack] = useState(false);
   async function addGameToCollection() {
-    postGameToCollection(singleGame);
+    newGame(singleGame);
   }
   async function addGameToWishlist() {
-    postGameToWishlist(singleGame);
+    newWishlistEntry(singleGame);
   }
 
   return (
@@ -99,17 +100,20 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
                 <CardBadge>Area Control</CardBadge>
                 <CardBadge>Route/Network Building</CardBadge>
               </CardCategories>
-              <DetailButton handleClick={() => setShowBack(true)} />
+              <DetailButton onClick={() => setShowBack(true)} />
               {enabled && (
                 <AddButtonCollection
-                  handleAddClick={() => addGameToCollection(singleGame)}
+                  onClick={() => {
+                    addGameToCollection(singleGame);
+                    // setetShowConfirmation()true
+                  }}
                 >
                   <Star />
                 </AddButtonCollection>
               )}
               {enabled && (
                 <AddButtonWishlist
-                  handleAddClick={() => addGameToWishlist(singleGame)}
+                  onClick={() => addGameToWishlist(singleGame)}
                 >
                   <Dice />
                 </AddButtonWishlist>
@@ -128,6 +132,10 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
           </StyledDiv>
         )}
       </FlexContainer>
+      <ConfirmationMessage
+      // show={showConformation}
+      // onClose={() => setShowConfirmation(false)}
+      />
     </>
   );
 }

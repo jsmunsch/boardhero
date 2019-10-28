@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const BadgeContainer = styled.div`
+const CardCategories = styled.div`
   display: flex;
   overflow-x: auto;
   flex-direction: row;
@@ -9,6 +8,4 @@ const BadgeContainer = styled.div`
   margin-left: 12px;
 `;
 
-export default function CardCategories({ children }) {
-  return <BadgeContainer>{children}</BadgeContainer>;
-}
+export default CardCategories;

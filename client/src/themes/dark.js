@@ -1,4 +1,4 @@
-const defaultTheme = {
+const darkTheme = {
   main: "#22262F",
   lightFont: "#fff",
   darkFont: "#9F9898",
@@ -8,4 +8,4 @@ const defaultTheme = {
   brightEffect: "#F0A42A"
 };
 
-export default defaultTheme;
+export default darkTheme;

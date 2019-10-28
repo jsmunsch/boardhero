@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const CardTitleContainer = styled.div`
+const CardSection = styled.div`
   font-size: 1.4em;
   color: black;
   width: 100%;
@@ -9,6 +8,4 @@ const CardTitleContainer = styled.div`
   border-bottom: 0.5px solid black;
 `;
 
-export default function CardSection({ children }) {
-  return <CardTitleContainer>{children}</CardTitleContainer>;
-}
+export default CardSection;

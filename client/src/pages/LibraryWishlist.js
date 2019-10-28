@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import CollectionGrid from "../components/CollectionGrid";
-import { getWishlistCollection } from "../api/WishlistCollection";
+import { getWishlistCollection } from "../api/fetchWishlist";
 
-export default function LibraryWishlist({ inputValue }) {
+export default function LibraryWishlist({ searchbarInput }) {
   React.useEffect(() => {
     getWishlistCollection().then(gameArray => {
       setWishlistGame(gameArray);
@@ -11,7 +11,7 @@ export default function LibraryWishlist({ inputValue }) {
 
   const [wishlistGame, setWishlistGame] = useState([]);
   const searchWishlistGames = wishlistGame.filter(info =>
-    info.name.toLowerCase().includes(inputValue.toLowerCase())
+    info.name.toLowerCase().includes(searchbarInput.toLowerCase())
   );
   return <CollectionGrid collection={searchWishlistGames} />;
 }

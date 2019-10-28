@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const FlexContainer = styled.div`
+const BrowseEmpty = styled.div`
   display: flex;
   font-size: 26px;
   color: white;
@@ -11,6 +10,4 @@ const FlexContainer = styled.div`
   justify-content: center;
 `;
 
-export default function BrowseEmpty({ children }) {
-  return <FlexContainer>{children}</FlexContainer>;
-}
+export default BrowseEmpty;
