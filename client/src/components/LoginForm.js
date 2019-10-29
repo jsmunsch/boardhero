@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-import { getUserData } from "../api/fetchUser";
+import { fetchUser, createUser } from "../api/fetchUser";
+const { ObjectID } = require("mongodb");
 
 const FlexForm = styled.form`
   display: flex;
@@ -38,26 +39,25 @@ export default function LoginForm() {
   let history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [userData, setUserData] = useState([]);
+  const [existingUser, setExistingUser] = useState([]);
+  const popel = {
+    name: username,
+    password: password
+  };
   React.useEffect(() => {
-    getUserData().then(UserCredentials => {
-      setUserData(UserCredentials);
+    fetchUser().then(UserCredentials => {
+      setExistingUser(UserCredentials);
     });
   }, []);
-  userData.forEach(validateUser);
+  console.log(popel);
+  console.log(existingUser);
 
-  function validateUser(user) {
-    const usernameTrue = user.user_id === username;
-    const passwordTrue = user.password === password;
-    if (usernameTrue && passwordTrue) {
-      history.push("/Library/Collection");
-    } else {
-    }
+  async function addUserToDatabase() {
+    createUser(popel);
   }
-
   return (
     <>
-      <FlexForm onSubmit={validateUser}>
+      <FlexForm>
         <InputContainer
           placeholder="Username"
           required
@@ -69,7 +69,9 @@ export default function LoginForm() {
           required
           onChange={event => setPassword(event.target.value)}
         />
-        <LoginButton>Login</LoginButton>
+        <LoginButton onClick={() => addUserToDatabase(popel)}>
+          Login
+        </LoginButton>
       </FlexForm>
     </>
   );

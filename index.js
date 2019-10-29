@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const { getGames, setGames } = require("./lib/games");
 const { getWishlist, setWishlist } = require("./lib/wishlist");
+const { getUsers, setUser } = require("./lib/users");
 const { initDatabase } = require("./lib/database");
 const app = express();
 const path = require("path");
@@ -40,6 +41,24 @@ app.post("/api/games", async (request, response) => {
   try {
     const newGame = await setGames(request.body);
     return response.json({ newGame });
+  } catch (error) {
+    response.end("Error");
+  }
+});
+
+app.get("/api/users", async (request, response) => {
+  try {
+    const users = await getUsers(request.params);
+    return response.json(users);
+  } catch (error) {
+    return response.end("Error");
+  }
+});
+
+app.post("/api/users", async (request, response) => {
+  try {
+    const newUser = await setUser(request.body);
+    return response.json(newUser);
   } catch (error) {
     response.end("Error");
   }
