@@ -73,6 +73,8 @@ const DescriptionContainer = styled.div`
 
 export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
   const [showBack, setShowBack] = useState(false);
+  const [startAnimation, setStartAnimation] = useState(false);
+  console.log(startAnimation);
   async function addGameToCollection() {
     newGame(singleGame);
   }
@@ -90,29 +92,31 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
             <Grid>
               <span></span>
               <GameName>{singleGame.name}</GameName>
-              <Players>
-                Players: {singleGame.min_players}-{singleGame.max_players}
-              </Players>
-              <Players>
-                Players: {singleGame.min_players}-{singleGame.max_players}
-              </Players>
-              <Players>
-                Players: {singleGame.min_players}-{singleGame.max_players}
-              </Players>
             </Grid>
             {enabled && (
               <AddButtonCollection
                 onClick={() => {
                   addGameToCollection(singleGame);
-                  // setetShowConfirmation()true
+                  setStartAnimation(true);
+                  setTimeout(() => {
+                    setStartAnimation(false);
+                  }, 5000);
                 }}
               >
-                <Star />
+                Collection
               </AddButtonCollection>
             )}
             {enabled && (
-              <AddButtonWishlist onClick={() => addGameToWishlist(singleGame)}>
-                <Dice />
+              <AddButtonWishlist
+                onClick={() => {
+                  addGameToWishlist(singleGame);
+                  setStartAnimation(true);
+                  setTimeout(() => {
+                    setStartAnimation(false);
+                  }, 5000);
+                }}
+              >
+                Wishlist
               </AddButtonWishlist>
             )}
           </StyledDiv>
@@ -128,10 +132,7 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
           </StyledDiv>
         )}
       </FlexContainer>
-      <ConfirmationMessage
-      // show={showConformation}
-      // onClose={() => setShowConfirmation(false)}
-      />
+      {startAnimation && <ConfirmationMessage />}
     </>
   );
 }
