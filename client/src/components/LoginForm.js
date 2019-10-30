@@ -36,9 +36,8 @@ const LoginButton = styled.button`
 
 export default function LoginForm() {
   let history = useHistory();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [userData, setUserData] = useState([]);
+  const { user, setUser } = useState({ name: "", email: "", password: "" });
+  const { name, email, password } = user;
   React.useEffect(() => {
     getUserData().then(UserCredentials => {
       setUserData(UserCredentials);
@@ -60,16 +59,25 @@ export default function LoginForm() {
       <FlexForm onSubmit={validateUser}>
         <InputContainer
           placeholder="Username"
-          required
-          onChange={event => setUsername(event.target.value)}
+          type="text"
+          name="name"
+          value={name}
+        />
+        <InputContainer
+          type="email"
+          name="email"
+          placeholder="email"
+          value={email}
         />
         <InputContainer
           placeholder="password"
           type="password"
           required
-          onChange={event => setPassword(event.target.value)}
+          value={password}
         />
-        <LoginButton>Login</LoginButton>
+        <InputContainer type="submit" value="Sign Up">
+          Login
+        </InputContainer>
       </FlexForm>
     </>
   );

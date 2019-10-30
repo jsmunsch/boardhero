@@ -7,7 +7,7 @@ const AddButtonCollection = styled.button`
   bottom: -20px;
   left: 40px;
   height: 60px;
-  width: 90px;
+  width: 110px;
   border: none;
   color: white;
   outline: none;

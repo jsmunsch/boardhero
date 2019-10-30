@@ -48,7 +48,7 @@ const StyledDiv = styled.div`
   background: ${props => props.theme.main};
   position: fixed;
   z-index: 2;
-  border: 4px solid ${props => props.theme.accent};
+  border: 4px solid white;
   border-radius: 15px;
   backdrop-filter: blur(2px);
   /* @keyframes turner {
@@ -92,6 +92,9 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
             <Grid>
               <span></span>
               <GameName>{singleGame.name}</GameName>
+              <Players>
+                Players: {singleGame.min_players}-{singleGame.max_players}
+              </Players>
             </Grid>
             {enabled && (
               <AddButtonCollection
@@ -103,7 +106,7 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
                   }, 5000);
                 }}
               >
-                Collection
+                + Collection
               </AddButtonCollection>
             )}
             {enabled && (
@@ -116,7 +119,7 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
                   }, 5000);
                 }}
               >
-                Wishlist
+                + Wishlist
               </AddButtonWishlist>
             )}
           </StyledDiv>
