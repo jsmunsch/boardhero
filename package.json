@@ -30,6 +30,5 @@
     "concurrently": "^5.0.0",
     "nodemon": "^1.19.3",
     "prettier": "^1.18.2"
-  },
-  "proxy": "http://localhost:8080"
+  }
 }
