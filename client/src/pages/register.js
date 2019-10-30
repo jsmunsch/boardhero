@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Hero from "../icons/Hero";
-import LoginForm from "../components/user-management/LoginForm";
+import RegisterForm from "../components/user-management/RegisterForm";
+import { Link } from "react-router-dom";
 
 const FlexContainer = styled.section`
   display: flex;
@@ -23,14 +24,14 @@ const Headline = styled.h1`
   font-size: 2.5em;
 `;
 
-export default function Login() {
+export default function Register() {
   return (
     <FlexContainer>
       <Headline>Boardhero</Headline>
       <VectorContainer>
         <Hero />
       </VectorContainer>
-      <LoginForm />
+      <RegisterForm />
     </FlexContainer>
   );
 }
