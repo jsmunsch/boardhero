@@ -4,7 +4,7 @@ import { alert } from "../../animations/alert";
 import { textFadeIn } from "../../animations/textFadeIn";
 
 const MessageBox = styled.div`
-  background: green;
+  background: #0e4213;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +12,7 @@ const MessageBox = styled.div`
   bottom: -5em;
   left: 50%;
   margin-left: -175px;
-  width: 350px;
+  width: 80%px;
   height: 65px;
   color: #fff;
   font-size: 22px;
