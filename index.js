@@ -23,6 +23,7 @@ app.get(`/api/games`, async (request, response) => {
     const games = await getGames(request.params);
     return response.json(games);
   } catch (error) {
+    console.log(error);
     return response.end("Error");
   }
 });
