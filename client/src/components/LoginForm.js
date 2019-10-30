@@ -51,6 +51,7 @@ export default function LoginForm() {
   }, []);
   console.log(popel);
   console.log(existingUser);
+  console.log(existingUser.includes(popel));
 
   async function addUserToDatabase() {
     createUser(popel);
