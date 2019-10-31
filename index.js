@@ -57,7 +57,10 @@ app.get("/api/users", async (request, response) => {
 
 app.post("/api/users", async (request, response) => {
   try {
+    const emailExist = await getUsers(request.body.email);
+    if (emailExist) return response.status(400).send("email already exists");
     const newUser = await setUser(request.body);
+    console.log(request.body.email);
     return response.json(newUser);
   } catch (error) {
     response.end("Error");
