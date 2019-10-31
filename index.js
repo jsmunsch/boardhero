@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const { getGames, setGames } = require("./lib/games");
 const { getWishlist, setWishlist } = require("./lib/wishlist");
-const { getUsers, setUser } = require("./lib/users");
+const { getUsers, setUser, validateUser } = require("./lib/users");
 const { initDatabase } = require("./lib/database");
 const app = express();
 const path = require("path");
@@ -62,6 +62,16 @@ app.post("/api/users", async (request, response) => {
     const newUser = await setUser(request.body);
     console.log(request.body.email);
     return response.json(newUser);
+  } catch (error) {
+    response.end("Error");
+  }
+});
+
+app.post("/api/login", async (request, response) => {
+  try {
+    const userExist = await validateUser(request.body);
+    console.log(userExist);
+    if (userExist) return localStorage.setItem("user", userExist.name);
   } catch (error) {
     response.end("Error");
   }
