@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import InputField from "./InputField";
 import Form from "./Form";
 import { Link } from "react-router-dom";
+import { validateCredentials } from "../../api/fetchUser";
 
 const LinkContainer = styled.div`
   fill: white;
@@ -15,7 +16,6 @@ const StyledLink = styled(Link)`
   color: ${props => props.theme.brightEffect};
 `;
 export default function LoginForm() {
-  let history = useHistory();
   const [user, setUser] = useState({
     email: "",
     password: ""
@@ -29,6 +29,7 @@ export default function LoginForm() {
   function submit(event) {
     event.preventDefault();
     console.log({ email, password });
+    validateCredentials(user);
   }
 
   return (
