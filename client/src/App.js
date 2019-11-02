@@ -6,8 +6,25 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from "./pages/login";
 import Library from "./pages/library";
 import Register from "./pages/register";
+import { useUser } from "./hooks";
 
 function App() {
+  const [user] = useUser();
+
+  if (!user)
+    return (
+      <ThemeProvider theme={darkTheme}>
+        <GlobalStyles />
+        <Router>
+          <Route exact path="/">
+            <Login />
+          </Route>
+          <Route exact path="/register">
+            <Register />
+          </Route>
+        </Router>
+      </ThemeProvider>
+    );
   return (
     <ThemeProvider theme={darkTheme}>
       <GlobalStyles />
