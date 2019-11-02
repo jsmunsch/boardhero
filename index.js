@@ -70,10 +70,14 @@ app.post("/api/users", async (request, response) => {
 app.post("/api/login", async (request, response) => {
   try {
     const userExist = await validateUser(request.body);
+    console.log("Post request succesfully submitted");
     console.log(userExist);
-    if (userExist) return localStorage.setItem("user", userExist.name);
+
+    console.log(userExist.name);
+    localStorage.setItem("user", userExist.name);
   } catch (error) {
     response.end("Error");
+    console.log(error);
   }
 });
 
