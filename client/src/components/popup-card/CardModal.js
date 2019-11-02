@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import CollectionItemPositioned from "../GamePositioned";
+import CollectionItemPositioned from "./GamePositioned";
 import CardBadge from "./CardBadge";
 import CardDetails from "./CardDetails";
 import CardCategories from "./CardCategories";
