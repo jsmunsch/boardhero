@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ImageContainer } from "./CollectionItem";
+import { ImageContainer } from "../library/CollectionItem";
 
 export const GamePositioned = styled(ImageContainer)`
   position: absolute;

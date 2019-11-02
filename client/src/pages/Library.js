@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
-import LibraryNav from "../components/LibraryNav";
-import OptionBox from "../components/OptionBox";
-import SortModal from "../components/SortModal";
+import LibraryNav from "../components/library/LibraryNav";
+import OptionBox from "../components/library/OptionBox";
+import SortModal from "../components/library/SortModal";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LibraryCollection from "./libraryGames";
 import LibraryBrowse from "./libraryBrowse";
