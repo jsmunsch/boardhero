@@ -29,7 +29,10 @@ export default function LoginForm() {
   function submit(event) {
     event.preventDefault();
     console.log({ email, password });
-    validateCredentials(user);
+
+    validateCredentials(user)
+      .then(response => response.json())
+      .then(user => localStorage.setItem("user", user.name));
   }
 
   return (

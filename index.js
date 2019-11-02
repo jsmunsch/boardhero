@@ -5,6 +5,7 @@ const { getGames, setGames } = require("./lib/games");
 const { getWishlist, setWishlist } = require("./lib/wishlist");
 const { getUsers, setUser, validateUser } = require("./lib/users");
 const { initDatabase } = require("./lib/database");
+const { createSession } = require("./lib/sessions");
 const app = express();
 const path = require("path");
 
@@ -72,14 +73,16 @@ app.post("/api/login", async (request, response) => {
   try {
     const userExist = await validateUser(request.body);
     console.log("Post request succesfully submitted");
-    console.log(userExist);
-
-    console.log(userExist.name);
-    localStorage.setItem("user", userExist.name);
+    if (userExist) {
+      const sessionId = createSession(userExist);
+      response.cookie("session", sessionId);
+      return response.json({ name: userExist.name });
+    }
   } catch (error) {
     response.end("Error");
     console.log(error);
   }
+  response.end();
 });
 
 app.get("/api/search", async (request, response) => {

@@ -4,9 +4,9 @@ import LibraryNav from "../components/library/LibraryNav";
 import OptionBox from "../components/library/OptionBox";
 import SortModal from "../components/library/SortModal";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import LibraryCollection from "./libraryGames";
-import LibraryBrowse from "./libraryBrowse";
-import LibraryWishlist from "./libraryWishlist";
+import LibraryCollection from "./LibraryGames";
+import LibraryBrowse from "./LibraryBrowse";
+import LibraryWishlist from "./LibraryWishlist";
 
 export default function Library() {
   const [currentNavigation, setCurrentNavigation] = useState("");

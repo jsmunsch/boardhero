@@ -4,7 +4,7 @@ import GlobalStyles from "./GlobalStyles";
 import darkTheme from "./themes/dark";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from "./pages/login";
-import Library from "./pages/library";
+import Library from "./pages/Library";
 import Register from "./pages/register";
 import { useUser } from "./hooks";
 
