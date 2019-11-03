@@ -34,6 +34,7 @@ export default function Header({
   const [showOptions, setShowOptions] = useState(false);
   const [showSort, setShowSort] = useState(false);
   const node = useRef();
+
   useOnClickOutside(node, () => {
     setShowMenu(false);
     setShowOptions(false);
@@ -54,7 +55,7 @@ export default function Header({
         Library
         <SearchBar
           active={active}
-          onChange={event => handleInputChange(event.target.value)}
+          onChange={event => handleInputChange(event)}
           onSearch={onSearch}
         />
         <IconButton onClick={toggleSearchbar}>

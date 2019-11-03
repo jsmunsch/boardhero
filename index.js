@@ -10,6 +10,7 @@ const {
   getUserBySession,
   deleteSession
 } = require("./lib/sessions");
+const axios = require("axios");
 
 const app = express();
 const path = require("path");
@@ -82,7 +83,6 @@ app.post("/api/users", async (request, response) => {
     const emailExist = await getUsers(request.body.email);
     if (emailExist) return response.status(400).send("email already exists");
     const newUser = await setUser(request.body);
-    console.log(request.body.email);
     return response.json(newUser);
   } catch (error) {
     response.end("Error");
@@ -92,7 +92,6 @@ app.post("/api/users", async (request, response) => {
 app.post("/api/login", async (request, response) => {
   try {
     const userExist = await validateUser(request.body);
-    console.log("Post request succesfully submitted");
     if (userExist) {
       const sessionId = createSession(userExist);
       response.cookie("session", sessionId);
@@ -116,20 +115,21 @@ app.post("/api/logout", async (request, response) => {
   }
 });
 
-// app.get("/api/search", async (request, response) => {
-//   const name = request.query.name;
-//   const targetUrl = `https://www.boardgameatlas.com/api/search?name=${name}&limit=10&fields=name,description,image_url,mechanics,categories,min_players,max_players,min_playtime,max_playtime&client_id=5cIY9zBPpt`;
-//   axios({
-//     url: targetUrl,
-//     method: "GET",
-//     headers: {
-//       Accept: "application/json",
-//       "client-id": "5cIY9zBPpt"
-//     }
-//   });
-//   const game = response.data;
-//   return response.json(game);
-// });
+app.get("/api/search", async (request, response) => {
+  const name = request.query.name;
+  const targetUrl = `https://www.boardgameatlas.com/api/search?name=${name}&limit=10&fields=name,description,image_url,mechanics,categories,min_players,max_players,min_playtime,max_playtime&client_id=5cIY9zBPpt`;
+
+  return axios({
+    url: targetUrl,
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "client-id": "5cIY9zBPpt"
+    }
+  })
+    .then(response => response.data)
+    .then(games => response.json(games));
+});
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));

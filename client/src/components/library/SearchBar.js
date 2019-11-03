@@ -35,10 +35,23 @@ const StyledInput = styled.input`
   animation: ${morph} 0.5s linear;
 `;
 
+// function onChange(event) {
+//   console.log("on change triggered");
+//   clearTimeout(throttleTimeout);
+//   throttleTimeout = setTimeout(function() {
+//     console.log("Timeout triggered");
+//     handleInputChange(event.target.value);
+//   }, 1000);
+// }
 export default function SearchBar({ active, onSearch }) {
+  let throttleTimeout;
+
   function handleInputChange(event) {
-    const value = event.target.value;
-    onSearch(value);
+    clearTimeout(throttleTimeout);
+    const inputValue = event.target.value;
+    throttleTimeout = setTimeout(function() {
+      onSearch(inputValue);
+    }, 400);
   }
   return (
     <StyledSearchBar active={active}>
