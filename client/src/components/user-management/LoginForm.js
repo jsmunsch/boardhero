@@ -9,6 +9,7 @@ import { validateCredentials } from "../../api/fetchUser";
 const LinkContainer = styled.div`
   fill: white;
   color: white;
+  margin: 6px;
 `;
 
 const StyledLink = styled(Link)`

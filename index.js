@@ -10,6 +10,7 @@ const {
   getUserBySession,
   deleteSession
 } = require("./lib/sessions");
+
 const app = express();
 const path = require("path");
 const cookieParser = require("cookie-parser");
@@ -20,6 +21,7 @@ app.use(cookieParser());
 app.get(`/api/wishlist`, async (request, response) => {
   try {
     const user = getUserBySession(request.cookies.session);
+    if (!user) return response.status(403).end("unauthorized request");
     if (user) {
       const wishlist = await getWishlist(user.name);
       return response.json(wishlist);
@@ -34,7 +36,8 @@ app.get(`/api/wishlist`, async (request, response) => {
 
 app.get(`/api/games`, async (request, response) => {
   try {
-    const user = getUserBySession();
+    const user = getUserBySession(request.cookies.session);
+    if (!user) return response.status(403).end("unauthorized request");
     const games = await getGames();
     return response.json(games);
   } catch (error) {
@@ -46,6 +49,7 @@ app.get(`/api/games`, async (request, response) => {
 app.post("/api/wishlist", async (request, response) => {
   try {
     const user = getUserBySession(request.cookies.session);
+    if (!user) return response.status(403).end("unauthorized request");
     request.body.owner = user.name;
     const WishlistEntry = await setWishlist(request.body);
     return response.json({ WishlistEntry });
@@ -112,20 +116,20 @@ app.post("/api/logout", async (request, response) => {
   }
 });
 
-app.get("/api/search", async (request, response) => {
-  const name = request.query.name;
-  const targetUrl = `https://www.boardgameatlas.com/api/search?name=${name}&limit=10&fields=name,description,image_url,mechanics,categories,min_players,max_players,min_playtime,max_playtime&client_id=5cIY9zBPpt`;
-  axios({
-    url: targetUrl,
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      "client-id": "5cIY9zBPpt"
-    }
-  });
-  const game = response.data;
-  return response.json(game);
-});
+// app.get("/api/search", async (request, response) => {
+//   const name = request.query.name;
+//   const targetUrl = `https://www.boardgameatlas.com/api/search?name=${name}&limit=10&fields=name,description,image_url,mechanics,categories,min_players,max_players,min_playtime,max_playtime&client_id=5cIY9zBPpt`;
+//   axios({
+//     url: targetUrl,
+//     method: "GET",
+//     headers: {
+//       Accept: "application/json",
+//       "client-id": "5cIY9zBPpt"
+//     }
+//   });
+//   const game = response.data;
+//   return response.json(game);
+// });
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
