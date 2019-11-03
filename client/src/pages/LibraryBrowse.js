@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import BrowseEmpty from "../components/BrowseEmpty";
-import CollectionGrid from "../components/CollectionGrid";
+import BrowseEmpty from "../components/library/BrowseEmpty";
+import CollectionGrid from "../components/library/CollectionGrid";
 import axios from "axios";
 
 export default function LibraryBrowse({ searchbarInput }) {

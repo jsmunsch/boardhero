@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import CollectionItem from "./CollectionItem";
-import CardModal from "./popup-card/CardModal";
+import CardModal from "../popup-card/CardModal";
 
 const BodyGrid = styled.div`
   width: 320px;

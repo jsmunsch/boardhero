@@ -4,8 +4,8 @@ export default function Hero() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="267.626"
-      height="354.286"
+      width="200"
+      height="300"
       viewBox="0 0 267.626 354.286"
     >
       <g
