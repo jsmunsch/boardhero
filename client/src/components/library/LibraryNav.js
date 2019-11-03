@@ -44,7 +44,7 @@ export default function LibraryNav({ selected, onNavigationChange }) {
         <NavGridButton
           selected={selected === `${url}/games`}
           value="games"
-          onClick={event => onNavigationChange(`${url}/games`)}
+          onClick={() => onNavigationChange(`${url}/games`)}
         >
           Games
         </NavGridButton>
@@ -53,7 +53,7 @@ export default function LibraryNav({ selected, onNavigationChange }) {
         <NavGridButton
           selected={selected === `${url}/browse`}
           value="browse"
-          onClick={event => onNavigationChange(`${url}/browse`)}
+          onClick={() => onNavigationChange(`${url}/browse`)}
         >
           Browse
         </NavGridButton>
@@ -62,7 +62,7 @@ export default function LibraryNav({ selected, onNavigationChange }) {
         <NavGridButton
           selected={selected === `${url}/wishlist`}
           value="wishlist"
-          onClick={event => onNavigationChange(`${url}/wishlist`)}
+          onClick={() => onNavigationChange(`${url}/wishlist`)}
         >
           Wishlist
         </NavGridButton>
