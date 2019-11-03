@@ -26,7 +26,6 @@ const Headline = styled.h1`
 
 export default function Register() {
   const [user] = useUser();
-  console.log(user);
 
   return (
     <FlexContainer>
