@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
 import InputField from "./InputField";
 import Form from "./Form";
 import { Link } from "react-router-dom";
 import { validateCredentials } from "../../api/fetchUser";
+import { useHistory } from "react-router-dom";
 
 const LinkContainer = styled.div`
   fill: white;
@@ -17,6 +17,7 @@ const StyledLink = styled(Link)`
   color: ${props => props.theme.brightEffect};
 `;
 export default function LoginForm() {
+  let history = useHistory();
   const [user, setUser] = useState({
     email: "",
     password: ""
@@ -33,7 +34,8 @@ export default function LoginForm() {
 
     validateCredentials(user)
       .then(response => response.json())
-      .then(user => localStorage.setItem("user", user.name));
+      .then(user => localStorage.setItem("user", user.name))
+      .then(() => (window.location.pathname = "/Library/browse"));
   }
 
   return (

@@ -42,27 +42,27 @@ export default function LibraryNav({ selected, onNavigationChange }) {
     <NavGrid>
       <StyledLink to={`${url}/games`}>
         <NavGridButton
-          selected={selected === "Games"}
+          selected={selected === `${url}/games`}
           value="games"
-          onClick={event => onNavigationChange(event.target.innerHTML)}
+          onClick={event => onNavigationChange(`${url}/games`)}
         >
           Games
         </NavGridButton>
       </StyledLink>
       <StyledLink to={`${url}/browse`}>
         <NavGridButton
-          selected={selected === "Browse"}
+          selected={selected === `${url}/browse`}
           value="browse"
-          onClick={event => onNavigationChange(event.target.innerHTML)}
+          onClick={event => onNavigationChange(`${url}/browse`)}
         >
           Browse
         </NavGridButton>
       </StyledLink>
       <StyledLink to={`${url}/wishlist`}>
         <NavGridButton
-          selected={selected === "Wishlist"}
+          selected={selected === `${url}/wishlist`}
           value="wishlist"
-          onClick={event => onNavigationChange(event.target.innerHTML)}
+          onClick={event => onNavigationChange(`${url}/wishlist`)}
         >
           Wishlist
         </NavGridButton>
