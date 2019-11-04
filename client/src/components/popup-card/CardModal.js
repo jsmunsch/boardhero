@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import CollectionItemPositioned from "../GamePositioned";
-import CardBadge from "./CardBadge";
-import CardDetails from "./CardDetails";
-import CardCategories from "./CardCategories";
-import CardSection from "./CardSection";
-import CardGameName from "./CardGameName";
+import CollectionItemPositioned from "./GamePositioned";
+import CardGameName from "./GameName";
 import AddButtonCollection from "./AddButtonCollection";
-import Star from "../../icons/Star";
-import Dice from "../../icons/Dice";
 import AddButtonWishlist from "./AddButtonWishlist";
 import { newGame } from "../../api/fetchGames";
 import { newWishlistEntry } from "../../api/fetchWishlist";
 import DetailButton from "./DetailButton";
 import ConfirmationMessage from "./ConfirmationMessage";
+import Grid from "./Grid";
+import GameName from "./GameName";
+import Players from "./Players";
+import TrimText from "./TrimText";
 
 export const Background = styled.img`
   height: 100%;
@@ -41,9 +39,11 @@ const StyledDiv = styled.div`
   margin-right: auto;
   top: 50%;
   margin-top: -240px;
-  background: white;
+  background: ${props => props.theme.main};
   position: fixed;
   z-index: 2;
+  border: 4px solid white;
+  border-radius: 15px;
   backdrop-filter: blur(2px);
   /* @keyframes turner {
     from {
@@ -58,15 +58,24 @@ const StyledDiv = styled.div`
 
 const DescriptionContainer = styled.div`
   display: flex;
+  fill: white;
+  color: white;
   justify-content: center;
-  margin: 40px 20px;
-  max-height: 75%;
+  margin: 0px 20px;
+  max-height: 45vh;
   overflow-x: scroll;
   font-size: 1.2em;
 `;
 
+const WhiteSpan = styled.span`
+  color: white;
+  margin-right: 10px;
+`;
+
 export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
   const [showBack, setShowBack] = useState(false);
+  const [startAnimation, setStartAnimation] = useState(false);
+  console.log(startAnimation);
   async function addGameToCollection() {
     newGame(singleGame);
   }
@@ -81,61 +90,62 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
         {!showBack && (
           <StyledDiv>
             <CollectionItemPositioned src={singleGame.image_url} />
-            <CardGameName>{singleGame.name}</CardGameName>
-            <CardDetails>
-              <CardSection>
-                Players: {singleGame.min_players}-{singleGame.max_players}
-              </CardSection>
-              <CardSection>
-                Time: {singleGame.min_playtime}-{singleGame.max_playtime} min
-              </CardSection>
-              <CardSection>Categories</CardSection>
-              <CardCategories>
-                <CardBadge>Economics</CardBadge>
-                <CardBadge>Sci-Fi</CardBadge>
-                <CardBadge>Territory-Building</CardBadge>
-              </CardCategories>
-              <CardSection>Mechanics</CardSection>
-              <CardCategories>
-                <CardBadge>Area Control</CardBadge>
-                <CardBadge>Route/Network Building</CardBadge>
-              </CardCategories>
-              <DetailButton onClick={() => setShowBack(true)} />
-              {enabled && (
-                <AddButtonCollection
-                  onClick={() => {
-                    addGameToCollection(singleGame);
-                    // setetShowConfirmation()true
-                  }}
-                >
-                  <Star />
-                </AddButtonCollection>
-              )}
-              {enabled && (
-                <AddButtonWishlist
-                  onClick={() => addGameToWishlist(singleGame)}
-                >
-                  <Dice />
-                </AddButtonWishlist>
-              )}
-            </CardDetails>
+            <Grid>
+              <span></span>
+              <GameName>{singleGame.name}</GameName>
+              <Players>
+                <WhiteSpan>Players: </WhiteSpan> {singleGame.min_players}-
+                {singleGame.max_players}
+                <WhiteSpan>Playtime: </WhiteSpan>
+                {singleGame.min_playtime}min. - {singleGame.max_playtime}min.
+                <WhiteSpan>Description</WhiteSpan>
+                {TrimText(`${singleGame.description}`, 43)}
+                <DetailButton onClick={() => setShowBack(!showBack)} />
+              </Players>
+            </Grid>
+            {enabled && (
+              <AddButtonCollection
+                onClick={() => {
+                  addGameToCollection(singleGame);
+                  setStartAnimation(true);
+                  setTimeout(() => {
+                    setStartAnimation(false);
+                  }, 5000);
+                }}
+              >
+                + Collection
+              </AddButtonCollection>
+            )}
+            {enabled && (
+              <AddButtonWishlist
+                onClick={() => {
+                  addGameToWishlist(singleGame);
+                  setStartAnimation(true);
+                  setTimeout(() => {
+                    setStartAnimation(false);
+                  }, 5000);
+                }}
+              >
+                + Wishlist
+              </AddButtonWishlist>
+            )}
           </StyledDiv>
         )}
         {showBack && (
           <StyledDiv>
             <CollectionItemPositioned src={singleGame.image_url} />
-            <DetailButton handleClick={() => setShowBack(false)} />
-            <CardGameName>Description</CardGameName>
-            <DescriptionContainer>
-              {singleGame.description}
-            </DescriptionContainer>
+            <Grid>
+              <span></span>
+              <CardGameName>Description</CardGameName>
+              <DescriptionContainer>
+                {singleGame.description}
+              </DescriptionContainer>
+              <DetailButton onClick={() => setShowBack(!showBack)} />
+            </Grid>
           </StyledDiv>
         )}
       </FlexContainer>
-      <ConfirmationMessage
-      // show={showConformation}
-      // onClose={() => setShowConfirmation(false)}
-      />
+      {startAnimation && <ConfirmationMessage />}
     </>
   );
 }

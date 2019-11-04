@@ -4,11 +4,11 @@ import IconButton from "./IconButton";
 import BurgerMenu from "../icons/BurgerMenuIcon";
 import Magnifier from "../icons/Magnifier";
 import VerticalPoints from "../icons/VerticalPoints";
-import SearchBar from "./SearchBar";
+import SearchBar from "./library/SearchBar";
 import BurgerMenuList from "./BurgerMenuList";
 import { useOnClickOutside } from "../hooks";
-import OptionBox from "./OptionBox";
-import SortModal from "./SortModal";
+import OptionBox from "./library/OptionBox";
+import SortModal from "./library/SortModal";
 
 const HeaderContainer = styled.header`
   display: flex;

@@ -4,7 +4,7 @@ import { alert } from "../../animations/alert";
 import { textFadeIn } from "../../animations/textFadeIn";
 
 const MessageBox = styled.div`
-  background: green;
+  background: #0e4213;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,50 +12,24 @@ const MessageBox = styled.div`
   bottom: -5em;
   left: 50%;
   margin-left: -175px;
-  width: 350px;
+  width: 80%px;
   height: 65px;
   color: #fff;
   font-size: 22px;
   padding: 0 1.2em 0 0;
   z-index: 10;
-
-  ${props =>
-    props.alert
-      ? css`
-          animation: ${alert} 2.5s ease-in-out;
-          display: "block";
-        `
-      : css`
-          animation: none;
-          display: none;
-        `}
+  animation: ${alert} 2.5s ease-in-out;
+  display: "block";
 `;
 
 const MessageText = styled.text`
-  ${props =>
-    props.alert
-      ? css`
-          animation: ${textFadeIn} 2.5s ease-in-out;
-          display: "block";
-        `
-      : css`
-          animation: none;
-          display: none;
-        `}
+  animation: ${textFadeIn} 2.5s ease-in-out;
+  display: "block";
 `;
 
 export default function ConfirmationMessage() {
-  const [alert, setAlert] = useState(true);
-
-  function alertUser() {
-    setAlert(true);
-  }
-  function resetAlert() {
-    setAlert(false);
-  }
-
   return (
-    <MessageBox alert={alert} resetAlert={resetAlert} x>
+    <MessageBox alert={alert}>
       <MessageText alert={alert}>Game Succesfully added</MessageText>
     </MessageBox>
   );

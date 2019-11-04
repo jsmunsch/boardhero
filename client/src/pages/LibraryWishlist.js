@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CollectionGrid from "../components/CollectionGrid";
+import CollectionGrid from "../components/library/CollectionGrid";
 import { getWishlistCollection } from "../api/fetchWishlist";
 
 export default function LibraryWishlist({ searchbarInput }) {
