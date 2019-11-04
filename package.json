@@ -1,6 +1,9 @@
 {
   "name": "boardhero",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.x"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -9,7 +12,8 @@
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "dev:server": "npm run build && cd .. && npm start",
     "server": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "heroku-prebuild": "cd client && npm ci --only=prod"
   },
   "repository": {
     "type": "git",
@@ -27,6 +31,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongodb": "^3.3.2",
+    "node": "^12.13.0",
     "now": "^16.4.4",
     "uuid": "^3.3.3"
   },
