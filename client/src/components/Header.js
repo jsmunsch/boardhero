@@ -9,6 +9,7 @@ import BurgerMenuList from "./BurgerMenuList";
 import { useOnClickOutside } from "../hooks";
 import OptionBox from "./library/OptionBox";
 import SortModal from "./library/SortModal";
+import { Background } from "./popup-card/CardModal";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -43,9 +44,12 @@ export default function Header({
   return (
     <>
       {showMenu && (
-        <div ref={node}>
-          <BurgerMenuList />
-        </div>
+        <>
+          <Background />
+          <div ref={node}>
+            <BurgerMenuList />
+          </div>
+        </>
       )}
 
       <HeaderContainer>

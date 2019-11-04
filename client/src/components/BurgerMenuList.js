@@ -2,10 +2,12 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import NavigationMenuButton from "./library/NavigationMenuButton";
 import Dice from "../icons/Dice";
-import Person from "../icons/Person";
-import Upload from "../icons/Upload";
+
 import Logout from "../icons/Logout";
 import { Link } from "react-router-dom";
+
+import { useUser } from "../hooks";
+import { unsetUser } from "../api/fetchUser";
 
 const morph = keyframes`
   0% { width: 0px;}
@@ -27,6 +29,9 @@ const PositionContainer = styled.nav`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  color: inherit;
+  height: inherit;
+  line-height: inherit;
 `;
 
 const NameContainer = styled.div`
@@ -40,28 +45,28 @@ const NameContainer = styled.div`
 `;
 
 export default function BurgerMenuList() {
+  const [user] = useUser();
   return (
     <>
       <PositionContainer>
-        <NameContainer>Hallo Jonas</NameContainer>
+        <NameContainer>Hallo {user}</NameContainer>
         <NavigationMenuButton
           onClick={() => console.log("Collection")}
           selected
         >
           <Dice selected />
-          Collection
+          Library
         </NavigationMenuButton>
-        <NavigationMenuButton onClick={() => console.log("User")}>
-          <Person />
-          User
-        </NavigationMenuButton>
-        <NavigationMenuButton onClick={() => console.log("Share")}>
-          <Upload />
-          Share
-        </NavigationMenuButton>
-        <NavigationMenuButton onClick={() => console.log("Logout")}>
-          <Logout />
-          Logout
+        <NavigationMenuButton
+          onClick={() => {
+            unsetUser();
+            localStorage.clear();
+          }}
+        >
+          <StyledLink to={"/"}>
+            <Logout />
+            Logout
+          </StyledLink>
         </NavigationMenuButton>
       </PositionContainer>
     </>

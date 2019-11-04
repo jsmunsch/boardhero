@@ -23,3 +23,12 @@ export function validateCredentials(user) {
     body: JSON.stringify(user)
   });
 }
+
+export function unsetUser() {
+  return fetch("/api/logout", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
+}
