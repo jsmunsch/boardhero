@@ -21,52 +21,52 @@ export const alert = keyframes`
     }
     25% {
       bottom: 3em;
-      width: 380px;
-      margin-left: -190px;
+      width: 300px;
+      margin-left: -150px;
       border-radius: 0;
     }
     37% {
       bottom: 3em;
-      width: 380px;
-      margin-left: -190px;
+      width: 300px;
+      margin-left: -150px;
     }
     42% {
       bottom: 3em;
-      width: 380px;
-      margin-left: -190px;
+      width: 300px;
+      margin-left: -150px;
     }
     47% {
       bottom: 3.5em;
-      width: 380px;
-      margin-left: -190px;
+      width: 300px;
+      margin-left: -150px;
       border-radius: 0;
     }
     50% {
       bottom: 3.5em;
-      width: 380px;
-      margin-left: -190px;
+      width: 300px;
+      margin-left: -150px;
       border-radius: 0;
     }
     53% {
       bottom: 3.5em;
-      width: 380px;
-      margin-left: -190px;
+      width: 300px;
+      margin-left: -150px;
       border-radius: 0;
     }
     58% {
       bottom: 3em;
-      width: 380px;
-      margin-left: -190px;
+      width: 300px;
+      margin-left: -150px;
     }
     63% {
       bottom: 3em;
-      width: 380px;
-      margin-left: -190px;
+      width: 300px;
+      margin-left: -150px;
     }
     75% {
       bottom: 3em;
-      width: 380px;
-      margin-left: -190px;
+      width: 300px;
+      margin-left: -150px;
       border-radius: 0;
     }
     87% {
