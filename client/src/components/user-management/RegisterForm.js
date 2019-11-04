@@ -52,6 +52,7 @@ export default function RegisterForm() {
         .then(function(data) {
           if (data === "email already exists") {
             setFeedback("Email adress is already being used");
+            setSuccess(false);
             setFailed(true);
             return;
           } else {
