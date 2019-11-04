@@ -19,6 +19,9 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: ${props => props.theme.brightEffect};
 `;
+
+let serverResponse = {};
+
 export default function LoginForm() {
   const [failed, setFailed] = useState(null);
   const [user, setUser] = useState({
@@ -33,15 +36,18 @@ export default function LoginForm() {
 
   function submit(event) {
     event.preventDefault();
-    try {
-      validateCredentials(user)
-        .then(response => response.json())
-        .then(user => localStorage.setItem("user", user.name))
-        .then(() => (window.location.pathname = "/Library/browse"));
-    } finally {
-      setFailed(true);
-      window.navigator.vibrate(400);
-    }
+
+    validateCredentials(user)
+      .then(response => response.json())
+      .then(function(data) {
+        if (data === "access denied") {
+          setFailed(true);
+          window.navigator.vibrate(400);
+        } else {
+          localStorage.setItem("user", data.name);
+          window.location.pathname = "/Library/browse";
+        }
+      });
   }
 
   return (

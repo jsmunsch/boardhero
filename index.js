@@ -81,10 +81,14 @@ app.get("/api/users", async (request, response) => {
 app.post("/api/users", async (request, response) => {
   try {
     const emailExist = await getUsers(request.body.email);
-    if (emailExist) return response.status(400).send("email already exists");
-    const newUser = await setUser(request.body);
-    return response.json(newUser);
+    if (emailExist) {
+      return response.status(400).json("email already exists");
+    } else {
+      await setUser(request.body);
+      return response.status(200).json("Account succesfully created");
+    }
   } catch (error) {
+    console.error(error);
     response.end("Error");
   }
 });
@@ -97,7 +101,7 @@ app.post("/api/login", async (request, response) => {
       response.cookie("session", sessionId);
       return response.json({ name: userExist.name });
     } else if (!userExist) {
-      return response.status(401).send("acces denied bitch");
+      return response.status(401).json("access denied");
     }
   } catch (error) {
     response.end("Error");

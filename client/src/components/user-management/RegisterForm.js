@@ -24,9 +24,8 @@ const StyledLink = styled(Link)`
   color: ${props => props.theme.brightEffect};
 `;
 
-let FeedbackMessage = {};
-
 export default function RegisterForm() {
+  const [feedback, setFeedback] = useState(null);
   const [success, setSuccess] = useState(null);
   const [failed, setFailed] = useState(null);
   const [user, setUser] = useState({
@@ -45,22 +44,32 @@ export default function RegisterForm() {
     event.preventDefault();
     if (password !== password2) {
       setFailed(true);
-      FeedbackMessage = "passwords don't match";
-    }
-    try {
-      createUser(user)
-        .then(response => response.json)
-        .then(() => (FeedbackMessage = "Account succesfully created"))
-        .then(() => setFailed(false))
-        .then(() => setSuccess(true));
+      setFeedback("passwords don't match");
       return;
-    } finally {
+    } else {
+      createUser(user)
+        .then(response => response.json())
+        .then(function(data) {
+          if (data === "email already exists") {
+            setFeedback("Email adress is already being used");
+            setFailed(true);
+            return;
+          } else {
+            setFeedback("Account succesfully created");
+            setFailed(false);
+            setSuccess(true);
+            return;
+          }
+        })
+        .catch(function() {
+          console.log("error");
+        });
     }
   }
   return (
     <>
-      {failed && <ErrorContainer>{FeedbackMessage}</ErrorContainer>}
-      {success && <SuccessContainer>{FeedbackMessage}</SuccessContainer>}
+      {failed && <ErrorContainer>{feedback}</ErrorContainer>}
+      {success && <SuccessContainer>{feedback}</SuccessContainer>}
       <Form onSubmit={submit}>
         <InputField
           placeholder="name"
