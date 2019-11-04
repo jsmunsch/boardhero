@@ -4,7 +4,11 @@ import InputField from "./InputField";
 import Form from "./Form";
 import { Link } from "react-router-dom";
 import { validateCredentials } from "../../api/fetchUser";
+import { alert } from "../../animations/alert";
 
+const FailMessage = styled.div`
+  color: red;
+`;
 const LinkContainer = styled.div`
   fill: white;
   color: white;
@@ -16,6 +20,7 @@ const StyledLink = styled(Link)`
   color: ${props => props.theme.brightEffect};
 `;
 export default function LoginForm() {
+  const [failed, setFailed] = useState(null);
   const [user, setUser] = useState({
     email: "",
     password: ""
@@ -28,14 +33,20 @@ export default function LoginForm() {
 
   function submit(event) {
     event.preventDefault();
-    validateCredentials(user)
-      .then(response => response.json())
-      .then(user => localStorage.setItem("user", user.name))
-      .then(() => (window.location.pathname = "/Library/browse"));
+    try {
+      validateCredentials(user)
+        .then(response => response.json())
+        .then(user => localStorage.setItem("user", user.name))
+        .then(() => (window.location.pathname = "/Library/browse"));
+    } finally {
+      setFailed(true);
+      window.navigator.vibrate(400);
+    }
   }
 
   return (
     <>
+      {failed && <FailMessage>Username or password incorrect</FailMessage>}
       <Form onSubmit={submit}>
         <InputField
           type="email"
