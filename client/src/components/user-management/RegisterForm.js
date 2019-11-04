@@ -6,6 +6,13 @@ import Form from "./Form";
 import { Link } from "react-router-dom";
 import { createUser } from "../../api/fetchUser";
 
+const ErrorContainer = styled.div`
+  color: red;
+`;
+
+const SuccessContainer = styled.div`
+  color: green;
+`;
 const LinkContainer = styled.div`
   fill: white;
   color: white;
@@ -17,7 +24,11 @@ const StyledLink = styled(Link)`
   color: ${props => props.theme.brightEffect};
 `;
 
+let FeedbackMessage = {};
+
 export default function RegisterForm() {
+  const [success, setSuccess] = useState(null);
+  const [failed, setFailed] = useState(null);
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -33,14 +44,23 @@ export default function RegisterForm() {
   function submit(event) {
     event.preventDefault();
     if (password !== password2) {
-      console.log("passwords don't match");
-    } else {
-      console.log({ name, email, password });
-      createUser(user);
+      setFailed(true);
+      FeedbackMessage = "passwords don't match";
+    }
+    try {
+      createUser(user)
+        .then(response => response.json)
+        .then(() => (FeedbackMessage = "Account succesfully created"))
+        .then(() => setFailed(false))
+        .then(() => setSuccess(true));
+      return;
+    } finally {
     }
   }
   return (
     <>
+      {failed && <ErrorContainer>{FeedbackMessage}</ErrorContainer>}
+      {success && <SuccessContainer>{FeedbackMessage}</SuccessContainer>}
       <Form onSubmit={submit}>
         <InputField
           placeholder="name"

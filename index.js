@@ -96,6 +96,8 @@ app.post("/api/login", async (request, response) => {
       const sessionId = createSession(userExist);
       response.cookie("session", sessionId);
       return response.json({ name: userExist.name });
+    } else if (!userExist) {
+      return response.status(401).send("acces denied bitch");
     }
   } catch (error) {
     response.end("Error");
