@@ -1,23 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import CollectionItemPositioned from "./GamePositioned";
-import CardBadge from "./CardBadge";
-import CardDetails from "./CardDetails";
-import CardCategories from "./CardCategories";
-import CardSection from "./CardSection";
 import CardGameName from "./GameName";
 import AddButtonCollection from "./AddButtonCollection";
-import Star from "../../icons/Star";
-import Dice from "../../icons/Dice";
 import AddButtonWishlist from "./AddButtonWishlist";
 import { newGame } from "../../api/fetchGames";
 import { newWishlistEntry } from "../../api/fetchWishlist";
 import DetailButton from "./DetailButton";
 import ConfirmationMessage from "./ConfirmationMessage";
-import Woodsign from "../../icons/WoodSign";
 import Grid from "./Grid";
 import GameName from "./GameName";
 import Players from "./Players";
+import TrimText from "./TrimText";
 
 export const Background = styled.img`
   height: 100%;
@@ -64,11 +58,18 @@ const StyledDiv = styled.div`
 
 const DescriptionContainer = styled.div`
   display: flex;
+  fill: white;
+  color: white;
   justify-content: center;
-  margin: 40px 20px;
-  max-height: 75%;
+  margin: 0px 20px;
+  max-height: 45vh;
   overflow-x: scroll;
   font-size: 1.2em;
+`;
+
+const WhiteSpan = styled.span`
+  color: white;
+  margin-right: 10px;
 `;
 
 export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
@@ -93,7 +94,13 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
               <span></span>
               <GameName>{singleGame.name}</GameName>
               <Players>
-                Players: {singleGame.min_players}-{singleGame.max_players}
+                <WhiteSpan>Players: </WhiteSpan> {singleGame.min_players}-
+                {singleGame.max_players}
+                <WhiteSpan>Playtime: </WhiteSpan>
+                {singleGame.min_playtime}min. - {singleGame.max_playtime}min.
+                <WhiteSpan>Description</WhiteSpan>
+                {TrimText(`${singleGame.description}`, 43)}
+                <DetailButton onClick={() => setShowBack(!showBack)} />
               </Players>
             </Grid>
             {enabled && (
@@ -127,11 +134,14 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
         {showBack && (
           <StyledDiv>
             <CollectionItemPositioned src={singleGame.image_url} />
-            <DetailButton handleClick={() => setShowBack(false)} />
-            <CardGameName>Description</CardGameName>
-            <DescriptionContainer>
-              {singleGame.description}
-            </DescriptionContainer>
+            <Grid>
+              <span></span>
+              <CardGameName>Description</CardGameName>
+              <DescriptionContainer>
+                {singleGame.description}
+              </DescriptionContainer>
+              <DetailButton onClick={() => setShowBack(!showBack)} />
+            </Grid>
           </StyledDiv>
         )}
       </FlexContainer>
