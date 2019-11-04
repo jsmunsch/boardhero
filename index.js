@@ -62,9 +62,13 @@ app.post("/api/wishlist", async (request, response) => {
 
 app.post("/api/games", async (request, response) => {
   try {
+    const user = getUserBySession(request.cookies.session);
+    if (!user) return response.status(403).end("unauthorized request");
+    request.body.owner = user.name;
     const newGame = await setGames(request.body);
     return response.json({ newGame });
   } catch (error) {
+    console.error(error);
     response.end("Error");
   }
 });
