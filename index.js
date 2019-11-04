@@ -10,6 +10,8 @@ const {
   getUserBySession,
   deleteSession
 } = require("./lib/sessions");
+const axios = require("axios");
+
 const app = express();
 const path = require("path");
 const cookieParser = require("cookie-parser");
@@ -20,6 +22,7 @@ app.use(cookieParser());
 app.get(`/api/wishlist`, async (request, response) => {
   try {
     const user = getUserBySession(request.cookies.session);
+    if (!user) return response.status(403).end("unauthorized request");
     if (user) {
       const wishlist = await getWishlist(user.name);
       return response.json(wishlist);
@@ -34,7 +37,8 @@ app.get(`/api/wishlist`, async (request, response) => {
 
 app.get(`/api/games`, async (request, response) => {
   try {
-    const user = getUserBySession();
+    const user = getUserBySession(request.cookies.session);
+    if (!user) return response.status(403).end("unauthorized request");
     const games = await getGames();
     return response.json(games);
   } catch (error) {
@@ -46,6 +50,7 @@ app.get(`/api/games`, async (request, response) => {
 app.post("/api/wishlist", async (request, response) => {
   try {
     const user = getUserBySession(request.cookies.session);
+    if (!user) return response.status(403).end("unauthorized request");
     request.body.owner = user.name;
     const WishlistEntry = await setWishlist(request.body);
     return response.json({ WishlistEntry });
@@ -76,11 +81,14 @@ app.get("/api/users", async (request, response) => {
 app.post("/api/users", async (request, response) => {
   try {
     const emailExist = await getUsers(request.body.email);
-    if (emailExist) return response.status(400).send("email already exists");
-    const newUser = await setUser(request.body);
-    console.log(request.body.email);
-    return response.json(newUser);
+    if (emailExist) {
+      return response.status(400).json("email already exists");
+    } else {
+      await setUser(request.body);
+      return response.status(200).json("Account succesfully created");
+    }
   } catch (error) {
+    console.error(error);
     response.end("Error");
   }
 });
@@ -88,11 +96,12 @@ app.post("/api/users", async (request, response) => {
 app.post("/api/login", async (request, response) => {
   try {
     const userExist = await validateUser(request.body);
-    console.log("Post request succesfully submitted");
     if (userExist) {
       const sessionId = createSession(userExist);
       response.cookie("session", sessionId);
       return response.json({ name: userExist.name });
+    } else if (!userExist) {
+      return response.status(401).json("access denied");
     }
   } catch (error) {
     response.end("Error");
@@ -115,16 +124,17 @@ app.post("/api/logout", async (request, response) => {
 app.get("/api/search", async (request, response) => {
   const name = request.query.name;
   const targetUrl = `https://www.boardgameatlas.com/api/search?name=${name}&limit=10&fields=name,description,image_url,mechanics,categories,min_players,max_players,min_playtime,max_playtime&client_id=5cIY9zBPpt`;
-  axios({
+
+  return axios({
     url: targetUrl,
     method: "GET",
     headers: {
       Accept: "application/json",
       "client-id": "5cIY9zBPpt"
     }
-  });
-  const game = response.data;
-  return response.json(game);
+  })
+    .then(response => response.data)
+    .then(games => response.json(games));
 });
 
 if (process.env.NODE_ENV === "production") {

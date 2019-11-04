@@ -17,7 +17,6 @@ export const useOnClickOutside = (ref, handler) => {
 
 export const useUser = () => {
   const [user, setUser] = React.useState(localStorage.getItem("user"));
-  console.log(user);
 
   useEffect(() => {
     const handleStorageChange = () => {

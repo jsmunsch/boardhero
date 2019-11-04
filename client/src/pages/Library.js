@@ -7,9 +7,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LibraryCollection from "./LibraryGames";
 import LibraryBrowse from "./LibraryBrowse";
 import LibraryWishlist from "./LibraryWishlist";
+import { useLocation } from "react-router-dom";
 
 export default function Library() {
-  const [currentNavigation, setCurrentNavigation] = useState("");
+  let location = useLocation();
+
+  const [currentNavigation, setCurrentNavigation] = useState(location.pathname);
   const [toggleOptions, setToggleOptions] = useState(false);
   const [displaySort, setDisplaySort] = useState(false);
   const [showSearchbar, setShowSearchbar] = useState(false);

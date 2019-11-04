@@ -6,9 +6,17 @@ import Form from "./Form";
 import { Link } from "react-router-dom";
 import { createUser } from "../../api/fetchUser";
 
+const ErrorContainer = styled.div`
+  color: red;
+`;
+
+const SuccessContainer = styled.div`
+  color: green;
+`;
 const LinkContainer = styled.div`
   fill: white;
   color: white;
+  margin: 6px;
 `;
 
 const StyledLink = styled(Link)`
@@ -17,6 +25,9 @@ const StyledLink = styled(Link)`
 `;
 
 export default function RegisterForm() {
+  const [feedback, setFeedback] = useState(null);
+  const [success, setSuccess] = useState(null);
+  const [failed, setFailed] = useState(null);
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -32,14 +43,33 @@ export default function RegisterForm() {
   function submit(event) {
     event.preventDefault();
     if (password !== password2) {
-      console.log("passwords don't match");
+      setFailed(true);
+      setFeedback("passwords don't match");
+      return;
     } else {
-      console.log({ name, email, password });
-      createUser(user);
+      createUser(user)
+        .then(response => response.json())
+        .then(function(data) {
+          if (data === "email already exists") {
+            setFeedback("Email adress is already being used");
+            setFailed(true);
+            return;
+          } else {
+            setFeedback("Account succesfully created");
+            setFailed(false);
+            setSuccess(true);
+            return;
+          }
+        })
+        .catch(function() {
+          console.log("error");
+        });
     }
   }
   return (
     <>
+      {failed && <ErrorContainer>{feedback}</ErrorContainer>}
+      {success && <SuccessContainer>{feedback}</SuccessContainer>}
       <Form onSubmit={submit}>
         <InputField
           placeholder="name"

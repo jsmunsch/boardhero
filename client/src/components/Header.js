@@ -9,6 +9,7 @@ import BurgerMenuList from "./BurgerMenuList";
 import { useOnClickOutside } from "../hooks";
 import OptionBox from "./library/OptionBox";
 import SortModal from "./library/SortModal";
+import { Background } from "./popup-card/CardModal";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -34,6 +35,7 @@ export default function Header({
   const [showOptions, setShowOptions] = useState(false);
   const [showSort, setShowSort] = useState(false);
   const node = useRef();
+
   useOnClickOutside(node, () => {
     setShowMenu(false);
     setShowOptions(false);
@@ -42,9 +44,12 @@ export default function Header({
   return (
     <>
       {showMenu && (
-        <div ref={node}>
-          <BurgerMenuList />
-        </div>
+        <>
+          <Background />
+          <div ref={node}>
+            <BurgerMenuList />
+          </div>
+        </>
       )}
 
       <HeaderContainer>
@@ -54,7 +59,7 @@ export default function Header({
         Library
         <SearchBar
           active={active}
-          onChange={event => handleInputChange(event.target.value)}
+          onChange={event => handleInputChange(event)}
           onSearch={onSearch}
         />
         <IconButton onClick={toggleSearchbar}>
