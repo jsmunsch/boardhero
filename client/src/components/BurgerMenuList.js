@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import StyledMenuButton from "./library/NavigationMenuButton";
+import NavigationMenuButton from "./library/NavigationMenuButton";
 import Dice from "../icons/Dice";
 import Person from "../icons/Person";
 import Upload from "../icons/Upload";
