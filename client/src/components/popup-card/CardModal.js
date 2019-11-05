@@ -69,10 +69,12 @@ const ColoredSpan = styled.span`
 `;
 
 export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
-  const regex = /(<([^>]+)>)/gi;
-  const description = singleGame.description.replace(regex, "");
   const [showBack, setShowBack] = useState(false);
   const [startAnimation, setStartAnimation] = useState(false);
+
+  const regex = /(<([^>]+)>)/gi;
+  const description = singleGame.description.replace(regex, "");
+
   async function addGameToCollection() {
     newGame(singleGame);
   }
