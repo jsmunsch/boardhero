@@ -12,6 +12,7 @@ import Grid from "./Grid";
 import GameName from "./GameName";
 import Players from "./Players";
 import TrimText from "./TrimText";
+import parse from "html-react-parser";
 
 export const Background = styled.img`
   height: 100%;
@@ -45,15 +46,7 @@ const StyledDiv = styled.div`
   border: 4px solid white;
   border-radius: 15px;
   backdrop-filter: blur(2px);
-  /* @keyframes turner {
-    from {
-      transform: rotateY(0deg);
-    }
-    to {
-      transform: rotateY(180deg);
-    }
-  }
-  animation: turner 1s ease-in-out; */
+  font-family: "Roboto-light";
 `;
 
 const DescriptionContainer = styled.div`
@@ -67,15 +60,19 @@ const DescriptionContainer = styled.div`
   font-size: 1.2em;
 `;
 
-const WhiteSpan = styled.span`
-  color: white;
+const Info = styled.span`
+  margin: 6px 0px;
+`;
+const ColoredSpan = styled.span`
+  color: ${props => props.theme.brightEffect};
   margin-right: 10px;
 `;
 
 export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
+  const regex = /(<([^>]+)>)/gi;
+  const description = singleGame.description.replace(regex, "");
   const [showBack, setShowBack] = useState(false);
   const [startAnimation, setStartAnimation] = useState(false);
-  console.log(startAnimation);
   async function addGameToCollection() {
     newGame(singleGame);
   }
@@ -94,13 +91,17 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
               <span></span>
               <GameName>{singleGame.name}</GameName>
               <Players>
-                <WhiteSpan>Players: </WhiteSpan> {singleGame.min_players}-
+                <ColoredSpan>Players: </ColoredSpan> {singleGame.min_players}-
                 {singleGame.max_players}
-                <WhiteSpan>Playtime: </WhiteSpan>
-                {singleGame.min_playtime}min. - {singleGame.max_playtime}min.
-                <WhiteSpan>Description</WhiteSpan>
-                {TrimText(`${singleGame.description}`, 43)}
-                <DetailButton onClick={() => setShowBack(!showBack)} />
+                <Info />
+                <ColoredSpan>Playtime: </ColoredSpan>
+                {singleGame.min_playtime}min - {singleGame.max_playtime}min
+                <Info />
+                <ColoredSpan>Description</ColoredSpan>
+                <span>
+                  {TrimText(`${description}`, 43)}
+                  <DetailButton onClick={() => setShowBack(!showBack)} />
+                </span>
               </Players>
             </Grid>
             {enabled && (
@@ -113,7 +114,7 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
                   }, 5000);
                 }}
               >
-                + Collection
+                To Collection
               </AddButtonCollection>
             )}
             {enabled && (
@@ -126,7 +127,7 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
                   }, 5000);
                 }}
               >
-                + Wishlist
+                To Wishlist
               </AddButtonWishlist>
             )}
           </StyledDiv>
@@ -137,9 +138,7 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
             <Grid>
               <span></span>
               <CardGameName>Description</CardGameName>
-              <DescriptionContainer>
-                {singleGame.description}
-              </DescriptionContainer>
+              <DescriptionContainer>{description}</DescriptionContainer>
               <DetailButton onClick={() => setShowBack(!showBack)} />
             </Grid>
           </StyledDiv>

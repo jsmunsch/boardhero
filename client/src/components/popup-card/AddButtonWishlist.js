@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 const AddButtonWishlist = styled.button`
   border-radius: 15px;
-  background-color: #1c1203;
+  background-color: ${props => props.theme.brightEffect};
   position: absolute;
-  bottom: -20px;
-  left: 180px;
-  height: 60px;
-  width: 90px;
+  bottom: 10px;
+  right: 15px;
+  height: 40px;
+  width: 130px;
   border: none;
   outline: none;
   box-shadow: 4px 4px 6px 4px rgba(0, 0, 0, 0.15);

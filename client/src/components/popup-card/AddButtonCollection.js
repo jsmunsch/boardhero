@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 const AddButtonCollection = styled.button`
   border-radius: 15px;
-  background-color: #1c1203;
+  background-color: ${props => props.theme.brightEffect};
   position: absolute;
-  bottom: -20px;
-  left: 40px;
-  height: 60px;
-  width: 110px;
+  bottom: 10px;
+  left: 15px;
+  height: 40px;
+  width: 130px;
   border: none;
   color: white;
   outline: none;

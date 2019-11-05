@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const Players = styled.div`
@@ -7,7 +6,7 @@ const Players = styled.div`
   flex-direction: column;
   margin: 0px 4px;
   fill: white;
-  color: ${props => props.theme.brightEffect};
+  color: white;
   font-size: 1.6em;
 `;
 
