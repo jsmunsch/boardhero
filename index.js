@@ -39,8 +39,12 @@ app.get(`/api/games`, async (request, response) => {
   try {
     const user = getUserBySession(request.cookies.session);
     if (!user) return response.status(403).end("unauthorized request");
-    const games = await getGames();
-    return response.json(games);
+    if (user) {
+      const games = await getGames(user.name);
+      return response.json(games);
+    } else {
+      response.send("User not found");
+    }
   } catch (error) {
     console.log(error);
     return response.end("Error");
