@@ -58,7 +58,10 @@ const DescriptionContainer = styled.div`
   color: white;
   justify-content: center;
   margin: 0px 20px 0 10px;
-  max-height: 45vh;
+  max-height: 40vh;
+  @media (min-height: 750px) {
+    max-height: 35vh;
+  }
   overflow-x: scroll;
   font-size: 1.2em;
 `;
