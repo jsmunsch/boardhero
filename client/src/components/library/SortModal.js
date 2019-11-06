@@ -16,7 +16,7 @@ const PopupContainer = styled.div`
   display: ${props => (props.show ? "block" : "none")};
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
 `;
-/* ${props => (props.show ? "block" : "none")}; */
+
 const RadioButtonContainer = styled.div`
   display: flex;
   margin-top: 10px;
@@ -28,11 +28,9 @@ export default function SortModal({ show }) {
       Sort
       <RadioButtonContainer>
         <input name="sort" type="radio" id="sort1" value="alphabetically" />
-        <label for="sort1">Alphabetically</label>
       </RadioButtonContainer>
       <RadioButtonContainer>
         <input name="sort" type="radio" id="sort2" value="newest" />
-        <label for="sort1">Newest</label>
       </RadioButtonContainer>
     </PopupContainer>
   );

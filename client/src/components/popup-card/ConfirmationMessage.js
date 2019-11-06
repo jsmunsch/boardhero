@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 import { alert } from "../../animations/alert";
 import { textFadeIn } from "../../animations/textFadeIn";
 

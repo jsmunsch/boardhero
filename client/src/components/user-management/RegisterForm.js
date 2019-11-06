@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
 import InputField from "./InputField";
 import Form from "./Form";
 import { Link } from "react-router-dom";

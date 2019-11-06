@@ -4,7 +4,6 @@ import InputField from "./InputField";
 import Form from "./Form";
 import { Link } from "react-router-dom";
 import { validateCredentials } from "../../api/fetchUser";
-import { alert } from "../../animations/alert";
 
 const FailMessage = styled.div`
   color: red;
@@ -19,8 +18,6 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: ${props => props.theme.brightEffect};
 `;
-
-let serverResponse = {};
 
 export default function LoginForm() {
   const [failed, setFailed] = useState(null);

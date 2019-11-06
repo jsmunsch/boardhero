@@ -3,7 +3,7 @@ import { ImageContainer } from "../library/CollectionItem";
 
 export const GamePositioned = styled(ImageContainer)`
   position: absolute;
-  top: -55px;
+  top: -60px;
   left: 100px;
   height: 120px;
   width: 120px;

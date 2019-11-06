@@ -51,7 +51,7 @@ export default function SearchBar({ active, onSearch }) {
     const inputValue = event.target.value;
     throttleTimeout = setTimeout(function() {
       onSearch(inputValue);
-    }, 400);
+    }, 225);
   }
   return (
     <StyledSearchBar active={active}>
@@ -60,6 +60,7 @@ export default function SearchBar({ active, onSearch }) {
           type="search"
           placeholder="Enter Game Name"
           onChange={handleInputChange}
+          autoFocus={true}
         />
       )}
     </StyledSearchBar>
