@@ -11,7 +11,6 @@ export default function StarRatingFull() {
       height="24px"
       viewBox="0 0 24 24"
       fill="#ffbc01"
-      enable-background="new 0 0 24 24"
     >
       <g id="Bounding_Boxes">
         <path fill="none" d="M0,0h24v24H0V0z" />

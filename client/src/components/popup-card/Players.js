@@ -7,7 +7,7 @@ const Players = styled.div`
   margin: 0px 4px;
   fill: white;
   color: white;
-  font-size: 1.6em;
+  font-size: 1.4em;
 `;
 
 export default Players;

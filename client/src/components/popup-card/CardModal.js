@@ -15,6 +15,7 @@ import TrimText from "./TrimText";
 import Rating from "react-rating";
 import StarRatingFull from "../../icons/StarRatingFull";
 import StarRatingEmpty from "../../icons/StarRatingEmpty";
+import RatingContainer from "./RatingContainer";
 
 export const Background = styled.img`
   height: 100%;
@@ -56,7 +57,7 @@ const DescriptionContainer = styled.div`
   fill: white;
   color: white;
   justify-content: center;
-  margin: 0px 20px;
+  margin: 0px 20px 0 10px;
   max-height: 45vh;
   overflow-x: scroll;
   font-size: 1.2em;
@@ -68,15 +69,6 @@ const Info = styled.span`
 const ColoredSpan = styled.span`
   color: ${props => props.theme.brightEffect};
   margin-right: 10px;
-`;
-
-const RatingContainer = styled.div`
-  position: absolute;
-  top: 100px;
-  right: 0px;
-  left: 0px;
-  margin-left: auto;
-  margin-right: auto;
 `;
 
 export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
@@ -93,7 +85,6 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
     newWishlistEntry(singleGame);
   }
   console.log(singleGame);
-
   return (
     <>
       <Background onClick={handleOutsideClick} />
@@ -108,6 +99,7 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
                 fullSymbol={<StarRatingFull />}
                 emptySymbol={<StarRatingEmpty />}
               />
+              <span>({singleGame.num_user_ratings})</span>
             </RatingContainer>
             <Grid>
               <span></span>
@@ -157,9 +149,19 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
         {showBack && (
           <StyledDiv>
             <CollectionItemPositioned src={singleGame.image_url} />
+            <RatingContainer>
+              <Rating
+                initialRating={singleGame.average_user_rating}
+                readonly
+                fullSymbol={<StarRatingFull />}
+                emptySymbol={<StarRatingEmpty />}
+              />
+              <span>({singleGame.num_user_ratings})</span>
+            </RatingContainer>
             <Grid>
               <span></span>
               <CardGameName>Description</CardGameName>
+
               <DescriptionContainer>{description}</DescriptionContainer>
               <DetailButton onClick={() => setShowBack(!showBack)} />
             </Grid>

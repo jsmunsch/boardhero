@@ -60,7 +60,7 @@ export default function SearchBar({ active, onSearch }) {
           type="search"
           placeholder="Enter Game Name"
           onChange={handleInputChange}
-          autofocus="true"
+          autoFocus={true}
         />
       )}
     </StyledSearchBar>

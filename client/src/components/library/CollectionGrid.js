@@ -38,7 +38,7 @@ export default function CollectionGrid({ collection, enabled }) {
         <BodyGrid>
           {collection.map(game => (
             <CollectionItem
-              key={game.id}
+              key={game.name}
               onClick={() => {
                 setSelectedGame(game);
                 setShowModal(true);
