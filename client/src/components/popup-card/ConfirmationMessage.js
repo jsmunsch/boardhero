@@ -4,7 +4,7 @@ import { alert } from "../../animations/alert";
 import { textFadeIn } from "../../animations/textFadeIn";
 
 const MessageBox = styled.div`
-  background: #0e4213;
+  background: ${props => props.theme.darkFont};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,8 +29,8 @@ const MessageText = styled.text`
 
 export default function ConfirmationMessage() {
   return (
-    <MessageBox alert={alert}>
-      <MessageText alert={alert}>Game Succesfully added</MessageText>
+    <MessageBox>
+      <MessageText>Game Succesfully added</MessageText>
     </MessageBox>
   );
 }
