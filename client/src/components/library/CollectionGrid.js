@@ -4,12 +4,19 @@ import CollectionItem from "./CollectionItem";
 import CardModal from "../popup-card/CardModal";
 
 const BodyGrid = styled.div`
-  width: 320px;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 90px);
   grid-column-gap: 30px;
   grid-row-gap: 30px;
   background-color: ${props => props.theme.main};
+  justify-content: center;
+  @media (min-width: 800px) {
+    width: 80%;
+    grid-template-columns: repeat(5, 90px);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+  }
 `;
 
 const WrapperDiv = styled.div`
