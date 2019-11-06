@@ -12,7 +12,9 @@ import Grid from "./Grid";
 import GameName from "./GameName";
 import Players from "./Players";
 import TrimText from "./TrimText";
-import parse from "html-react-parser";
+import Rating from "react-rating";
+import StarRatingFull from "../../icons/StarRatingFull";
+import StarRatingEmpty from "../../icons/StarRatingEmpty";
 
 export const Background = styled.img`
   height: 100%;
@@ -68,6 +70,15 @@ const ColoredSpan = styled.span`
   margin-right: 10px;
 `;
 
+const RatingContainer = styled.div`
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  left: 0px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
   const [showBack, setShowBack] = useState(false);
   const [startAnimation, setStartAnimation] = useState(false);
@@ -81,6 +92,7 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
   async function addGameToWishlist() {
     newWishlistEntry(singleGame);
   }
+  console.log(singleGame);
 
   return (
     <>
@@ -89,6 +101,14 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
         {!showBack && (
           <StyledDiv>
             <CollectionItemPositioned src={singleGame.image_url} />
+            <RatingContainer>
+              <Rating
+                initialRating={singleGame.average_user_rating}
+                readonly
+                fullSymbol={<StarRatingFull />}
+                emptySymbol={<StarRatingEmpty />}
+              />
+            </RatingContainer>
             <Grid>
               <span></span>
               <GameName>{singleGame.name}</GameName>
