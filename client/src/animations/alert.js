@@ -23,7 +23,7 @@ export const alert = keyframes`
       bottom: 3em;
       width: 300px;
       margin-left: -150px;
-      border-radius: 0;
+      border-radius: 15px;
     }
     37% {
       bottom: 3em;
@@ -39,19 +39,19 @@ export const alert = keyframes`
       bottom: 3.5em;
       width: 300px;
       margin-left: -150px;
-      border-radius: 0;
+      border-radius: 15px;
     }
     50% {
       bottom: 3.5em;
       width: 300px;
       margin-left: -150px;
-      border-radius: 0;
+      border-radius: 15px;
     }
     53% {
       bottom: 3.5em;
       width: 300px;
       margin-left: -150px;
-      border-radius: 0;
+      border-radius: 15px;
     }
     58% {
       bottom: 3em;
@@ -67,7 +67,7 @@ export const alert = keyframes`
       bottom: 3em;
       width: 300px;
       margin-left: -150px;
-      border-radius: 0;
+      border-radius: 15px;
     }
     87% {
       bottom: 3em;
