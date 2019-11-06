@@ -131,7 +131,7 @@ app.post("/api/logout", async (request, response) => {
 
 app.get("/api/search", async (request, response) => {
   const name = request.query.name;
-  const targetUrl = `https://www.boardgameatlas.com/api/search?name=${name}&limit=10&fields=name,description,image_url,mechanics,categories,min_players,max_players,min_playtime,max_playtime&client_id=5cIY9zBPpt`;
+  const targetUrl = `https://www.boardgameatlas.com/api/search?name=${name}&limit=10&fields=name,description,image_url,average_user_rating,num_user_ratings,mechanics,categories,min_players,max_players,min_playtime,max_playtime&client_id=5cIY9zBPpt`;
 
   return axios({
     url: targetUrl,
