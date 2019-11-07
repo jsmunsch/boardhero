@@ -7,6 +7,9 @@ import StyledLink from "../components/User-page.js/UserNavigation";
 import RecentlyAdded from "../components/User-page.js/RecentlyAdded";
 import { useUser } from "../hooks";
 import { getGamesCollection } from "../api/fetchGames";
+import compare from "../components/User-page.js/CompareFunction";
+import UserNameArea from "../components/User-page.js/UserNameArea";
+import { getWishlistCollection } from "../api/fetchWishlist";
 
 const Container = styled.div`
   display: flex;
@@ -21,13 +24,6 @@ const TopArea = styled.section`
   display: flex;
   justify-content: space-around;
   align-items: center;
-`;
-
-const UserNameArea = styled.div`
-  height: 13%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
 `;
 
 const ScrollBar = styled.div`
@@ -58,33 +54,19 @@ const Title = styled.div`
 
 export default function User() {
   const [games, setGames] = useState([]);
+  const [wishlistGames, setWishlistGames] = useState([]);
+
+  React.useEffect(() => {
+    getWishlistCollection().then(gameArray => {
+      setWishlistGames(gameArray);
+    });
+  }, []);
 
   React.useEffect(() => {
     getGamesCollection().then(gameArray => {
       setGames(gameArray);
     });
   }, []);
-
-  function compare(a, b) {
-    if (a.date_added > b.date_added) {
-      return -1;
-    }
-    if (a.date_added < b.date_added) {
-      return 1;
-    }
-    return 0;
-  }
-  games.sort(function(a, b) {
-    const dateA = a.date_added;
-    const dateB = b.date_added;
-    if (dateA < dateB) {
-      return -1;
-    }
-    if (dateA > dateB) {
-      return 1;
-    }
-    return 0;
-  });
 
   const filteredGames = games.sort(compare);
   const [user] = useUser();
@@ -93,8 +75,8 @@ export default function User() {
       <Header />
       <TopArea>
         <PictureContainer src="https://avatarsed1.serversdev.getgo.com/2205256774854474505_medium.jpg" />
-        <AmountGames name="1231" description="Games" />
-        <AmountGames name="12" description="Wishlist" />
+        <AmountGames name={games.length} description="Games" />
+        <AmountGames name={wishlistGames.length} description="Wishlist" />
       </TopArea>
       <UserNameArea>
         <AmountGames name={user} description="Playing smart since 2015" />
