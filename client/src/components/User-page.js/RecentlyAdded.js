@@ -14,12 +14,12 @@ const Span = styled.span`
   margin-top: 20px;
 `;
 
-export default function RecentlyAdded() {
+export default function RecentlyAdded({ src, name, description }) {
   return (
     <Container>
-      <CollectionItem />
+      <CollectionItem src={src} />
       <Span>
-        <AmountGames amount="1231" description="Games" />
+        <AmountGames name={name} description={description} />
       </Span>
       <span />
     </Container>

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import PictureContainer from "../components/User-page.js/RoundPicture";
 import AmountGames from "../components/User-page.js/AmountGames";
 import StyledLink from "../components/User-page.js/UserNavigation";
 import RecentlyAdded from "../components/User-page.js/RecentlyAdded";
+import { useUser } from "../hooks";
+import { getGamesCollection } from "../api/fetchGames";
 
 const Container = styled.div`
   display: flex;
@@ -48,25 +50,31 @@ const MainContent = styled.section`
 
 const Title = styled.div`
   display: flex;
-  font-size: 1.5em;
+  font-size: 1.3em;
   margin-top: 20px;
   justify-content: space-around;
 `;
 
 export default function User() {
+  const [games, setGames] = useState([]);
+
+  React.useEffect(() => {
+    getGamesCollection().then(gameArray => {
+      setGames(gameArray);
+    });
+  }, []);
+
+  const [user] = useUser();
   return (
     <Container>
       <Header />
       <TopArea>
         <PictureContainer src="https://avatarsed1.serversdev.getgo.com/2205256774854474505_medium.jpg" />
-        <AmountGames amount="1231" description="Games" />
-        <AmountGames amount="12" description="Wishlist" />
+        <AmountGames name="1231" description="Games" />
+        <AmountGames name="12" description="Wishlist" />
       </TopArea>
       <UserNameArea>
-        <AmountGames
-          amount="Jonas Bertel"
-          description="Playing smart since 2015"
-        />
+        <AmountGames name={user} description="Playing smart since 2015" />
         <span />
         <span />
       </UserNameArea>
@@ -74,7 +82,6 @@ export default function User() {
         <StyledLink>Overview</StyledLink>
         <StyledLink>Statistics</StyledLink>
         <StyledLink>Friends</StyledLink>
-        <span>Example</span>
       </ScrollBar>
       <MainContent>
         <Title>
@@ -82,10 +89,15 @@ export default function User() {
           <span />
           <span />
         </Title>
-        <RecentlyAdded />
-        <RecentlyAdded />
-        <RecentlyAdded />
-        <RecentlyAdded />
+        {games &&
+          games.map(game => (
+            <RecentlyAdded
+              key={game.id}
+              src={game.image_url}
+              name={game.name}
+              description={game.id}
+            />
+          ))}
       </MainContent>
     </Container>
   );

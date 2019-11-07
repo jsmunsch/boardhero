@@ -16,10 +16,10 @@ const Description = styled.div`
   font-weight: 100;
 `;
 
-export default function AmountGames({ amount, description }) {
+export default function AmountGames({ name, description }) {
   return (
     <Container>
-      <Amount>{amount}</Amount>
+      <Amount>{name}</Amount>
       <Description>{description}</Description>
     </Container>
   );
