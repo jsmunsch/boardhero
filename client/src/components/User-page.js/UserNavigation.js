@@ -7,6 +7,8 @@ const StyledLink = styled(Link)`
   color: inherit;
   padding: 10px;
   font-size: 1.1em;
+  border-bottom: ${props =>
+    props.selected ? `3px solid ${props.theme.brightEffect}` : "none"};
 `;
 
 export default StyledLink;

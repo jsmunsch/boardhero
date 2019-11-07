@@ -2,12 +2,13 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import NavigationMenuButton from "./library/NavigationMenuButton";
 import Dice from "../icons/Dice";
-
+import { useHistory, useLocation, useRouteMatch } from "react-router-dom";
 import Logout from "../icons/Logout";
 import { Link } from "react-router-dom";
 
 import { useUser } from "../hooks";
 import { unsetUser } from "../api/fetchUser";
+import Person from "../icons/Person";
 
 const morph = keyframes`
   0% { width: 0px;}
@@ -45,28 +46,59 @@ const NameContainer = styled.div`
 `;
 
 export default function BurgerMenuList() {
+  let history = useHistory();
+  let location = useLocation();
+  let { url } = useRouteMatch();
   const [user] = useUser();
   return (
     <>
       <PositionContainer>
         <NameContainer>Hallo {user}</NameContainer>
         <NavigationMenuButton
-          onClick={() => console.log("Collection")}
-          selected
+          onClick={() => history.push("/library/browse")}
+          selected={
+            location.pathname === `${url}/browse` ||
+            location.pathname === `${url}/collection` ||
+            location.pathname === `${url}/wishlist`
+          }
         >
-          <Dice selected />
+          <Dice
+            selected={
+              location.pathname === `${url}/browse` ||
+              location.pathname === `${url}/collection` ||
+              location.pathname === `${url}/wishlist`
+            }
+          />
           Library
         </NavigationMenuButton>
         <NavigationMenuButton
           onClick={() => {
             unsetUser();
             localStorage.clear();
+            history.push("/");
           }}
         >
-          <StyledLink to={"/"}>
-            <Logout />
-            Logout
-          </StyledLink>
+          <Logout />
+          Logout
+        </NavigationMenuButton>
+        <NavigationMenuButton
+          onClick={() => {
+            history.push("/user/overview");
+          }}
+          selected={
+            location.pathname === `${url}/overview` ||
+            location.pathname === `${url}/statistics` ||
+            location.pathname === `${url}/friends`
+          }
+        >
+          <Person
+            selected={
+              location.pathname === `${url}/overview` ||
+              location.pathname === `${url}/statistics` ||
+              location.pathname === `${url}/friends`
+            }
+          />
+          User
         </NavigationMenuButton>
       </PositionContainer>
     </>

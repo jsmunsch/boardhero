@@ -79,7 +79,9 @@ export default function User() {
         <span />
       </UserNameArea>
       <ScrollBar>
-        <StyledLink to={`${url}/overview`}>Overview</StyledLink>
+        <StyledLink to={`${url}/overview`} selected>
+          Overview
+        </StyledLink>
         <StyledLink to={`${url}/statistics`}>Statistics</StyledLink>
         <StyledLink to={`${url}/friends`}>Friends</StyledLink>
       </ScrollBar>
