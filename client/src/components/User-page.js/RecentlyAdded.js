@@ -6,10 +6,11 @@ import AmountGames from "./AmountGames";
 const Container = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  align-items: center;
 `;
 
 const Span = styled.span`
-  margin-left: 50px;
   margin-top: 20px;
 `;
 
@@ -20,6 +21,7 @@ export default function RecentlyAdded() {
       <Span>
         <AmountGames amount="1231" description="Games" />
       </Span>
+      <span />
     </Container>
   );
 }

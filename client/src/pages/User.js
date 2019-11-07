@@ -44,12 +44,13 @@ const MainContent = styled.section`
   overflow: auto;
   flex-grow: 1;
   max-height: 50%;
-  margin-left: 40px;
 `;
 
 const Title = styled.div`
+  display: flex;
   font-size: 1.5em;
   margin-top: 20px;
+  justify-content: space-around;
 `;
 
 export default function User() {
@@ -76,7 +77,11 @@ export default function User() {
         <span>Example</span>
       </ScrollBar>
       <MainContent>
-        <Title>Recently Added</Title>
+        <Title>
+          <span>Recently Added</span>
+          <span />
+          <span />
+        </Title>
         <RecentlyAdded />
         <RecentlyAdded />
         <RecentlyAdded />
