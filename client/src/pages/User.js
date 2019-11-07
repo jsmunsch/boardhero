@@ -9,7 +9,6 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import PictureContainer from "../components/User-page.js/RoundPicture";
 import AmountGames from "../components/User-page.js/AmountGames";
-import StyledLink from "../components/User-page.js/UserNavigation";
 import RecentlyAdded from "../components/User-page.js/RecentlyAdded";
 import { useUser } from "../hooks";
 import { getGamesCollection } from "../api/fetchGames";
@@ -20,6 +19,7 @@ import UserStatistics from "./UserStatistics";
 import UserFriends from "./UserFriends";
 import UserOverview from "./UserOverview";
 import NameText from "../components/User-page.js/NameText";
+import NavBar from "../components/User-page.js/NavBar";
 
 const Container = styled.div`
   display: flex;
@@ -34,16 +34,6 @@ const TopArea = styled.section`
   display: flex;
   justify-content: space-around;
   align-items: center;
-`;
-
-const ScrollBar = styled.div`
-  display: flex;
-  height: 8%;
-  overflow-x: auto;
-  align-items: center;
-  justify-content: space-around;
-  border-top: 1px solid ${props => props.theme.brightEffect};
-  border-bottom: 1px solid ${props => props.theme.brightEffect};
 `;
 
 export default function User() {
@@ -64,7 +54,7 @@ export default function User() {
 
   const filteredGames = games.sort(compare);
   const [user] = useUser();
-  let { url } = useRouteMatch();
+
   return (
     <Container>
       <Header />
@@ -78,13 +68,7 @@ export default function User() {
         <span />
         <span />
       </UserNameArea>
-      <ScrollBar>
-        <StyledLink to={`${url}/overview`} selected>
-          Overview
-        </StyledLink>
-        <StyledLink to={`${url}/statistics`}>Statistics</StyledLink>
-        <StyledLink to={`${url}/friends`}>Friends</StyledLink>
-      </ScrollBar>
+      <NavBar />
       <Switch>
         <Route exact path="/user/overview">
           <UserOverview filteredGames={filteredGames} />
