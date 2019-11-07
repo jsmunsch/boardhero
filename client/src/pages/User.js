@@ -52,7 +52,8 @@ const Title = styled.div`
   display: flex;
   font-size: 1.3em;
   margin-top: 20px;
-  justify-content: space-around;
+  justify-content: flex-start;
+  margin-left: 8%;
 `;
 
 export default function User() {
@@ -64,6 +65,28 @@ export default function User() {
     });
   }, []);
 
+  function compare(a, b) {
+    if (a.date_added > b.date_added) {
+      return -1;
+    }
+    if (a.date_added < b.date_added) {
+      return 1;
+    }
+    return 0;
+  }
+  games.sort(function(a, b) {
+    const dateA = a.date_added;
+    const dateB = b.date_added;
+    if (dateA < dateB) {
+      return -1;
+    }
+    if (dateA > dateB) {
+      return 1;
+    }
+    return 0;
+  });
+
+  const filteredGames = games.sort(compare);
   const [user] = useUser();
   return (
     <Container>
@@ -86,18 +109,18 @@ export default function User() {
       <MainContent>
         <Title>
           <span>Recently Added</span>
-          <span />
-          <span />
         </Title>
-        {games &&
-          games.map(game => (
-            <RecentlyAdded
-              key={game.id}
-              src={game.image_url}
-              name={game.name}
-              description={game.id}
-            />
-          ))}
+        {filteredGames &&
+          filteredGames
+            .slice(0, 5)
+            .map(game => (
+              <RecentlyAdded
+                key={game.id}
+                src={game.image_url}
+                name={game.name}
+                description={game.id}
+              />
+            ))}
       </MainContent>
     </Container>
   );

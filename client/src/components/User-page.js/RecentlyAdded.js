@@ -6,8 +6,7 @@ import AmountGames from "./AmountGames";
 const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  align-items: center;
+  margin-left: 7%;
 `;
 
 const Span = styled.span`
