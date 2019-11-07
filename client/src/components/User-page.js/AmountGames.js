@@ -11,7 +11,9 @@ const Amount = styled.h1`
   margin: 0;
 `;
 
-const Description = styled.div``;
+const Description = styled.div`
+  font-weight: 100;
+`;
 
 export default function AmountGames({ amount, description }) {
   return (
