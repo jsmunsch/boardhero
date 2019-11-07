@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/register">
             <Register />
           </Route>
-          <Route exact path="/user">
+          <Route path="/user">
             <User />
           </Route>
           {user && (

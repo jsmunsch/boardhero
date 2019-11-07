@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useRouteMatch
+} from "react-router-dom";
 import styled from "styled-components";
 import Header from "../components/Header";
 import PictureContainer from "../components/User-page.js/RoundPicture";
@@ -10,6 +16,9 @@ import { getGamesCollection } from "../api/fetchGames";
 import compare from "../components/User-page.js/CompareFunction";
 import UserNameArea from "../components/User-page.js/UserNameArea";
 import { getWishlistCollection } from "../api/fetchWishlist";
+import UserStatistics from "./UserStatistics";
+import UserFriends from "./UserFriends";
+import UserOverview from "./UserOverview";
 
 const Container = styled.div`
   display: flex;
@@ -36,22 +45,6 @@ const ScrollBar = styled.div`
   border-bottom: 1px solid ${props => props.theme.brightEffect};
 `;
 
-const MainContent = styled.section`
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-  flex-grow: 1;
-  max-height: 50%;
-`;
-
-const Title = styled.div`
-  display: flex;
-  font-size: 1.3em;
-  margin-top: 20px;
-  justify-content: flex-start;
-  margin-left: 8%;
-`;
-
 export default function User() {
   const [games, setGames] = useState([]);
   const [wishlistGames, setWishlistGames] = useState([]);
@@ -70,6 +63,7 @@ export default function User() {
 
   const filteredGames = games.sort(compare);
   const [user] = useUser();
+  let { url } = useRouteMatch();
   return (
     <Container>
       <Header />
@@ -84,26 +78,21 @@ export default function User() {
         <span />
       </UserNameArea>
       <ScrollBar>
-        <StyledLink>Overview</StyledLink>
-        <StyledLink>Statistics</StyledLink>
-        <StyledLink>Friends</StyledLink>
+        <StyledLink to={`${url}/overview`}>Overview</StyledLink>
+        <StyledLink to={`${url}/statistics`}>Statistics</StyledLink>
+        <StyledLink to={`${url}/friends`}>Friends</StyledLink>
       </ScrollBar>
-      <MainContent>
-        <Title>
-          <span>Recently Added</span>
-        </Title>
-        {filteredGames &&
-          filteredGames
-            .slice(0, 5)
-            .map(game => (
-              <RecentlyAdded
-                key={game.id}
-                src={game.image_url}
-                name={game.name}
-                description={game.id}
-              />
-            ))}
-      </MainContent>
+      <Switch>
+        <Route exact path="/user/overview">
+          <UserOverview filteredGames={filteredGames} />
+        </Route>
+        <Route exact path="/user/statistics">
+          <UserStatistics />
+        </Route>
+        <Route exact path="/user/friends">
+          <UserFriends />
+        </Route>
+      </Switch>
     </Container>
   );
 }
