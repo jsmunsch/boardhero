@@ -19,6 +19,7 @@ import { getWishlistCollection } from "../api/fetchWishlist";
 import UserStatistics from "./UserStatistics";
 import UserFriends from "./UserFriends";
 import UserOverview from "./UserOverview";
+import NameText from "../components/User-page.js/NameText";
 
 const Container = styled.div`
   display: flex;
@@ -68,12 +69,12 @@ export default function User() {
     <Container>
       <Header />
       <TopArea>
-        <PictureContainer src="https://avatarsed1.serversdev.getgo.com/2205256774854474505_medium.jpg" />
+        <PictureContainer src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT78zVsh02EAe_AqYX-lLKW3umGxLzasjAzyOqy3WWEfXLzV4wShQ&s" />
         <AmountGames name={games.length} description="Games" />
         <AmountGames name={wishlistGames.length} description="Wishlist" />
       </TopArea>
       <UserNameArea>
-        <AmountGames name={user} description="Playing smart since 2015" />
+        <NameText name={user} description="Playing smart since 2015" />
         <span />
         <span />
       </UserNameArea>
