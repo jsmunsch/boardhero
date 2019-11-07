@@ -6,9 +6,10 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-const Amount = styled.h1`
+const Amount = styled.text`
   font-style: bold;
   margin: 0;
+  font-size: 1.6em;
 `;
 
 const Description = styled.div`

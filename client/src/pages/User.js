@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import PictureContainer from "../components/User-page.js/RoundPicture";
 import AmountGames from "../components/User-page.js/AmountGames";
 import StyledLink from "../components/User-page.js/UserNavigation";
+import RecentlyAdded from "../components/User-page.js/RecentlyAdded";
 
 const Container = styled.div`
   display: flex;
@@ -39,7 +40,16 @@ const ScrollBar = styled.div`
 
 const MainContent = styled.section`
   display: flex;
+  flex-direction: column;
+  overflow: auto;
   flex-grow: 1;
+  max-height: 50%;
+  margin-left: 40px;
+`;
+
+const Title = styled.div`
+  font-size: 1.5em;
+  margin-top: 20px;
 `;
 
 export default function User() {
@@ -60,12 +70,18 @@ export default function User() {
         <span />
       </UserNameArea>
       <ScrollBar>
-        <StyledLink>Overwiew</StyledLink>
+        <StyledLink>Overview</StyledLink>
         <StyledLink>Statistics</StyledLink>
         <StyledLink>Friends</StyledLink>
         <span>Example</span>
       </ScrollBar>
-      <MainContent></MainContent>
+      <MainContent>
+        <Title>Recently Added</Title>
+        <RecentlyAdded />
+        <RecentlyAdded />
+        <RecentlyAdded />
+        <RecentlyAdded />
+      </MainContent>
     </Container>
   );
 }
