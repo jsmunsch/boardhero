@@ -15,7 +15,7 @@ const morph = keyframes`
 `;
 
 const PositionContainer = styled.nav`
-  position: absolute;
+  position: fixed;
   left: 0px;
   z-index: 1;
   display: flex;
