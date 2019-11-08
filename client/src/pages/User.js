@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useRouteMatch
-} from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import Header from "../components/Header";
 import PictureContainer from "../components/User-page.js/RoundPicture";
 import AmountGames from "../components/User-page.js/AmountGames";
-import RecentlyAdded from "../components/User-page.js/RecentlyAdded";
 import { useUser } from "../hooks";
 import { getGamesCollection } from "../api/fetchGames";
 import compare from "../components/User-page.js/CompareFunction";
@@ -71,10 +65,10 @@ export default function User() {
       <NavBar />
       <Switch>
         <Route exact path="/user/overview">
-          <UserOverview filteredGames={filteredGames} />
+          <UserOverview filteredGames={filteredGames} games={games} />
         </Route>
         <Route exact path="/user/statistics">
-          <UserStatistics />
+          <UserStatistics games={games} />
         </Route>
         <Route exact path="/user/friends">
           <UserFriends />

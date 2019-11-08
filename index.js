@@ -132,7 +132,7 @@ app.post("/api/logout", async (request, response) => {
 
 app.get("/api/search", async (request, response) => {
   const name = request.query.name;
-  const targetUrl = `https://www.boardgameatlas.com/api/search?name=${name}&limit=15&fields=id,name,description,image_url,average_user_rating,num_user_ratings,mechanics,categories,min_players,max_players,min_playtime,max_playtime&client_id=5cIY9zBPpt`;
+  const targetUrl = `https://www.boardgameatlas.com/api/search?name=${name}&limit=15&fields=id,name,description,image_url,publishers,average_user_rating,num_user_ratings,mechanics,categories,min_players,max_players,min_playtime,max_playtime&client_id=5cIY9zBPpt`;
 
   return axios({
     url: targetUrl,
@@ -144,6 +144,21 @@ app.get("/api/search", async (request, response) => {
   })
     .then(response => response.data)
     .then(games => response.json(games));
+});
+
+app.get("/api/mechanics", async (request, response) => {
+  const targetUrl = `https://www.boardgameatlas.com/api/game/mechanics?client_id=5cIY9zBPpt`;
+
+  return axios({
+    url: targetUrl,
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "client-id": "5cIY9zBPpt"
+    }
+  })
+    .then(response => response.data)
+    .then(mechanics => response.json(mechanics));
 });
 
 if (process.env.NODE_ENV === "production") {

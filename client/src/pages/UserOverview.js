@@ -7,12 +7,13 @@ import { useHistory } from "react-router-dom";
 
 export default function UserOverview({
   filteredGames,
+  games,
   text,
   buttonText,
   onClick
 }) {
   let history = useHistory();
-  let bool = filteredGames.name;
+  let bool = games;
   return (
     <MainContent>
       {!bool && (
@@ -32,7 +33,7 @@ export default function UserOverview({
           key={game.id}
           src={game.image_url}
           name={game.name}
-          description={game.id}
+          description={game.publishers[0] || "unknown"}
         />
       ))}
     </MainContent>

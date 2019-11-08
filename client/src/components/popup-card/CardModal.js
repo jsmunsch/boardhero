@@ -17,11 +17,13 @@ import StarRatingFull from "../../icons/StarRatingFull";
 import StarRatingEmpty from "../../icons/StarRatingEmpty";
 import RatingContainer from "./RatingContainer";
 
-export const Background = styled.img`
+export const Background = styled.div`
   height: 100%;
   width: 100%;
   background: transparent;
   position: fixed;
+  outline: none;
+  border: none;
   top: 0;
   z-index: 1;
   backdrop-filter: blur(2.8px);
