@@ -13,7 +13,8 @@
     "dev:server": "npm run build && cd .. && npm start",
     "server": "nodemon index.js",
     "start": "node index.js",
-    "heroku-prebuild": "cd client && npm ci --only=prod"
+    "heroku-prebuild": "cd client && npm ci --only=prod",
+    "reset": "killall -9 node"
   },
   "repository": {
     "type": "git",
