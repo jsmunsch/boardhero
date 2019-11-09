@@ -29,7 +29,7 @@ export default function Register() {
 
   return (
     <FlexContainer>
-      <Headline>Boardhero {user}</Headline>
+      <Headline>Boardhero</Headline>
       <VectorContainer>
         <Hero />
       </VectorContainer>
