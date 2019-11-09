@@ -16,14 +16,14 @@ export default function UserOverview({
   let bool = games;
   return (
     <MainContent>
-      {!bool && (
+      {bool && (
         <Placeholder
           text="Is this your first time here ? To display your recently added games add some first. Let's go!"
           buttonText="Add Games"
           onClick={() => history.push("/library/browse")}
         />
       )}
-      {bool && (
+      {!bool && (
         <Title>
           <span>Recently Added</span>
         </Title>

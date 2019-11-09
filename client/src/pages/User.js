@@ -58,7 +58,7 @@ export default function User() {
         <AmountGames name={wishlistGames.length} description="Wishlist" />
       </TopArea>
       <UserNameArea>
-        <NameText name={user} description="Playing smart since 2015" />
+        <NameText name={user} description="Playing smart since October 19'" />
         <span />
         <span />
       </UserNameArea>
