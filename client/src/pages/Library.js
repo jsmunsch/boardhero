@@ -8,7 +8,6 @@ import LibraryCollection from "./LibraryGames";
 import LibraryBrowse from "./LibraryBrowse";
 import LibraryWishlist from "./LibraryWishlist";
 import { useLocation } from "react-router-dom";
-import SearchBar from "../components/library/SearchBar";
 
 export default function Library() {
   let location = useLocation();

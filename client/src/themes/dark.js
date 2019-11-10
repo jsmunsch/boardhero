@@ -5,7 +5,8 @@ const darkTheme = {
   highlight: "#6F7477",
   lightBackground: "#707070",
   accent: "#404345",
-  brightEffect: "#F0A42A"
+  brightEffect: "#F0A42A",
+  mainLight: "#2b303b"
 };
 
 export default darkTheme;

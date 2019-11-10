@@ -8,6 +8,7 @@ import Library from "./pages/Library";
 import Register from "./pages/register";
 import { useUser } from "./hooks";
 import NotFound from "./pages/NotFound";
+import User from "./pages/User";
 
 function App() {
   const [user] = useUser();
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route exact path="/register">
             <Register />
+          </Route>
+          <Route path="/user">
+            <User />
           </Route>
           {user && (
             <Route path="/library">

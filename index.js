@@ -69,6 +69,7 @@ app.post("/api/games", async (request, response) => {
     const user = getUserBySession(request.cookies.session);
     if (!user) return response.status(403).end("unauthorized request");
     request.body.owner = user.name;
+    request.body.date_added = Date.now();
     const newGame = await setGames(request.body);
     return response.json({ newGame });
   } catch (error) {
