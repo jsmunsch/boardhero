@@ -4,7 +4,6 @@ import NavigationMenuButton from "./library/NavigationMenuButton";
 import Dice from "../icons/Dice";
 import { useHistory, useLocation, useRouteMatch } from "react-router-dom";
 import Logout from "../icons/Logout";
-import { Link } from "react-router-dom";
 
 import { useUser } from "../hooks";
 import { unsetUser } from "../api/fetchUser";
@@ -26,13 +25,6 @@ const PositionContainer = styled.nav`
   height: 100vh;
   background-color: ${props => props.theme.accent};
   animation: ${morph} 0.3s ease-in-out;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: inherit;
-  height: inherit;
-  line-height: inherit;
 `;
 
 const NameContainer = styled.div`

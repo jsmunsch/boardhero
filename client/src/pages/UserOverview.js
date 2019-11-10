@@ -7,22 +7,23 @@ import { useHistory } from "react-router-dom";
 
 export default function UserOverview({
   filteredGames,
+  games,
   text,
   buttonText,
   onClick
 }) {
   let history = useHistory();
-  let bool = filteredGames.name;
+  let bool = games;
   return (
     <MainContent>
-      {!bool && (
+      {bool && (
         <Placeholder
           text="Is this your first time here ? To display your recently added games add some first. Let's go!"
           buttonText="Add Games"
           onClick={() => history.push("/library/browse")}
         />
       )}
-      {bool && (
+      {!bool && (
         <Title>
           <span>Recently Added</span>
         </Title>
@@ -32,7 +33,7 @@ export default function UserOverview({
           key={game.id}
           src={game.image_url}
           name={game.name}
-          description={game.id}
+          description={game.publishers[0] || "unknown"}
         />
       ))}
     </MainContent>

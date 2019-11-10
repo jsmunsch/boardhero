@@ -4,7 +4,8 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
-  useRouteMatch
+  useRouteMatch,
+  useLocation
 } from "react-router-dom";
 
 const NavGrid = styled.div`
@@ -38,11 +39,12 @@ const StyledLink = styled(Link)`
 
 export default function LibraryNav({ selected, onNavigationChange }) {
   let { url } = useRouteMatch();
+  let location = useLocation();
   return (
     <NavGrid>
       <StyledLink to={`${url}/games`}>
         <NavGridButton
-          selected={selected === `${url}/games`}
+          selected={location.pathname === `${url}/games`}
           value="games"
           onClick={() => onNavigationChange(`${url}/games`)}
         >
@@ -51,7 +53,7 @@ export default function LibraryNav({ selected, onNavigationChange }) {
       </StyledLink>
       <StyledLink to={`${url}/browse`}>
         <NavGridButton
-          selected={selected === `${url}/browse`}
+          selected={location.pathname === `${url}/browse`}
           value="browse"
           onClick={() => onNavigationChange(`${url}/browse`)}
         >
@@ -60,7 +62,7 @@ export default function LibraryNav({ selected, onNavigationChange }) {
       </StyledLink>
       <StyledLink to={`${url}/wishlist`}>
         <NavGridButton
-          selected={selected === `${url}/wishlist`}
+          selected={location.pathname === `${url}/wishlist`}
           value="wishlist"
           onClick={() => onNavigationChange(`${url}/wishlist`)}
         >
