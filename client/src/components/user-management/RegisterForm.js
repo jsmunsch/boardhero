@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import InputField from "./InputField";
 import Form from "./Form";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { createUser } from "../../api/fetchUser";
 
 const ErrorContainer = styled.div`
@@ -33,6 +33,8 @@ export default function RegisterForm() {
     password: "",
     password2: ""
   });
+
+  let history = useHistory();
   const { name, email, password, password2 } = user;
 
   function handleChange(event) {
@@ -58,6 +60,9 @@ export default function RegisterForm() {
             setFeedback("Account succesfully created");
             setFailed(false);
             setSuccess(true);
+            setTimeout(() => {
+              history.push("/");
+            }, 1300);
             return;
           }
         })
