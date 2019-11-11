@@ -74,14 +74,14 @@ export default function BurgerMenuList({ handleClose }) {
           onClick={() => history.push("/library/browse")}
           selected={
             location.pathname === `${url}/browse` ||
-            location.pathname === `${url}/collection` ||
+            location.pathname === `${url}/games` ||
             location.pathname === `${url}/wishlist`
           }
         >
           <Dice
             selected={
               location.pathname === `${url}/browse` ||
-              location.pathname === `${url}/collection` ||
+              location.pathname === `${url}/games` ||
               location.pathname === `${url}/wishlist`
             }
           />
