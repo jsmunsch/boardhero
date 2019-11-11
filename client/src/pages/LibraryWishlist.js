@@ -34,7 +34,7 @@ export default function LibraryWishlist({ searchbarInput }) {
           />
         </FlexContainer>
       )}
-      <CollectionGrid collection={searchWishlistGames} />
+      <CollectionGrid collection={searchWishlistGames} removeWishlist={true} />
     </>
   );
 }
