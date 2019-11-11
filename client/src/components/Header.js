@@ -26,6 +26,10 @@ const HeaderContainer = styled.header`
 `;
 
 const PageSpan = styled.span``;
+
+const IconSpan = styled.span`
+  position: absolute;
+`;
 export default function Header({
   toggleOptions,
   toggleSearchbar,
@@ -60,7 +64,12 @@ export default function Header({
           <BurgerMenu />
         </IconButton>
         <PageSpan page={page}>{page}</PageSpan>
-        <AxeViking />
+        {!active && (
+          <IconSpan>
+            <AxeViking />
+          </IconSpan>
+        )}
+
         <SearchBar
           active={active}
           onChange={event => handleInputChange(event)}
