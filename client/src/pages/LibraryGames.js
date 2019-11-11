@@ -37,7 +37,7 @@ export default function LibraryCollection({ searchbarInput }) {
         </FlexContainer>
       )}
 
-      <CollectionGrid collection={searchGames} />
+      <CollectionGrid collection={searchGames} removeGame={true} />
     </>
   );
 }

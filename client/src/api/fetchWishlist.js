@@ -11,3 +11,13 @@ export function newWishlistEntry(game) {
     body: JSON.stringify(game)
   });
 }
+
+export function removeGameWishlist(game) {
+  return fetch("/api/wishlistremove", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(game)
+  });
+}

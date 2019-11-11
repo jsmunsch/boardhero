@@ -12,3 +12,13 @@ export function newGame(game) {
     body: JSON.stringify(game)
   });
 }
+
+export function removeGameEntry(game) {
+  return fetch("/api/gamesremove", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(game)
+  });
+}
