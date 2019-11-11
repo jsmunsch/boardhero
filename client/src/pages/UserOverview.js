@@ -13,17 +13,16 @@ export default function UserOverview({
   onClick
 }) {
   let history = useHistory();
-  let bool = games;
   return (
     <MainContent>
-      {bool && (
+      {filteredGames.length === 0 && (
         <Placeholder
           text="Is this your first time here ? To display your recently added games add some first. Let's go!"
           buttonText="Add Games"
           onClick={() => history.push("/library/browse")}
         />
       )}
-      {!bool && (
+      {filteredGames.length > 0 && (
         <Title>
           <span>Recently Added</span>
         </Title>
