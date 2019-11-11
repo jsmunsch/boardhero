@@ -24,13 +24,16 @@ function App() {
           <Route exact path="/register">
             <Register />
           </Route>
-          <Route path="/user">
-            <User />
-          </Route>
           {user && (
-            <Route path="/library">
-              <Library />
-            </Route>
+            <>
+              <Route path="/user">
+                <User />
+              </Route>
+
+              <Route path="/library">
+                <Library />
+              </Route>
+            </>
           )}
           <Route>
             <NotFound />

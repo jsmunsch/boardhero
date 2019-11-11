@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 import CollectionItemPositioned from "./GamePositioned";
 import CardGameName from "./GameName";
 import AddButtonCollection from "./AddButtonCollection";
 import AddButtonWishlist from "./AddButtonWishlist";
-import { newGame } from "../../api/fetchGames";
-import { newWishlistEntry } from "../../api/fetchWishlist";
+import { newGame, removeGameEntry } from "../../api/fetchGames";
+import { newWishlistEntry, removeGameWishlist } from "../../api/fetchWishlist";
 import DetailButton from "./DetailButton";
 import ConfirmationMessage from "./ConfirmationMessage";
 import Grid from "./Grid";
@@ -16,6 +17,7 @@ import Rating from "react-rating";
 import StarRatingFull from "../../icons/StarRatingFull";
 import StarRatingEmpty from "../../icons/StarRatingEmpty";
 import RatingContainer from "./RatingContainer";
+import RemoveButton from "./RemoveButton";
 
 export const Background = styled.div`
   height: 100%;
@@ -71,25 +73,26 @@ const DescriptionContainer = styled.div`
 const Info = styled.span`
   margin: 6px 0px;
 `;
+
 const ColoredSpan = styled.span`
   color: ${props => props.theme.brightEffect};
   margin-right: 10px;
 `;
 
-export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
+export default function CardModal({
+  handleOutsideClick,
+  singleGame,
+  enabled,
+  removeGame,
+  removeWishlist
+}) {
   const [showBack, setShowBack] = useState(false);
   const [startAnimation, setStartAnimation] = useState(false);
 
   const regex = /(<([^>]+)>)/gi;
   const description = singleGame.description.replace(regex, "");
+  let history = useHistory();
 
-  async function addGameToCollection() {
-    newGame(singleGame);
-  }
-  async function addGameToWishlist() {
-    newWishlistEntry(singleGame);
-  }
-  console.log(singleGame);
   return (
     <>
       <Background onClick={handleOutsideClick} />
@@ -126,7 +129,7 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
             {enabled && (
               <AddButtonCollection
                 onClick={() => {
-                  addGameToCollection(singleGame);
+                  newGame(singleGame);
                   setStartAnimation(true);
                   setTimeout(() => {
                     setStartAnimation(false);
@@ -139,7 +142,7 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
             {enabled && (
               <AddButtonWishlist
                 onClick={() => {
-                  addGameToWishlist(singleGame);
+                  newWishlistEntry(singleGame);
                   setStartAnimation(true);
                   setTimeout(() => {
                     setStartAnimation(false);
@@ -148,6 +151,26 @@ export default function CardModal({ handleOutsideClick, singleGame, enabled }) {
               >
                 To Wishlist
               </AddButtonWishlist>
+            )}
+            {removeWishlist && (
+              <RemoveButton
+                onClick={() => {
+                  removeGameWishlist(singleGame);
+                  window.location.reload(true);
+                }}
+              >
+                Remove
+              </RemoveButton>
+            )}
+            {removeGame && (
+              <RemoveButton
+                onClick={() => {
+                  removeGameEntry(singleGame);
+                  window.location.reload(true);
+                }}
+              >
+                Remove
+              </RemoveButton>
             )}
           </StyledDiv>
         )}

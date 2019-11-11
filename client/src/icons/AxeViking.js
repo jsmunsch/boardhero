@@ -4,8 +4,8 @@ export default function AxeViking() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="401.574"
-      height="325.442"
+      width="50"
+      height="40"
       viewBox="0 0 401.574 325.442"
     >
       <g id="Group_225" data-name="Group 225" transform="translate(0 0)">

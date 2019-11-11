@@ -51,7 +51,7 @@ export default function User() {
 
   return (
     <Container>
-      <Header />
+      <Header page="User" />
       <TopArea>
         <PictureContainer src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT78zVsh02EAe_AqYX-lLKW3umGxLzasjAzyOqy3WWEfXLzV4wShQ&s" />
         <AmountGames name={games.length} description="Games" />

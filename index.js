@@ -1,8 +1,12 @@
 require("dotenv").config();
 
 const express = require("express");
-const { getGames, setGames } = require("./lib/games");
-const { getWishlist, setWishlist } = require("./lib/wishlist");
+const { getGames, setGames, removeGame } = require("./lib/games");
+const {
+  getWishlist,
+  setWishlist,
+  removeWishlistEntry
+} = require("./lib/wishlist");
 const { getUsers, setUser, validateUser } = require("./lib/users");
 const { initDatabase } = require("./lib/database");
 const {
@@ -159,6 +163,28 @@ app.get("/api/mechanics", async (request, response) => {
   })
     .then(response => response.data)
     .then(mechanics => response.json(mechanics));
+});
+
+app.post("/api/wishlistremove", async (request, response) => {
+  try {
+    const user = getUserBySession(request.cookies.session);
+    if (!user) return response.status(403).end("unauthorized request");
+    removeWishlistEntry(request.body.name);
+    response.send("Wishlist entry deleted");
+  } catch (error) {
+    console.error;
+  }
+});
+
+app.post("/api/gamesremove", async (request, response) => {
+  try {
+    const user = getUserBySession(request.cookies.session);
+    if (!user) return response.status(403).end("unauthorized request");
+    removeGame(request.body.name);
+    response.send("Game deleted");
+  } catch (error) {
+    console.error;
+  }
 });
 
 if (process.env.NODE_ENV === "production") {
