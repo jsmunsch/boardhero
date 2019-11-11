@@ -19,19 +19,21 @@ export default function LibraryWishlist({ searchbarInput }) {
     });
   }, []);
 
-  const [wishlistGame, setWishlistGame] = useState([]);
-  const searchWishlistGames = wishlistGame.filter(info =>
+  const [wishlistGame, setWishlistGame] = useState(null);
+  const searchWishlistGames = (wishlistGame || []).filter(info =>
     info.name.toLowerCase().includes(searchbarInput.toLowerCase())
   );
   return (
     <>
-      <FlexContainer>
-        <Placeholder
-          text="Games added to your Wishlist will be shown here. Start by adding a few!"
-          buttonText="Add Games"
-          onClick={() => history.push("/library/browse")}
-        />
-      </FlexContainer>
+      {wishlistGame && wishlistGame.length === 0 && (
+        <FlexContainer>
+          <Placeholder
+            text="Games added to your Wishlist will be shown here. Start by adding a few!"
+            buttonText="Add Games"
+            onClick={() => history.push("/library/browse")}
+          />
+        </FlexContainer>
+      )}
       <CollectionGrid collection={searchWishlistGames} />
     </>
   );

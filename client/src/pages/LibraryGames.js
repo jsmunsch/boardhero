@@ -12,7 +12,7 @@ const FlexContainer = styled.div`
 `;
 
 export default function LibraryCollection({ searchbarInput }) {
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useState(null);
   let history = useHistory();
 
   React.useEffect(() => {
@@ -21,20 +21,22 @@ export default function LibraryCollection({ searchbarInput }) {
     });
   }, []);
 
-  const searchGames = games.filter(info =>
+  const searchGames = (games || []).filter(info =>
     info.name.toLowerCase().includes(searchbarInput.toLowerCase())
   );
 
   return (
     <>
-      <FlexContainer>
-        <Placeholder
-          text="Is this your first time using this App ? Start by Adding Games via the browse page!"
-          buttonText="Add Games"
-          onClick={() => history.push("/library/browse")}
-        />
-      </FlexContainer>
+      {games && games.length === 0 && (
+        <FlexContainer>
+          <Placeholder
+            text="Is this your first time using this App ? Start by Adding Games via the browse page!"
+            buttonText="Add Games"
+            onClick={() => history.push("/library/browse")}
+          />
+        </FlexContainer>
       )}
+
       <CollectionGrid collection={searchGames} />
     </>
   );

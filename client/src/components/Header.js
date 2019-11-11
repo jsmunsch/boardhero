@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import IconButton from "./IconButton";
 import BurgerMenu from "../icons/BurgerMenuIcon";
@@ -10,6 +10,7 @@ import { useOnClickOutside } from "../hooks";
 import OptionBox from "./library/OptionBox";
 import SortModal from "./library/SortModal";
 import { Background } from "./popup-card/CardModal";
+import AxeViking from "../icons/AxeViking";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -24,12 +25,14 @@ const HeaderContainer = styled.header`
   top: 0;
 `;
 
+const PageSpan = styled.span``;
 export default function Header({
   toggleOptions,
   toggleSearchbar,
   active,
   handleInputChange,
-  onSearch
+  onSearch,
+  page
 }) {
   const [showMenu, setShowMenu] = React.useState(false);
   const [showOptions, setShowOptions] = useState(false);
@@ -47,7 +50,7 @@ export default function Header({
         <>
           <Background />
           <div ref={node}>
-            <BurgerMenuList />
+            <BurgerMenuList handleClose={() => setShowMenu(false)} />
           </div>
         </>
       )}
@@ -56,7 +59,8 @@ export default function Header({
         <IconButton onClick={() => setShowMenu(!showMenu)}>
           <BurgerMenu />
         </IconButton>
-        Library
+        <PageSpan page={page}>{page}</PageSpan>
+        <AxeViking />
         <SearchBar
           active={active}
           onChange={event => handleInputChange(event)}

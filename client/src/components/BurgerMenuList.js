@@ -8,11 +8,8 @@ import Logout from "../icons/Logout";
 import { useUser } from "../hooks";
 import { unsetUser } from "../api/fetchUser";
 import Person from "../icons/Person";
-
-const morph = keyframes`
-  0% { width: 0px;}
-  100% { width: 100%}
-`;
+import Clear from "../icons/Clear";
+import { morph, morphAway } from "../animations/morph";
 
 const PositionContainer = styled.nav`
   position: fixed;
@@ -24,7 +21,7 @@ const PositionContainer = styled.nav`
   width: 70vw;
   height: 100vh;
   background-color: ${props => props.theme.accent};
-  animation: ${morph} 0.3s ease-in-out;
+  animation: ${morph} 0.4s ease-in-out;
 `;
 
 const NameContainer = styled.div`
@@ -37,7 +34,28 @@ const NameContainer = styled.div`
   align-items: center;
 `;
 
-export default function BurgerMenuList() {
+const FlexDiv = styled.div`
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1em;
+  margin-left: -10px;
+`;
+
+const CloseButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  color: inherit;
+  width: 40px;
+  height: 40px;
+  background: inherit;
+`;
+
+export default function BurgerMenuList({ handleClose }) {
   let history = useHistory();
   let location = useLocation();
   let { url } = useRouteMatch();
@@ -45,7 +63,13 @@ export default function BurgerMenuList() {
   return (
     <>
       <PositionContainer>
-        <NameContainer>Hallo {user}</NameContainer>
+        <NameContainer>
+          <CloseButton onClick={handleClose}>
+            <Clear />
+          </CloseButton>
+          <FlexDiv>Hallo {user}</FlexDiv>
+        </NameContainer>
+
         <NavigationMenuButton
           onClick={() => history.push("/library/browse")}
           selected={
