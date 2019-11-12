@@ -1,10 +1,8 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+import { morph } from "../../animations/morph";
+import { slideIn } from "../../animations/slideIn";
 
-const morph = keyframes`
-  0% { width: 0px;}
-  100% { width: 100%}
-`;
 const StyledSearchBar = styled.div`
   display: flex;
   flex-direction: row;
@@ -14,7 +12,6 @@ const StyledSearchBar = styled.div`
   background-color: inherit;
   color: white;
   margin-left: 10px;
-  animation: ${morph} 0.5s linear;
 `;
 
 const StyledInput = styled.input`
@@ -32,7 +29,7 @@ const StyledInput = styled.input`
   width: 100%;
   fill: white;
   color: white;
-  animation: ${morph} 0.3s ease-in;
+  animation: ${slideIn} 0.25s ease-in;
   -webkit-appearance: none;
 `;
 
