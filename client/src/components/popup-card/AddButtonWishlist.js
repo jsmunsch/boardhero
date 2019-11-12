@@ -1,6 +1,7 @@
+import React from "react";
 import styled from "styled-components";
 
-const AddButtonWishlist = styled.button`
+const StyledButton = styled.button`
   border-radius: 15px;
   background-color: ${props => props.theme.brightEffect};
   position: absolute;
@@ -15,4 +16,23 @@ const AddButtonWishlist = styled.button`
   color: white;
 `;
 
-export default AddButtonWishlist;
+export default function AddButtonWishlist({
+  children,
+  setStartAnimation,
+  singleGame,
+  newWishlistEntry
+}) {
+  return (
+    <StyledButton
+      onClick={() => {
+        newWishlistEntry(singleGame);
+        setStartAnimation(true);
+        setTimeout(() => {
+          setStartAnimation(false);
+        }, 5000);
+      }}
+    >
+      {children}
+    </StyledButton>
+  );
+}

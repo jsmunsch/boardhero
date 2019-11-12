@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Container = styled.section`
   display: flex;
@@ -28,7 +29,7 @@ const FriendButton = styled.button`
   border: none;
   font-size: 1.1em;
   box-shadow: 4px 4px 6px 4px rgba(0, 0, 0, 0.15);
-  padding: 15px;
+  padding: 20px;
   line-height: 1px;
 `;
 
@@ -42,3 +43,8 @@ export default function Placeholder({ text, buttonText, onClick }) {
     </Container>
   );
 }
+
+Placeholder.propTypes = {
+  text: PropTypes.string,
+  buttonText: PropTypes.string
+};

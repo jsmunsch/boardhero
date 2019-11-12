@@ -30,6 +30,7 @@ export default function Library() {
         active={showSearchbar}
         handleInputChange={setSearchbarInput}
         onSearch={handleSearch}
+        page="Library"
       />
       <OptionBox
         show={toggleOptions}

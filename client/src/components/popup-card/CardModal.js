@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
 import CollectionItemPositioned from "./GamePositioned";
-import CardGameName from "./GameName";
 import AddButtonCollection from "./AddButtonCollection";
 import AddButtonWishlist from "./AddButtonWishlist";
-import { newGame, removeGameEntry } from "../../api/fetchGames";
+import { removeGameEntry } from "../../api/fetchGames";
 import { newWishlistEntry, removeGameWishlist } from "../../api/fetchWishlist";
 import DetailButton from "./DetailButton";
 import ConfirmationMessage from "./ConfirmationMessage";
@@ -18,6 +16,8 @@ import StarRatingFull from "../../icons/StarRatingFull";
 import StarRatingEmpty from "../../icons/StarRatingEmpty";
 import RatingContainer from "./RatingContainer";
 import RemoveButton from "./RemoveButton";
+import CardBack from "./CardBack";
+import ModalContainer from "./ModalContainer";
 
 export const Background = styled.div`
   height: 100%;
@@ -36,37 +36,6 @@ const FlexContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-`;
-
-const StyledDiv = styled.div`
-  width: 320px;
-  height: 480px;
-  right: 0;
-  left: 0;
-  margin-left: auto;
-  margin-right: auto;
-  top: 50%;
-  margin-top: -240px;
-  background: ${props => props.theme.main};
-  position: fixed;
-  z-index: 2;
-  border: 4px solid white;
-  border-radius: 15px;
-  backdrop-filter: blur(2px);
-`;
-
-const DescriptionContainer = styled.div`
-  display: flex;
-  fill: white;
-  color: white;
-  justify-content: center;
-  margin: 0px 20px 0 10px;
-  max-height: 40vh;
-  @media (min-height: 750px) {
-    max-height: 35vh;
-  }
-  overflow-x: scroll;
-  font-size: 1.2em;
 `;
 
 const Info = styled.span`
@@ -88,16 +57,15 @@ export default function CardModal({
   const [showBack, setShowBack] = useState(false);
   const [startAnimation, setStartAnimation] = useState(false);
 
-  const regex = /(<([^>]+)>)/gi;
+  const regex = /((<([^>&"]+)>)|(\&quot\;))/gi;
   const description = singleGame.description.replace(regex, "");
-  let history = useHistory();
 
   return (
     <>
       <Background onClick={handleOutsideClick} />
       <FlexContainer>
         {!showBack && (
-          <StyledDiv>
+          <ModalContainer>
             <CollectionItemPositioned src={singleGame.image_url} />
             <RatingContainer>
               <Rating
@@ -127,26 +95,17 @@ export default function CardModal({
             </Grid>
             {enabled && (
               <AddButtonCollection
-                onClick={() => {
-                  newGame(singleGame);
-                  setStartAnimation(true);
-                  setTimeout(() => {
-                    setStartAnimation(false);
-                  }, 5000);
-                }}
+                singleGame={singleGame}
+                setStartAnimation={setStartAnimation}
               >
                 To Collection
               </AddButtonCollection>
             )}
             {enabled && (
               <AddButtonWishlist
-                onClick={() => {
-                  newWishlistEntry(singleGame);
-                  setStartAnimation(true);
-                  setTimeout(() => {
-                    setStartAnimation(false);
-                  }, 5000);
-                }}
+                singleGame={singleGame}
+                setStartAnimation={setStartAnimation}
+                newWishlistEntry={newWishlistEntry}
               >
                 To Wishlist
               </AddButtonWishlist>
@@ -171,28 +130,14 @@ export default function CardModal({
                 Remove
               </RemoveButton>
             )}
-          </StyledDiv>
+          </ModalContainer>
         )}
         {showBack && (
-          <StyledDiv>
-            <CollectionItemPositioned src={singleGame.image_url} />
-            <RatingContainer>
-              <Rating
-                initialRating={singleGame.average_user_rating}
-                readonly
-                fullSymbol={<StarRatingFull />}
-                emptySymbol={<StarRatingEmpty />}
-              />
-              <span>({singleGame.num_user_ratings})</span>
-            </RatingContainer>
-            <Grid>
-              <span></span>
-              <CardGameName>Description</CardGameName>
-
-              <DescriptionContainer>{description}</DescriptionContainer>
-              <DetailButton onClick={() => setShowBack(!showBack)} />
-            </Grid>
-          </StyledDiv>
+          <CardBack
+            singleGame={singleGame}
+            setShowBack={setShowBack}
+            showBack={showBack}
+          />
         )}
       </FlexContainer>
       {startAnimation && <ConfirmationMessage />}
