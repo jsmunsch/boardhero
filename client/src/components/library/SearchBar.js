@@ -32,18 +32,10 @@ const StyledInput = styled.input`
   width: 100%;
   fill: white;
   color: white;
-  animation: ${morph} 0.5s linear;
+  animation: ${morph} 0.3s ease-in;
   -webkit-appearance: none;
 `;
 
-// function onChange(event) {
-//   console.log("on change triggered");
-//   clearTimeout(throttleTimeout);
-//   throttleTimeout = setTimeout(function() {
-//     console.log("Timeout triggered");
-//     handleInputChange(event.target.value);
-//   }, 1000);
-// }
 export default function SearchBar({ active, onSearch }) {
   let throttleTimeout;
 
