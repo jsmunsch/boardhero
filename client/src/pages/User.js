@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useHistory
+} from "react-router-dom";
 import styled from "styled-components";
 import Header from "../components/Header";
 import PictureContainer from "../components/User-page.js/RoundPicture";
@@ -14,6 +19,7 @@ import UserFriends from "./UserFriends";
 import UserOverview from "./UserOverview";
 import NameText from "../components/User-page.js/NameText";
 import NavBar from "../components/User-page.js/NavBar";
+import LibraryBrowse from "./LibraryBrowse";
 
 const Container = styled.div`
   display: flex;
@@ -48,10 +54,16 @@ export default function User() {
 
   const filteredGames = games.sort(compare);
   const [user] = useUser();
+  let history = useHistory();
 
   return (
     <Container>
-      <Header page="User" />
+      <Header
+        page="User"
+        toggleSearchbar={() => {
+          history.push("/library/browse");
+        }}
+      />
       <TopArea>
         <PictureContainer src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png" />
         <AmountGames name={games.length} description="Games" />

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import CollectionItemPositioned from "./GamePositioned";
 import AddButtonCollection from "./AddButtonCollection";
 import AddButtonWishlist from "./AddButtonWishlist";
-import { removeGameEntry } from "../../api/fetchGames";
+import { removeGameEntry, newGame } from "../../api/fetchGames";
 import { newWishlistEntry, removeGameWishlist } from "../../api/fetchWishlist";
 import DetailButton from "./DetailButton";
 import ConfirmationMessage from "./ConfirmationMessage";
@@ -78,7 +78,7 @@ export default function CardModal({
             </RatingContainer>
             <Grid>
               <span></span>
-              <GameName>{singleGame.name}</GameName>
+              <GameName>{TrimText(`${singleGame.name}`, 45)}</GameName>
               <Players>
                 <ColoredSpan>Players: </ColoredSpan> {singleGame.min_players}-
                 {singleGame.max_players}
@@ -97,6 +97,7 @@ export default function CardModal({
               <AddButtonCollection
                 singleGame={singleGame}
                 setStartAnimation={setStartAnimation}
+                newGame={newGame}
               >
                 To Collection
               </AddButtonCollection>

@@ -8,6 +8,7 @@ const BrowseEmpty = styled.div`
   text-align: center;
   height: 60vh;
   justify-content: center;
+  padding: 25px;
 `;
 
 export default BrowseEmpty;

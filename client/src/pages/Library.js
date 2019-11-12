@@ -55,7 +55,3 @@ export default function Library() {
     </>
   );
 }
-
-// filter by number of players etc
-// Set own "nickname", individualizing
-// different grid options on button click

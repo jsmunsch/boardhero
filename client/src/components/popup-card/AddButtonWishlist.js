@@ -8,7 +8,7 @@ const StyledButton = styled.button`
   bottom: 10px;
   right: 15px;
   height: 40px;
-  width: 130px;
+  width: 135px;
   border: none;
   outline: none;
   box-shadow: 4px 4px 6px 4px rgba(0, 0, 0, 0.15);
