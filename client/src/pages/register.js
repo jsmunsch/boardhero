@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Hero from "../icons/Hero";
 import RegisterForm from "../components/user-management/RegisterForm";
-import { useUser } from "../hooks";
 
 const FlexContainer = styled.section`
   display: flex;
@@ -25,8 +24,6 @@ const Headline = styled.h1`
 `;
 
 export default function Register() {
-  const [user] = useUser();
-
   return (
     <FlexContainer>
       <Headline>Boardhero</Headline>

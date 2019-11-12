@@ -7,7 +7,7 @@ export default function UserStatistics() {
   useEffect(() => {
     getMechanics().then(mechanics => setMechanics(mechanics));
   }, []);
-  console.log(mechanics);
+
   return (
     <Placeholder
       text="This page is under construction"
