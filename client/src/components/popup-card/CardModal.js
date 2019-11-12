@@ -119,7 +119,7 @@ export default function CardModal({
                 <ColoredSpan>Playtime: </ColoredSpan>
                 {singleGame.min_playtime}min - {singleGame.max_playtime}min
                 <Info />
-                <ColoredSpan>Description</ColoredSpan>
+                <ColoredSpan>Description: </ColoredSpan>
                 <span>
                   {TrimText(`${description}`, 43)}
                   <DetailButton onClick={() => setShowBack(!showBack)} />

@@ -2,20 +2,21 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import NavigationMenuButton from "./library/NavigationMenuButton";
 import Dice from "../icons/Dice";
-import { useHistory, useLocation, useRouteMatch } from "react-router-dom";
+import { useHistory, useLocation, useRouteMatch, Link } from "react-router-dom";
 import Logout from "../icons/Logout";
 
 import { useUser } from "../hooks";
 import { unsetUser } from "../api/fetchUser";
 import Person from "../icons/Person";
 import Clear from "../icons/Clear";
-import { morph, morphAway } from "../animations/morph";
+import { morph } from "../animations/morph";
 
 const PositionContainer = styled.nav`
   position: fixed;
   left: 0px;
   z-index: 1;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   justify-content: flex-start;
   width: 70vw;
@@ -55,6 +56,12 @@ const CloseButton = styled.button`
   background: inherit;
 `;
 
+const ImpressumLink = styled(Link)`
+  position: absolute;
+  bottom: 15px;
+  left: 150px;
+  color: white;
+`;
 export default function BurgerMenuList({ handleClose }) {
   let history = useHistory();
   let location = useLocation();
@@ -67,7 +74,7 @@ export default function BurgerMenuList({ handleClose }) {
           <CloseButton onClick={handleClose}>
             <Clear />
           </CloseButton>
-          <FlexDiv>Hallo {user}</FlexDiv>
+          <FlexDiv>Hello, {user}!</FlexDiv>
         </NameContainer>
 
         <NavigationMenuButton
@@ -116,6 +123,7 @@ export default function BurgerMenuList({ handleClose }) {
           />
           User
         </NavigationMenuButton>
+        <ImpressumLink to="/impressum">Impressum</ImpressumLink>
       </PositionContainer>
     </>
   );

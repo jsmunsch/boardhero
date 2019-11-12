@@ -7,7 +7,7 @@ const Container = styled.div`
   max-width: 70%;
 `;
 
-const Name = styled.text`
+const Name = styled.span`
   font-style: bold;
   margin: 0;
   font-size: 1.4em;

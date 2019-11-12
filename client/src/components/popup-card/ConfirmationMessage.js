@@ -22,7 +22,7 @@ const MessageBox = styled.div`
   display: "block";
 `;
 
-const MessageText = styled.text`
+const MessageText = styled.span`
   animation: ${textFadeIn} 2.5s ease-in-out;
   display: "block";
 `;

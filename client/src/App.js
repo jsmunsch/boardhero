@@ -9,6 +9,7 @@ import Register from "./pages/register";
 import { useUser } from "./hooks";
 import NotFound from "./pages/NotFound";
 import User from "./pages/User";
+import Impressum from "./pages/Impressum";
 
 function App() {
   const [user] = useUser();
@@ -32,6 +33,9 @@ function App() {
 
               <Route path="/library">
                 <Library />
+              </Route>
+              <Route exact path="/impressum">
+                <Impressum />
               </Route>
             </>
           )}

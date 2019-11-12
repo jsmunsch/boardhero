@@ -8,7 +8,7 @@ const Container = styled.div`
   margin-left: 30px;
 `;
 
-const Amount = styled.text`
+const Amount = styled.span`
   font-style: bold;
   margin: 0;
   font-size: 1.2em;
