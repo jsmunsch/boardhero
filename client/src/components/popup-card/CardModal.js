@@ -3,7 +3,7 @@ import styled from "styled-components";
 import CollectionItemPositioned from "./GamePositioned";
 import AddButtonCollection from "./AddButtonCollection";
 import AddButtonWishlist from "./AddButtonWishlist";
-import { newGame, removeGameEntry } from "../../api/fetchGames";
+import { removeGameEntry } from "../../api/fetchGames";
 import { newWishlistEntry, removeGameWishlist } from "../../api/fetchWishlist";
 import DetailButton from "./DetailButton";
 import ConfirmationMessage from "./ConfirmationMessage";
