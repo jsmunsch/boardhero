@@ -5,13 +5,7 @@ import RecentlyAdded from "../components/User-page.js/RecentlyAdded";
 import Placeholder from "../components/User-page.js/Placeholder";
 import { useHistory } from "react-router-dom";
 
-export default function UserOverview({
-  filteredGames,
-  games,
-  text,
-  buttonText,
-  onClick
-}) {
+export default function UserOverview({ filteredGames }) {
   let history = useHistory();
   return (
     <MainContent>

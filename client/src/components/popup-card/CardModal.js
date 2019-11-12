@@ -89,9 +89,9 @@ export default function CardModal({
   const [showBack, setShowBack] = useState(false);
   const [startAnimation, setStartAnimation] = useState(false);
 
-  const regex = /(<([^>]+)>)/gi;
+  const regex = /(<([^>&"]+)>)/gi;
+  const regex2 = /(&quot\;)/gi;
   const description = singleGame.description.replace(regex, "");
-  let history = useHistory();
 
   return (
     <>
