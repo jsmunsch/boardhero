@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import Placeholder from "../components/User-page.js/Placeholder";
 
 export default function UserFriends() {

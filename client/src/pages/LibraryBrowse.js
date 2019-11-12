@@ -6,7 +6,7 @@ import { getGamesFromApi } from "../api/GetDataFromApi";
 export default function LibraryBrowse({ searchbarInput }) {
   const [apiGame, setApiGame] = useState(null);
   useEffect(() => {
-    getGamesFromApi(searchbarInput).then(game => setApiGame(game));
+    getGamesFromApi(searchbarInput).then(games => setApiGame(games));
   }, [searchbarInput]);
   return (
     <>

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import IconButton from "./IconButton";
 import BurgerMenu from "../icons/BurgerMenuIcon";

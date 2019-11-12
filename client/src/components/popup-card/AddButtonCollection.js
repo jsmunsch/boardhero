@@ -1,6 +1,7 @@
+import React from "react";
 import styled from "styled-components";
 
-const AddButtonCollection = styled.button`
+const StyledButton = styled.button`
   border-radius: 15px;
   background-color: ${props => props.theme.brightEffect};
   position: absolute;
@@ -15,4 +16,23 @@ const AddButtonCollection = styled.button`
   font-size: 1.1em;
 `;
 
-export default AddButtonCollection;
+export default function AddButtonCollection({
+  children,
+  singleGame,
+  setStartAnimation,
+  newGame
+}) {
+  return (
+    <StyledButton
+      onClick={() => {
+        newGame(singleGame);
+        setStartAnimation(true);
+        setTimeout(() => {
+          setStartAnimation(false);
+        }, 5000);
+      }}
+    >
+      {children}
+    </StyledButton>
+  );
+}
