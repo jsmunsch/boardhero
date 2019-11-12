@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     -moz-appearance: none;
+    -webkit-appearance: none;
   }
   *, *::after, *::before {
     box-sizing: border-box;
