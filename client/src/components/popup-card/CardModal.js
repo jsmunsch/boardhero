@@ -78,7 +78,7 @@ export default function CardModal({
             </RatingContainer>
             <Grid>
               <span></span>
-              <GameName>{singleGame.name}</GameName>
+              <GameName>{TrimText(`${singleGame.name}`, 45)}</GameName>
               <Players>
                 <ColoredSpan>Players: </ColoredSpan> {singleGame.min_players}-
                 {singleGame.max_players}
