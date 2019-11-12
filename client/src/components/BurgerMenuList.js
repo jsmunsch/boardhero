@@ -59,7 +59,7 @@ const CloseButton = styled.button`
 const ImpressumLink = styled(Link)`
   position: absolute;
   bottom: 15px;
-  left: 150px;
+  right: 5%;
   color: white;
 `;
 export default function BurgerMenuList({ handleClose }) {
