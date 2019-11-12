@@ -28,6 +28,7 @@ const FriendButton = styled.button`
   border: none;
   font-size: 1.1em;
   box-shadow: 4px 4px 6px 4px rgba(0, 0, 0, 0.15);
+  padding: 15px;
 `;
 
 export default function Placeholder({ text, buttonText, onClick }) {

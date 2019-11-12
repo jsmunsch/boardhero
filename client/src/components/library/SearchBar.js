@@ -33,6 +33,7 @@ const StyledInput = styled.input`
   fill: white;
   color: white;
   animation: ${morph} 0.5s linear;
+  -webkit-appearance: none;
 `;
 
 // function onChange(event) {

@@ -6,6 +6,7 @@ const Title = styled.div`
   margin-top: 20px;
   justify-content: flex-start;
   margin-left: 8%;
+  min-height: 15px;
 `;
 
 export default Title;

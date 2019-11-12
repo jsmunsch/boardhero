@@ -9,5 +9,10 @@ export default function UserStatistics({ games, text, buttonText }) {
     getMechanics().then(mechanics => setMechanics(mechanics));
   }, []);
   console.log(mechanics);
-  return <Placeholder text="This page is under construction" />;
+  return (
+    <Placeholder
+      text="This page is under construction"
+      buttonText="In Progress"
+    />
+  );
 }
