@@ -53,7 +53,6 @@ const StyledDiv = styled.div`
   border: 4px solid white;
   border-radius: 15px;
   backdrop-filter: blur(2px);
-  font-family: "Roboto-light";
 `;
 
 const DescriptionContainer = styled.div`

@@ -7,6 +7,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   margin-left: 7%;
+  min-height: 108px;
 `;
 
 const Span = styled.span`

@@ -11,6 +11,7 @@ const InputField = styled.input`
   border: none;
   background-color: ${props =>
     props.highlight ? props.theme.brightEffect : "white"};
+  -webkit-appearance: none;
 `;
 
 export default InputField;
