@@ -96,16 +96,6 @@ export default function BurgerMenuList({ handleClose }) {
         </NavigationMenuButton>
         <NavigationMenuButton
           onClick={() => {
-            unsetUser();
-            localStorage.clear();
-            history.push("/");
-          }}
-        >
-          <Logout />
-          Logout
-        </NavigationMenuButton>
-        <NavigationMenuButton
-          onClick={() => {
             history.push("/user/overview");
           }}
           selected={
@@ -122,6 +112,16 @@ export default function BurgerMenuList({ handleClose }) {
             }
           />
           User
+        </NavigationMenuButton>
+        <NavigationMenuButton
+          onClick={() => {
+            unsetUser();
+            localStorage.clear();
+            history.push("/");
+          }}
+        >
+          <Logout />
+          Logout
         </NavigationMenuButton>
         <ImpressumLink to="/impressum">Impressum</ImpressumLink>
       </PositionContainer>
