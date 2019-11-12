@@ -15,6 +15,8 @@ const GlobalStyles = createGlobalStyle`
     height: 100vh;
     width: 100vw;
     background: ${props => props.theme.main};
+    -moz-appearance: none;
+    -webkit-appearance: none;
   }
 
   button {
