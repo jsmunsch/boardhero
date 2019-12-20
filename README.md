@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 A mobile first application to keep track of your boardgames. Create your own account with a digital portfolio of all the games you own and add the ones you want to your Wishlist.
 
+![yeah](./client/src/pictures/Screenshot 2019-12-20 at 09.15.23.png)
+
 # Hosting
 
 The Website is currently hosted via heroku.
