@@ -7,15 +7,18 @@ const BodyGrid = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 90px);
-  grid-column-gap: 30px;
+  grid-column-gap: 8%;
   grid-row-gap: 30px;
   background-color: ${props => props.theme.main};
   justify-content: center;
+  @media (min-width: 600px) {
+    grid-column-gap: 130px;
+  }
   @media (min-width: 800px) {
-    width: 80%;
+    grid-template-columns: repeat(4, 90px);
+  }
+  @media (min-width: 1400px) {
     grid-template-columns: repeat(5, 90px);
-    grid-column-gap: 40px;
-    grid-row-gap: 40px;
   }
 `;
 
